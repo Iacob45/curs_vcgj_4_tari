@@ -10,6 +10,7 @@ Teme luate:
     Kosovo: Alexandra,
     Franta: Stefi,
     Brazilia: Andreea,
-    Lituania: Calcan
+    Lituania: Calcan,
+    Egipt: Monica
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
