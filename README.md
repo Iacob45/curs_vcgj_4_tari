@@ -12,6 +12,7 @@ Teme luate:
     Brazilia: Andreea,
     Lituania: Calcan,
     Egipt: Monica,
-    Italia: Daria
+    Italia: Daria,
+    Japonia: Ilie
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
