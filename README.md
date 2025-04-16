@@ -8,6 +8,8 @@ Teme luate:
     Spania: Carla,
     Canada: Vali,
     Kosovo: Alexandra,
-    Franta: Stefi
+    Franta: Stefi,
+    Brazilia: Andreea,
+    Lituania: Calcan
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
