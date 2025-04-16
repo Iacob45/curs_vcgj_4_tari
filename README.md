@@ -13,6 +13,7 @@ Teme luate:
     Lituania: Calcan,
     Egipt: Monica,
     Italia: Daria,
-    Japonia: Ilie
+    Japonia: Ilie,
+    Danemarca: Razvan
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
