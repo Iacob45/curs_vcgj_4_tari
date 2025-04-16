@@ -6,5 +6,7 @@ In cele 3 endpoint-uri puneti o functie care aduna text html la o variabila stri
 (se face in PYTHON)
 Textul html v-a alcatui un continut care va aparea la acel url, de ex: www.Siteulmeu.com/capitala va afisa return-ul de la capitala
 
+Fiecare va avea un branch main_nume_prenume si un branch devel_nume_prenume.
+
 Restul de proiect, Jenkins, Docker, Git, sunt ceea ce am facut la curs si lab pana acum.
 Avem undeva pe teams exact ordinea la astea, si pe ce ne puncteaza.
