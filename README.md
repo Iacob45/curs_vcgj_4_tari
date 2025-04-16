@@ -11,6 +11,7 @@ Teme luate:
     Franta: Stefi,
     Brazilia: Andreea,
     Lituania: Calcan,
-    Egipt: Monica
+    Egipt: Monica,
+    Italia: Daria
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
