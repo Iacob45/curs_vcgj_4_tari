@@ -14,6 +14,7 @@ Teme luate:
     Egipt: Monica,
     Italia: Daria,
     Japonia: Ilie,
-    Danemarca: Razvan
+    Danemarca: Razvan,
+    Malta: Ana
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
