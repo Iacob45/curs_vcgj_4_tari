@@ -15,6 +15,7 @@ Teme luate:
     Italia: Daria,
     Japonia: Ilie,
     Danemarca: Razvan,
-    Malta: Ana
+    Malta: Ana,
+    Germania: Gutescu
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
