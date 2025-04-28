@@ -17,6 +17,7 @@ Teme luate:
     Danemarca: Razvan,
     Malta: Ana,
     Germania: Gutescu,
-    Olanda: Daniela
+    Olanda: Daniela,
+    Romania: Iacob
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
