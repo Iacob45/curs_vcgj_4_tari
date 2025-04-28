@@ -6,7 +6,10 @@ ENV FLASK_APP tari
 #3.8 alpine
 RUN adduser -D tari
 
+RUN chown -R tari /home/user/SCC/
+
 USER tari
+
 
 WORKDIR /home/user/SCC/curs_vcgj_4_tari/
 
