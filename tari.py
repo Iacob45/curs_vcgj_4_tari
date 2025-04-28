@@ -1,3 +1,4 @@
+import sys
 from flask import Flask, url_for
 from app.lib import biblioteca_header, biblioteca_romania
 
@@ -22,4 +23,15 @@ def steag() -> str:
     text += biblioteca_romania.steag_romania()
     return text
 
+
+@api.cli.command()
+def test():
+    """
+    Rulare 'unit tests'
+
+    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
+
+    """
+    import pytest
+    sys.exit(pytest.main(["."]))
 
