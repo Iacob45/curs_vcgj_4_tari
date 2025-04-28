@@ -13,11 +13,9 @@ def test_header_descriere():
     <h1>Aceasta este descrierea României</h1><br><br>
     """:
         logger.info(f"Merge functia header_descriere")
-        print("Merge functia header_descriere")
         assert True
     else:
         logger.info(f"Nu merge functia header_descriere")
-        print("Nu merge functia header_descriere")
         assert False
 
 def test_header_capitala():
@@ -31,11 +29,9 @@ def test_header_capitala():
     <h1>Aceasta este capitala României</h1><br><br>
     """:
         logger.info(f"Merge functia header_capitala")
-        print("Merge functia header_capitala")
         assert True
     else:
         logger.info(f"Nu merge functia header_capitala")
-        print("Nu merge functia header_capitala")
         assert False
 def test_header_steag():
     if header_steag() == """
@@ -48,11 +44,9 @@ def test_header_steag():
     <h1>Acesta este steagul României</h1><br><br>
     """:
         logger.info(f"Merge functia header_steag")
-        print("Merge functia header_steag")
         assert True
     else:
         logger.info(f"Nu merge functia header_steag")
-        print("Nu merge functia header_steag")
         assert False
 
 if __name__ == "__main__":
