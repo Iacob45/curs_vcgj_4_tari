@@ -1,16 +1,9 @@
-from enum import Enum
-import uvicorn
-from fastapi import FastAPI, HTTPException, Path, Query
-from fastapi.responses import HTMLResponse
+from flask import Flask, url_for
 from app.lib import biblioteca_header, biblioteca_romania, biblioteca_germania, biblioteca_olanda, biblioteca_franta
 
-api = FastAPI(
-    title="Api_Tari_PROIECT_VCGJ",
-    version="0.1"
-)
+api = Flask(__name__)
 
-
-@api.get("/", response_class=HTMLResponse)
+@api.route("/", methods=['GET'])
 def index() -> str:
     text = biblioteca_header.header_descriere()
     text += biblioteca_romania.descriere_romania()
@@ -19,7 +12,7 @@ def index() -> str:
     text += biblioteca_franta.descriere_franta()
     return text
 
-@api.get("/capitala", response_class=HTMLResponse)
+@api.route("/capitala", methods=['GET'])
 def capitala() -> str:
     text = biblioteca_header.header_capitala()
     text += biblioteca_romania.capitala_romania()
@@ -28,7 +21,7 @@ def capitala() -> str:
     text += biblioteca_franta.capitala_franta()
     return text
 
-@api.get("/steag", response_class=HTMLResponse)
+@api.route("/steag", methods=['GET'])
 def steag() -> str:
     text = biblioteca_header.header_steag()
     text += biblioteca_romania.steag_romania()
@@ -36,9 +29,3 @@ def steag() -> str:
     text += biblioteca_olanda.steag_olanda()
     text += biblioteca_franta.steag_franta()
     return text
-
-
-
-
-if __name__ == "__main__":
-    uvicorn.run(api, host="127.0.0.1", port=5050)
