@@ -8,7 +8,7 @@ RUN adduser -D tari
 
 USER tari
 
-WORKDIR /home/user/SCC/tari/
+WORKDIR /home/user/SCC/curs_vcgj_4_tari/
 
 COPY app app
 COPY dockerstart.sh dockerstart.sh
