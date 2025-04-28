@@ -55,6 +55,17 @@ pipeline {
                     docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
+			
+        }
+		stage('Running') {
+            agent any
+            steps {
+                echo "Pornesc containerul"
+                sh '''
+                    docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                '''
+            }
+			
         }
     }
 }
