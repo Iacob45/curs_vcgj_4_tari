@@ -8,25 +8,25 @@ api = Flask(__name__)
 def index() -> str:
     return render_template(
         "index.html", 
-        header=biblioteca_header.header_descriere_olanda(),
+        header=biblioteca_header.header_descriere(),
         descriere=biblioteca_olanda.descriere_olanda()
     )
 
 # Ruta pentru pagina cu capitala Olandei
-@api.route("/olanda/capitala", methods=['GET'])
+@api.route("/capitala", methods=['GET'])
 def capitala() -> str:
     return render_template(
         "capitala.html", 
-        header=biblioteca_header.header_capitala_olanda(),
+        header=biblioteca_header.header_capitala(),
         capitala=biblioteca_olanda.capitala_olanda()
     )
 
 # Ruta pentru pagina cu steagul Olandei
-@api.route("/olanda/steag", methods=['GET'])
+@api.route("/steag", methods=['GET'])
 def steag() -> str:
     return render_template(
         "steag.html", 
-        header=biblioteca_header.header_steag_olanda(),
+        header=biblioteca_header.header_steag(),
         steag=biblioteca_olanda.steag_olanda()
     )
 
