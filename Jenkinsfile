@@ -15,7 +15,7 @@ pipeline {
                     pwd
                     ls -l
                     
-                    # Crearea mediului virtual
+                    # Crearea mediului virtual (doar o dată)
                     python3 -m venv .venv
                     
                     # Activează mediul virtual
@@ -46,7 +46,7 @@ pipeline {
                 echo 'Running unit tests with Pytest...'
                 sh '''
                     . ./.venv/bin/activate  # Activează mediul virtual
-                    flask --app tari test
+                    pytest --maxfail=1 --disable-warnings -q  # Execută testele cu pytest
                 '''
             }
         }
