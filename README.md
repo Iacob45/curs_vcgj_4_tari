@@ -20,6 +20,8 @@ Teme luate:
     Olanda: Daniela,
     Romania: Iacob,
     Cristiana: Bulgaria,
-    Sasha: Guatemala
+    Sasha: Guatemala,
+    Luxemburg: Buta,
+    Vatican: Miron
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
