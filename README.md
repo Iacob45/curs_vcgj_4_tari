@@ -18,6 +18,8 @@ Teme luate:
     Malta: Ana,
     Germania: Gutescu,
     Olanda: Daniela,
-    Romania: Iacob
+    Romania: Iacob,
+    Cristiana: Bulgaria,
+    Sasha: Guatemala
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
