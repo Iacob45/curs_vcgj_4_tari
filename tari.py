@@ -3,7 +3,7 @@ import pytest
 from flask import Flask
 from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
 
-""" Modulul `tari.py` conține funcții care generează pagini HTML pentru diverse țări (descriere, capitală, steag). """
+""" Modulul `tari.py` conține funcții care generează pagini HTML pentru CANADA (descriere, capitală, steag). """
 api = Flask(__name__)
 
 
