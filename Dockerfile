@@ -12,7 +12,7 @@ RUN mkdir -p /home/user/proiect/curs_vcgj_4_tari/
 RUN chown -R tari /home/user/proiect/
 
 # Setăm directorul de lucru
-WORKDIR /home/tari/proiect/curs_vcgj_4_tari/
+WORKDIR /home/user/proiect/curs_vcgj_4_tari/
 
 # Copiem fișierele aplicației
 COPY app/ app/
