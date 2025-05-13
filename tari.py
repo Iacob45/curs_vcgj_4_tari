@@ -1,31 +1,31 @@
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania, biblioteca_germania, biblioteca_olanda, biblioteca_franta
+from flask import Flask, render_template
+from app.lib import biblioteca_header, biblioteca_bulgaria
 
 api = Flask(__name__)
 
 @api.route("/", methods=['GET'])
 def index() -> str:
-    text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
-    text += biblioteca_germania.descriere_germania()
-    text += biblioteca_olanda.descriere_olanda()
-    text += biblioteca_franta.descriere_franta()
-    return text
+    return render_template(
+        "index.html", 
+        header_descriere=biblioteca_header.header_descriere(),
+        descriere=biblioteca_bulgaria.descriere_bulgaria()
+    )
 
 @api.route("/capitala", methods=['GET'])
 def capitala() -> str:
-    text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
-    text += biblioteca_germania.capitala_germania()
-    text += biblioteca_olanda.capitala_olanda()
-    text += biblioteca_franta.capitala_franta()
-    return text
+    return render_template(
+        "capitala.html", 
+        header_capitala=biblioteca_header.header_capitala(),
+        capitala=biblioteca_bulgaria.capitala_bulgaria()
+    )
 
 @api.route("/steag", methods=['GET'])
 def steag() -> str:
-    text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
-    text += biblioteca_germania.steag_germania()
-    text += biblioteca_olanda.steag_olanda()
-    text += biblioteca_franta.steag_franta()
-    return text
+    return render_template(
+        "steag.html", 
+        header_steag=biblioteca_header.header_steag(),
+        steag=biblioteca_bulgaria.steag_bulgaria()
+    )
+
+if __name__ == "__main__":
+    api.run(debug=True, port=5011)

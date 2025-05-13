@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steagul Bulgariei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccffcc;
+            color: #333;
+        }
+        h1 {
+            color: #dc3545;
+        }
+        .button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            text-align: center;
+            background-color: #009900;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        .button:hover {
+            background-color: #c82333;
+        }
+        .flag {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    {{ header_steag }}
+    
+    <div>
+        <img src="{{ url_for('static', filename='Steag_bulgaria.png') }}" class="flag" alt="Steagul Bulgariei">
+    </div>
+
+    <a href="/">
+        <button class="button">Descrierea Bulgariei</button>
+    </a>
+    <a href="/capitala">
+        <button class="button">Capitala Bulgariei</button>
+    </a>
+</body>
+</html>
