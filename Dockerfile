@@ -6,20 +6,20 @@ ENV FLASK_APP tari
 #3.8 alpine
 RUN adduser -D tari
 
-RUN mkdir -p /home/user/SCC/curs_vcgj_4_tari/
-RUN chown -R tari /home/user/SCC/
+RUN mkdir -p /home/vali/proiect_SCC/curs_vcgj_4_tari
+RUN chown -R tari /home/vali/proiect_SCC
 
 
-WORKDIR /home/user/SCC/curs_vcgj_4_tari/
+WORKDIR /home/vali/proiect_SCC/curs_vcgj_4_tari
 
-COPY app app
+COPY app/ app/
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
 COPY quickrequirements.txt quickrequirements.txt
 COPY tari.py tari.py
-COPY static static
+COPY static/ static/
 
-RUN chmod -R 777 static
+RUN chmod -R 777 static/
 RUN chmod +x dockerstart.sh
 
 USER tari
