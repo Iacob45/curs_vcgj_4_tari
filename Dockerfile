@@ -5,8 +5,8 @@ ENV FLASK_APP tari
 RUN adduser -D tari
 
 
-RUN mkdir -p /home/proiect/tari/
-RUN chown -R tari /home/proiect/
+RUN mkdir -p /home/user/proiect/curs_vcgj_4_tari/
+RUN chown -R tari /home/user/proiect/
 
 WORKDIR /home/proiect
 
