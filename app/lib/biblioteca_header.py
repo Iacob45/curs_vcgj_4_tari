@@ -1,21 +1,11 @@
 def header_descriere() -> str:
-    # Adaugă butoanele de navigare către Capitala și Steag
-    return """
-    
-    Descrierea Olandei
-    """
+    return  "Descrierea Olandei"
 
 def header_capitala() -> str:
-    # Adaugă butoanele de navigare către Descriere și Steag
-    return """
+    return  "Capitala Olandei"
    
-    Capitala Olandei
-    """
 
 def header_steag() -> str:
-    # Adaugă butoanele de navigare către Descriere și Capitala
-    return """
-   
-    Drapelul Olandei
-    """
+    return "Steagul Olandei"
+    
 
