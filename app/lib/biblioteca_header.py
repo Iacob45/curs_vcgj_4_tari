@@ -4,7 +4,7 @@ def header_descriere_olanda() -> str:
         <button style="padding: 12px 28px; font-size: 18px; background-color: #007bff; color: white; border: 2px solid #0056b3; border-radius: 8px;">Vezi Capitala</button>
     </a>
     <a href="/olanda/steag">
-        <button style="padding: 12px 28px; font-size: 18px; background-color: #f39c12; color: white; border: 2px solid #e67e22; border-radius: 8px;">Vezi Steag</button>
+        <button style="padding: 12px 28px; font-size: 18px; background-color: #f39c12; color: white; border: 2px solid #e007bff; border-radius: 8px;">Vezi Steag</button>
     </a><br><br>
     <h1 style="font-family: 'Arial', sans-serif; color: #333;">Aceasta este descrierea Olandei</h1><br><br>
     """
