@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitala Olandei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #28a745;
+        }
+        .button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Includem header-ul generat din funcția Python -->
+    {{ header }}
+    
+    <!-- Informațiile despre capitala Olandei -->
+    <p>{{ capitala }}</p>
+
+    <a href="/olanda">
+        <button class="button">Vezi Descrierea</button>
+    </a>
+    <a href="/olanda/steag">
+        <button class="button">Vezi Steagul</button>
+    </a>
+</body>
+</html>

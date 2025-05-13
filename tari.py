@@ -1,22 +1,34 @@
-from flask import Flask
+from flask import Flask, render_template
 from app.lib import biblioteca_header, biblioteca_olanda
 
 api = Flask(__name__)
 
-@api.route("/", methods=['GET'])
+# Ruta pentru pagina principală (Descrierea Olandei)
+@api.route("/olanda", methods=['GET'])
 def index() -> str:
-	text = biblioteca_header.header_descriere_olanda()
-	text += biblioteca_olanda.descriere_olanda()
+    return render_template(
+        "index.html", 
+        header=biblioteca_header.header_descriere(),
+        descriere=biblioteca_olanda.descriere_olanda()
+    )
 
-@api.route("/capitala", methods=['GET'])
+# Ruta pentru pagina cu capitala Olandei
+@api.route("/olanda/capitala", methods=['GET'])
 def capitala() -> str:
-    
-    text = biblioteca_header.header_capitala_olanda()  
-    text += biblioteca_olanda.capitala_olanda()  
-    return text
+    return render_template(
+        "capitala.html", 
+        header=biblioteca_header.header_capitala(),
+        capitala=biblioteca_olanda.capitala_olanda()
+    )
 
-@api.route("/steag", methods=['GET'])
+# Ruta pentru pagina cu steagul Olandei
+@api.route("/olanda/steag", methods=['GET'])
 def steag() -> str:
-    text = biblioteca_header.header_steag_olanda()  
-    text += biblioteca_olanda.steag_olanda()  
-    return text
+    return render_template(
+        "steag.html", 
+        header=biblioteca_header.header_steag(),
+        steag=biblioteca_olanda.steag_olanda()
+    )
+
+if __name__ == "__main__":
+    api.run(debug=True, port=5011)
