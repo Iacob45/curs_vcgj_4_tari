@@ -22,10 +22,10 @@ pipeline {
                 sh '''
                     . ./activeaza_venv;
                     echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero lib/*.py;
+                    pylint --exit-zero $(find lib -name "*.py");
 
                     echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero tests/*.py;
+                    pylint --exit-zero $(find tests -name "tests/*.py");
 
                     echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
