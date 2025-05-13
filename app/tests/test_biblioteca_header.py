@@ -1,6 +1,6 @@
 import logging
-logger = logging.getLogger(__name__)
 from app.lib.biblioteca_header import header_descriere, header_capitala, header_steag
+logger = logging.getLogger(__name__)
 
 def test_header_descriere():
     if header_descriere() == """
@@ -12,10 +12,10 @@ def test_header_descriere():
     </a><br><br>
     <h1>Aceasta este descrierea României</h1><br><br>
     """:
-        logger.info(f"Merge functia header_descriere")
+        logger.info("Merge functia header_descriere")
         assert True
     else:
-        logger.info(f"Nu merge functia header_descriere")
+        logger.info("Nu merge functia header_descriere")
         assert False
 
 def test_header_capitala():
@@ -28,10 +28,10 @@ def test_header_capitala():
     </a><br><br>
     <h1>Aceasta este capitala României</h1><br><br>
     """:
-        logger.info(f"Merge functia header_capitala")
+        logger.info("Merge functia header_capitala")
         assert True
     else:
-        logger.info(f"Nu merge functia header_capitala")
+        logger.info("Nu merge functia header_capitala")
         assert False
 def test_header_steag():
     if header_steag() == """
@@ -43,10 +43,10 @@ def test_header_steag():
     </a><br><br>
     <h1>Acesta este steagul României</h1><br><br>
     """:
-        logger.info(f"Merge functia header_steag")
+        logger.info("Merge functia header_steag")
         assert True
     else:
-        logger.info(f"Nu merge functia header_steag")
+        logger.info("Nu merge functia header_steag")
         assert False
 
 if __name__ == "__main__":

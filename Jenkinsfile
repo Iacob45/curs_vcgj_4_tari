@@ -21,6 +21,8 @@ pipeline {
             steps {
                 sh '''
                     . ./activeaza_venv;
+					export PYTHONPATH=.
+					
                     echo '\n\nVerificare lib/*.py cu pylint\n';
                     pylint --exit-zero $(find app/lib -name "*.py");
 
