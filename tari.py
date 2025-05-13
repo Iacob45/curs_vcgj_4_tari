@@ -8,7 +8,7 @@ api = Flask(__name__)
 def index() -> str:
     return render_template(
         "index.html", 
-        header=biblioteca_header.header_descriere(),
+        header_descriere=biblioteca_header.header_descriere(),
         descriere=biblioteca_olanda.descriere_olanda()
     )
 
@@ -17,7 +17,7 @@ def index() -> str:
 def capitala() -> str:
     return render_template(
         "capitala.html", 
-        header=biblioteca_header.header_capitala(),
+        header_capitala=biblioteca_header.header_capitala(),
         capitala=biblioteca_olanda.capitala_olanda()
     )
 
@@ -26,7 +26,7 @@ def capitala() -> str:
 def steag() -> str:
     return render_template(
         "steag.html", 
-        header=biblioteca_header.header_steag(),
+        header_steag=biblioteca_header.header_steag(),
         steag=biblioteca_olanda.steag_olanda()
     )
 

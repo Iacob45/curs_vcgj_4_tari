@@ -1,32 +1,21 @@
 def header_descriere() -> str:
+    # Adaugă butoanele de navigare către Capitala și Steag
     return """
-    <a href="/olanda/capitala">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Capitala</button>
-    </a>
-    <a href="/olanda/steag">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steagul</button>
-    </a><br><br>
-    <h1>Acestea sunt descrierile Olandei</h1><br><br>
+    
+    Descrierea Olandei
     """
 
 def header_capitala() -> str:
+    # Adaugă butoanele de navigare către Descriere și Steag
     return """
-    <a href="/olanda">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descrierea</button>
-    </a>
-    <a href="/olanda/steag">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steagul</button>
-    </a><br><br>
-    <h1>Acestea sunt capitalele Olandei</h1><br><br>
+   
+    Capitala Olandei
     """
 
 def header_steag() -> str:
+    # Adaugă butoanele de navigare către Descriere și Capitala
     return """
-    <a href="/olanda">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descrierea</button>
-    </a>
-    <a href="/olanda/capitala">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Capitala</button>
-    </a><br><br>
-    <h1>Acestea sunt steagurile Olandei</h1><br><br>
+   
+    Drapelul Olandei
     """
+
