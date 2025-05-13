@@ -14,7 +14,14 @@ pipeline {
                 sh '''
                     pwd
                     ls -l
-                    . ./.venv/bin/activate  # Activează mediul virtual, asigură-te că există fișierul .venv
+                    
+                    # Crearea mediului virtual
+                    python3 -m venv .venv
+                    
+                    # Activează mediul virtual
+                    . ./.venv/bin/activate
+
+                    # Instalarea dependențelor
                     pip install -r requirements.txt
                 '''
             }
@@ -25,7 +32,7 @@ pipeline {
             steps {
                 echo 'Running pylint on Python files...'
                 sh '''
-                    . ./.venv/bin/activate
+                    . ./.venv/bin/activate  # Activează mediul virtual
                     pylint --exit-zero lib/*.py
                     pylint --exit-zero tests/*.py
                     pylint --exit-zero tari.py
@@ -38,7 +45,7 @@ pipeline {
             steps {
                 echo 'Running unit tests with Pytest...'
                 sh '''
-                    . ./.venv/bin/activate
+                    . ./.venv/bin/activate  # Activează mediul virtual
                     flask --app tari test
                 '''
             }
