@@ -7,5 +7,5 @@ echo "Installing the dependencies"
 
 
 # sau prin intermediul fisierului de requirements
-pip install -r quickrequirements.txt
+pip install -r requirements.txt
 
