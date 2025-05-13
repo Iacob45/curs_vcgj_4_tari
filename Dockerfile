@@ -29,4 +29,5 @@ RUN .venv/bin/pip install -r requirments.txt
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
 
-CMD 
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5011"]
+ 
