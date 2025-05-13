@@ -1,108 +1,73 @@
+/*Jenkins*/
 pipeline {
     agent any
 
-    environment {
-        // Setează variabila de mediu pentru Flask
-        FLASK_APP = 'tari.py'
-    }
-
     stages {
-        // Pasul 1: Build
         stage('Build') {
+            agent any
             steps {
-                echo 'Building the application...'
+                echo 'Building...'
                 sh '''
-                    pwd
-                    ls -l
-                    
-                    # Crearea mediului virtual (doar o dată)
-                    python3 -m venv .venv
-                    
-                    # Activează mediul virtual
-                    . ./.venv/bin/activate
+                    pwd;
+                    ls -l;
+                    . ./activeaza_venv_jenkins
+                    '''
+            }
+        }
+        
 
-                    # Instalarea dependențelor
-                    pip install -r requirements.txt
+        stage('pylint - calitate cod') {
+            agent any
+            steps {
+                sh '''
+                    . ./activeaza_venv;
+					export PYTHONPATH=.
+					
+                    echo '\n\nVerificare lib/*.py cu pylint\n';
+                    pylint --exit-zero $(find app/lib -name "*.py");
+
+                    echo '\n\nVerificare tests/*.py cu pylint';
+                    pylint --exit-zero $(find app/tests -name "*.py");
+
+                    echo '\n\nVerificare tari.py cu pylint';
+                    pylint --exit-zero tari.py;
                 '''
             }
         }
 
-        // Pasul 2: Verificare calitate cod cu pylint
-        stage('pylint - Calitate Cod') {
-            steps {
-                echo 'Running pylint on Python files...'
-                sh '''
-                    . ./.venv/bin/activate  # Activează mediul virtual
-                    pylint --exit-zero lib/*.py
-                    pylint --exit-zero tests/*.py
-                    pylint --exit-zero tari.py
-                '''
-            }
-        }
-
-        // Pasul 3: Testare unitară cu pytest
         stage('Unit Testing cu pytest') {
+            agent any
             steps {
-                echo 'Running unit tests with Pytest...'
+                echo 'Unit testing with Pytest...'
                 sh '''
-                    . ./.venv/bin/activate  # Activează mediul virtual
-                    pytest --maxfail=1 --disable-warnings -q  # Execută testele cu pytest
+                    . ./activeaza_venv;
+                    flask --app tari test;
+                    
                 '''
             }
         }
-
-        // Pasul 4: Crearea imaginii Docker
-        stage('Creare Imagine Docker') {
+        
+        stage('Deploy') {
+            agent any
             steps {
-                echo "Creating Docker image"
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker"
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
+				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
             }
+			
         }
-
-        // Pasul 5: Rularea containerului Docker
-        stage('Running Docker Container') {
+		stage('Running') {
+            agent any
             steps {
-                echo "Running the Docker container"
+                echo "Pornesc containerul"
                 sh '''
                     docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
-        }
-
-        // Pasul 6: Testarea aplicației din container
-        stage('Testare Aplicație Docker') {
-            steps {
-                echo 'Testarea aplicației cu Olanda...'
-                sh '''
-                    curl http://localhost:8020/olanda  # Verifică că aplicația funcționează la adresa respectivă
-                '''
-            }
-        }
-
-        // Pasul 7: Curățare (opțional)
-        stage('Cleanup') {
-            steps {
-                echo 'Removing Docker container'
-                sh '''
-                    docker rm -f tari${BUILD_NUMBER}
-                    docker rmi tari:v${BUILD_NUMBER}
-                '''
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'This will always run at the end of the pipeline.'
-        }
-        success {
-            echo 'The pipeline ran successfully.'
-        }
-        failure {
-            echo 'The pipeline failed. Check the logs above for details.'
+			
         }
     }
 }
-
