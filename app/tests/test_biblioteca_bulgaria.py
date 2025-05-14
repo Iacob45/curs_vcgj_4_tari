@@ -19,7 +19,7 @@ def test_steag_bulgaria():
 	expected_steag = """<img src="/static/Steag_bulgaria.png" alt="Drapel Bulgaria" width="1000", height="600"> """
 	assert steag_bulgaria() == expected_steag, "Test esuat"
 
-if __name__ == "__main__"
+if __name__ == "__main__":
 	test_descriere_bulgaria()
 	test_capitala_bulgaria()
 	test_steag_bulgaria()
