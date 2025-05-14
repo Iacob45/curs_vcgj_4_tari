@@ -1,4 +1,3 @@
-/*Jenkins*/
 pipeline {
     agent any
 
@@ -10,19 +9,19 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
-                    . ./activeaza_venv_jenkins
-                    '''
+                    . ./activeaza_venv_jenkins;
+                    docker build -t tari:v${BUILD_NUMBER} .
+                '''
             }
         }
-        
 
         stage('pylint - calitate cod') {
             agent any
             steps {
                 sh '''
                     . ./activeaza_venv;
-					export PYTHONPATH=.
-					
+                    export PYTHONPATH=.
+                    
                     echo '\n\nVerificare lib/*.py cu pylint\n';
                     pylint --exit-zero $(find app/lib -name "*.py");
 
@@ -42,11 +41,10 @@ pipeline {
                 sh '''
                     . ./activeaza_venv;
                     pytest app/tests/
-                    
                 '''
             }
         }
-        
+
         stage('Deploy') {
             agent any
             steps {
@@ -55,19 +53,50 @@ pipeline {
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
-				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
             }
-			
         }
-		stage('Running') {
+        
+        stage('Running') {
             agent any
             steps {
                 echo "Pornesc containerul"
                 sh '''
-                    docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
+                    # Verifică dacă portul 8020 este liber
+                    if sudo lsof -i :8020; then
+                        echo "Portul 8020 este deja ocupat, încercăm alt port..."
+                        NEW_PORT=8021
+                    else
+                        NEW_PORT=8020
+                    fi
+
+                    # Rulează containerul cu portul disponibil
+                    docker run -d --name tari${BUILD_NUMBER} -p ${NEW_PORT}:5011 tari:v${BUILD_NUMBER}
                 '''
             }
-			
+        }
+        
+        stage('Stop and Clean Up') {
+            agent any
+            steps {
+                echo "Oprire și curățare container"
+                sh '''
+                    # Oprește și șterge containerul
+                    docker stop tari${BUILD_NUMBER} || true
+                    docker rm tari${BUILD_NUMBER} || true
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleanup: Oprire container Docker"
+            sh '''
+                # Încearcă să oprești și să elimini orice container care a fost lăsat activ
+                docker stop tari${BUILD_NUMBER} || true
+                docker rm tari${BUILD_NUMBER} || true
+            '''
         }
     }
 }
+
