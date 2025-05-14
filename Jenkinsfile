@@ -56,25 +56,11 @@ pipeline {
             }
         }
         
-        stage('Running') {
-            agent any
+   stage('Running') {
             steps {
                 echo "Pornesc containerul"
                 sh '''
-                    
-                    docker run -d --name tari${BUILD_NUMBER} -p $8020:5011 tari:v${BUILD_NUMBER}
-                '''
-            }
-        }
-        
-        stage('Stop and Clean Up') {
-            agent any
-            steps {
-                echo "Oprire și curățare container"
-                sh '''
-                    # Oprește și șterge containerul
-                    docker stop tari${BUILD_NUMBER} || true
-                    docker rm tari${BUILD_NUMBER} || true
+                    docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
         }
@@ -91,4 +77,3 @@ pipeline {
         }
     }
 }
-
