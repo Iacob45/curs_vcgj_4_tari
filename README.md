@@ -36,7 +36,7 @@ Crearea si activarea mediului virtual
 
 Crearea directoarelor si fisierelor necesare proiectului cu comenzile mkdir si touch
 Structura proiect:
-![Structura](/home/daniela/proiect/curs_vcgj_4_tari/static/)
+![Structura](/static/structura.png)
 
 Instalarea dependentelor
 
