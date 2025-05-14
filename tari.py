@@ -1,31 +1,34 @@
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania, biblioteca_germania, biblioteca_olanda, biblioteca_franta
+import sys
+import pytest
+from flask import Flask
+from app.lib.biblioteca_danemarca import descriere_danemarca, capitala_danemarca, steag_danemarca
 
+""" Modulul `tari.py` conține funcții care generează pagini HTML pentru DANEMARCA (descriere, capitală, steag). """
 api = Flask(__name__)
 
-@api.route("/", methods=['GET'])
+
+@api.route("/danemarca", methods=['GET'])
 def index() -> str:
-    text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
-    text += biblioteca_germania.descriere_germania()
-    text += biblioteca_olanda.descriere_olanda()
-    text += biblioteca_franta.descriere_franta()
-    return text
+    """Returnează HTML-ul cu descrierea Danemarcei."""
+    return descriere_danemarca()
 
-@api.route("/capitala", methods=['GET'])
+@api.route("/danemarca/capitala", methods=['GET'])
 def capitala() -> str:
-    text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
-    text += biblioteca_germania.capitala_germania()
-    text += biblioteca_olanda.capitala_olanda()
-    text += biblioteca_franta.capitala_franta()
-    return text
+    """Returnează HTML-ul capitala Danemarcei."""
+    return capitala_danemarca()
 
-@api.route("/steag", methods=['GET'])
+
+@api.route("/danemarca/steag", methods=['GET'])
 def steag() -> str:
-    text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
-    text += biblioteca_germania.steag_germania()
-    text += biblioteca_olanda.steag_olanda()
-    text += biblioteca_franta.steag_franta()
-    return text
+    """Returnează HTML-ul cu drapelul Danemarcei."""
+    return steag_danemarca()
+
+@api.cli.command()
+def test():
+    """
+    Rulare 'unit tests'
+
+    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
+
+    """
+    sys.exit(pytest.main(["."]))
