@@ -36,12 +36,12 @@ pipeline {
         }
 
         stage('Unit Testing cu pytest') {
-            agent any
+            agent anys
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     . ./activeaza_venv;
-                    pytest tests/
+                    pytest app/tests/
                     
                 '''
             }
