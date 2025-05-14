@@ -1,20 +1,9 @@
-def header_descriere() -> str:
+def header_descriere():
+    return "Descrierea Bulgariei"
 
-    return """
-    
-    Descrierea Bulgariei
-    """
+def header_capitala():
+    return "Capitala Bulgariei"
 
-def header_capitala() -> str:
+def header_steag():
+    return "Steagul Bulgariei"
 
-    return """
-   
-    Capitala Bulgariei
-    """
-
-def header_steag() -> str:
-
-    return """
-   
-    Steagul Bulgariei
-    """
