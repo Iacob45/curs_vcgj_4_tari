@@ -61,16 +61,8 @@ pipeline {
             steps {
                 echo "Pornesc containerul"
                 sh '''
-                    # Verifică dacă portul 8020 este liber
-                    if sudo lsof -i :8020; then
-                        echo "Portul 8020 este deja ocupat, încercăm alt port..."
-                        NEW_PORT=8021
-                    else
-                        NEW_PORT=8020
-                    fi
-
-                    # Rulează containerul cu portul disponibil
-                    docker run -d --name tari${BUILD_NUMBER} -p ${NEW_PORT}:5011 tari:v${BUILD_NUMBER}
+                    
+                    docker run -d --name tari${BUILD_NUMBER} -p $8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
         }
