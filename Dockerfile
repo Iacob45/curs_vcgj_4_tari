@@ -8,11 +8,11 @@ ENV FLASK_APP=tari
 RUN adduser -D tari
 
 # Creăm și setăm calea de lucru pentru aplicație
-RUN mkdir -p /home/user/proiect/curs_vcgj_4_tari/
-RUN chown -R tari /home/user/proiect/
+RUN mkdir -p /home/user/proiect_Cristiana/curs_vcgj_4_tari/
+RUN chown -R tari /home/user/proiect_Cristiana/
 
 # Setăm directorul de lucru
-WORKDIR /home/user/proiect/curs_vcgj_4_tari/
+WORKDIR /home/user/proiect_Cristiana/curs_vcgj_4_tari/
 
 # Copiem fișierele aplicației
 COPY app/ app/
@@ -43,3 +43,4 @@ EXPOSE 5011
 # Comanda pentru a porni aplicația Flask
 ENTRYPOINT ["./dockerstart.sh"]
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5011"]
+
