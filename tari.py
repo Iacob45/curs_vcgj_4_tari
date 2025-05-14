@@ -1,28 +1,27 @@
 import sys
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania
+import pytest
+from flask import Flask
+from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
 
-
+""" Modulul `tari.py` conține funcții care generează pagini HTML pentru CANADA (descriere, capitală, steag). """
 api = Flask(__name__)
 
-@api.route("/romania", methods=['GET'])
+
+@api.route("/canada", methods=['GET'])
 def index() -> str:
-    text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
-    return text
+    """Returnează HTML-ul cu descrierea Canadei."""
+    return descriere_canada()
 
-@api.route("/romania/capitala", methods=['GET'])
+@api.route("/canada/capitala", methods=['GET'])
 def capitala() -> str:
-    text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
-    return text
+    """Returnează HTML-ul capitala Canadei."""
+    return capitala_canada()
 
-@api.route("/romania/steag", methods=['GET'])
+
+@api.route("/canada/steag", methods=['GET'])
 def steag() -> str:
-    text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
-    return text
-
+    """Returnează HTML-ul cu drapelul Canadei."""
+    return steag_canada()
 
 @api.cli.command()
 def test():
@@ -32,6 +31,4 @@ def test():
     Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
 
     """
-    import pytest
     sys.exit(pytest.main(["."]))
-
