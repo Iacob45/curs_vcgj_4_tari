@@ -36,7 +36,7 @@ pipeline {
         }
 
         stage('Unit Testing cu pytest') {
-            agent anys
+            agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
