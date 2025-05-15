@@ -9,9 +9,9 @@ Am implementat functionalitatea corespunzatoare tarii **Canada**:
 
 Funcționalitatea dezvoltată în acest branch constă în adăugarea unui modul dedicat țării **Canada**, integrat în aplicația Flask existentă.
 
-Au fost implementate trei rute HTTP (endpoint-uri API) care expun informații despre această țară prin metode specifice definite în fișierul `app/lib/biblioteca_tari.py`:
+Au fost implementate trei rute HTTP (endpoint-uri API) care expun informații despre această țară prin metode specifice definite în fișierul `app/lib/biblioteca_canada.py`:
 
-- `GET /canada` – punct de intrare general care oferă o descriere succintă a Canadei;
+- `GET /canada` – punct de intrare general care oferă o descriere pe scurt a Canadei;
 - `GET /canada/capitala` – returnează numele capitalei Canadei;
 - `GET /canada/steag` – returnează drapelul Canadei.
 
@@ -43,4 +43,6 @@ source activeaza_venv
 source ruleaza_aplicatia
 ```
 
-![CAPTURA APLICATIE](static/ruleaza_aplicatia.png)
+![CAPTURA1 APLICATIE](static/ruleaza_aplicatia.png)
+![CAPTURA2 APLICATIE](static/capitala.png)
+![CAPTURA3 APLICATIE](static/steag.png)
