@@ -20,7 +20,7 @@ Teme luate:
     Olanda: Daniela,
     Romania: Iacob,
     Cristiana: Bulgaria,
-    Sasha: Guatemala,
+    Sasha: asdsddsd,
     Luxemburg: Buta,
     Vatican: Miron
 
