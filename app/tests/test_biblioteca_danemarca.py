@@ -56,7 +56,7 @@ def test_descriere_danemarca():
        Danemarca este o țară situată în nordul Europei, făcând parte din Scandinavia. Este formată din Peninsula Iutlanda și numeroase insule, cele mai mari fiind Zealand și Funen. Capitala Danemarcei este Copenhaga, un oraș modern și vibrant, situat pe insula Zealand. Danemarca are un sistem politic de tip monarhie constituțională și este cunoscută pentru democrația sa stabilă și nivelul ridicat de trai. Limba oficială este daneza, iar moneda națională este coroana daneză (DKK). Țara are o economie puternică, bazată pe servicii, industrie și agricultură. Este un lider global în energie regenerabilă, în special eoliană. Danemarca face parte din Uniunea Europeană, dar nu a adoptat euro. Cultura daneză este cunoscută pentru design-ul minimalist, literatura, și gastronomia modernă. Populația daneză este recunoscută pentru stilul de viață echilibrat și pentru conceptul de „hygge” – confort și bunăstare.
     </p>
     """
-     if descriere_danemarca().strip() == expected_descriere.strip():
+    if descriere_danemarca().strip() == expected_descriere.strip():
         logger.info("Functioneaza descriere_danemarca")
         assert True
     else:
