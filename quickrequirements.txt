@@ -1,0 +1,6 @@
+flask
+pytest
+pylint
+matplotlib
+gunicorn
+
