@@ -34,12 +34,13 @@ Mai jos sunt pașii necesari pentru rularea aplicației:
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 cd curs_vcgj_4_tari
 git checkout devel_manta_valentina
-
+```
 
 2. Se activeaza venv si se ruleaza aplicatia, urmand a fi accesata in broswer la adresa 127.0.0.1:5011/canada
 
 ```bash
 source activeaza_venv
 source ruleaza_aplicatia
+```
 
 ![CAPTURA APLICATIE](static/ruleaza_aplicatia.png)
