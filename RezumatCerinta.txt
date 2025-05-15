@@ -1,15 +1,1 @@
-Sal, sunt Iacob, aici scriu ce am inteles eu pana acum.
 
-Cautati pe net cum se foloseste Flask, si faceti un API simplu, cu 3 endpoint-uri de GET, url-urile celor 3 endpoint-uri sunt "/<tara ta>", "/<tara ta>/capitala", "/<tara ta>/steag"
-Puteti folosi ca template branch-ul meu: main_delcea_iacob
-Este important sa avem toti aceeasi structura, deoarece la final dau merge la tot intr-un singur site
-Faceti 3 functii pentru cei 3 parametrii pe care o sa ii aveti la tara voastra, descriere, capitala, steag, si facetile sa intoarca cod html
-In cele 3 endpoint-uri puneti in fiecare functia specifica parametrului ei, si dati-i return
-(se face in PYTHON)
-Textul html v-a alcatui un continut care va aparea la acel url, de ex: 127.0.0.1:5050/Romania/capitala va afisa return-ul de la capitala
-
-Fiecare va avea un branch main_nume_prenume si un branch devel_nume_prenume.
-
-Vor fi nevoie si 3 functii de test pentru cele 3 functii care intorc html. Functiile acelea doar vor testa return-ul de la functiile html.
-Restul de proiect, Jenkins, Docker, Git, sunt ceea ce am facut la curs si lab pana acum.
-Avem undeva pe teams exact ordinea lor, si pe ce ne puncteaza.
