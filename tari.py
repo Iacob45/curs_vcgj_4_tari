@@ -26,3 +26,14 @@ def steag() -> str:
     text += biblioteca_lituania.steag_lituania()
     return text
 
+
+@api.cli.command()
+def test():
+    """
+    Rulare 'unit tests'
+
+    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
+
+    """
+    import pytest
+    sys.exit(pytest.main(["."]))
