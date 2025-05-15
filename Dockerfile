@@ -1,4 +1,4 @@
-ROM python:3.10-alpine
+FROM python:3.10-alpine
 
 # Creăm utilizatorul
 RUN adduser -D tari
