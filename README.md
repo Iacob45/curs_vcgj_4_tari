@@ -1,6 +1,17 @@
 - **Dezvoltator**: Valentina Manta
 - **Funcție implementată**: Canada
 
+## Cuprins
+
+- [Element adăugat](#element-adăugat)
+- [Implementare funcționalitate](#implementare-funcționalitate)
+- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
+- [Rulare aplicație cu Docker](#rulare-aplicație-cu-docker)
+- [Testare cu pytest](#testare-cu-pytest)
+- [Testare calitate cod cu pylint](#testare-calitate-cod-cu-pylint)
+- [Testare automată cu Jenkins](#testare-automată-cu-jenkins)
+  - [Etapele testării](#etapele-testării)
+
 ## Element adăugat
 
 Am integrat funcționalitatea corespunzătoare țării **Canada** în aplicația software dezvoltată la nivelul grupei.
@@ -108,18 +119,18 @@ jenkins
 
 Fișierul `Jenkinsfile` conține cele 5 etape de testare automată prin care va trece programul pentru a analiza complet aplicația.
 
-1. **Build**
+1. **Build** ~
 Are rolul de a crea mediul de lucru necesar aplicației, prin activarea mediului virtualizat (.venv).localhost
 
-2. **pylint-calitate cod**
+2. **pylint-calitate cod** ~
 Testează calitatea codului prin rularea pylint pe fișierele din `app/lib/`, `app/tests/`, `tari.py`. Flow-ul de testare nu va fi oprit în cazul erorilor.
 
-3. **Unit Testing cu pytest**
+3. **Unit Testing cu pytest** ~
 Rulează aplicația prin comanda `flask --app tari test`, care declanșează pytest. Astfel, se verifică dacă HTML-ul returnat este corect.
 
-4. **Deploy**
+4. **Deploy** ~
 Creează o imagine Docker cu etichetă tari:v<ID> și build ID-ul este unic la fiecare rulare (variabila ${BUILD_NUMBER}).
 
-5. **Running**
+5. **Running** ~
 Pornește container-ul în fundal, rulează aplicația în container Docker și asociază portul 8020 de pe host cu portul 5011 de pe container.
 
