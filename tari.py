@@ -1,28 +1,27 @@
 from flask import Flask, url_for,redirect
-from app.lib import biblioteca_header, biblioteca_lituania
+from app.lib import biblioteca_header, biblioteca_CoreeaDeNord
 
 
 api = Flask(__name__)
 @api.route("/", methods=['GET'])
 def home() -> str:
-    # Redirecționează automat către /lituania
     return redirect(url_for('index'))
 
-@api.route("/lituania", methods=['GET'])
+@api.route("/CoreeaDeNord", methods=['GET'])
 def index() -> str:
     text = biblioteca_header.header_descriere()
-    text += biblioteca_lituania.descriere_lituania()
+    text += biblioteca_CoreeaDeNord.descriere_CoreeaDeNord()
     return text
 
-@api.route("/lituania/capitala", methods=['GET'])
+@api.route("/CoreeaDeNord/capitala", methods=['GET'])
 def capitala() -> str:
     text = biblioteca_header.header_capitala()
-    text += biblioteca_lituania.capitala_lituania()
+    text += biblioteca_CoreeaDeNord.capitala_CoreeaDeNord()
     return text
 
-@api.route("/lituania/steag", methods=['GET'])
+@api.route("/CoreeaDeNord/steag", methods=['GET'])
 def steag() -> str:
     text = biblioteca_header.header_steag()
-    text += biblioteca_lituania.steag_lituania()
+    text += biblioteca_CoreeaDeNord.steag_CoreeaDeNord()
     return text
 
