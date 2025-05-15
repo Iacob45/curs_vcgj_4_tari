@@ -1,6 +1,6 @@
 from flask import Flask, url_for,redirect
 from app.lib import biblioteca_header, biblioteca_lituania
-
+import sys
 
 api = Flask(__name__)
 @api.route("/", methods=['GET'])
