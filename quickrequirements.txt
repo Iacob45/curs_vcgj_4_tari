@@ -3,5 +3,4 @@ pytest
 pylint
 matplotlib
 gunicorn
-sys
 
