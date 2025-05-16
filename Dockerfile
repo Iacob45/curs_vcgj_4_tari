@@ -2,13 +2,9 @@ FROM python:3.10-alpine
 
 ENV FLASK_APP tari
 
-
-#3.8 alpine
 RUN adduser -D tari
-
 RUN mkdir -p /home/andrei/SCC/curs_vcgj_4_tari/
 RUN chown -R tari /home/andrei/SCC/
-
 WORKDIR /home/andrei/SCC/curs_vcgj_4_tari/
 
 COPY app app
