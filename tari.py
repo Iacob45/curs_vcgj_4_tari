@@ -1,37 +1,20 @@
-import sys
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania
+from flask import Flask
+from app.lib.biblioteca_honduras import descriere_honduras, steag_honduras, capitala_honduras
 
 
 api = Flask(__name__)
 
-@api.route("/romania", methods=['GET'])
-def index() -> str:
-    text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
-    return text
+@api.route("/honduras", methods=['GET'])
+def index():
+    "Endpoint descriere"
+    return descriere_honduras()
 
-@api.route("/romania/capitala", methods=['GET'])
-def capitala() -> str:
-    text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
-    return text
+@api.route("/honduras/capitala", methods=['GET'])
+def capitala():
+    "Endpoint capitala"
+    return capitala_honduras()
 
-@api.route("/romania/steag", methods=['GET'])
-def steag() -> str:
-    text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
-    return text
-
-
-@api.cli.command()
-def test():
-    """
-    Rulare 'unit tests'
-
-    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
-
-    """
-    import pytest
-    sys.exit(pytest.main(["."]))
-
+@api.route("/honduras/steag", methods=['GET'])
+def steag():
+    "Endpoint steag"
+    return steag_honduras()
