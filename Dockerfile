@@ -16,7 +16,7 @@ COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
 COPY quickrequirements.txt quickrequirements.txt
 COPY tari.py tari.py
-COPY static static
+COPY static static.
 
 RUN chmod -R 777 static
 RUN chmod +x dockerstart.sh
