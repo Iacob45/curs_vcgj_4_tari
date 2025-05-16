@@ -1,7 +1,9 @@
 # venv-ul se gaseste in directorul parinte: .venv
-source /home/cxb/proiect_scc/curs_vcgj_4_tari/venv/bin/activate
-. .venv/bin/activate
+. /home/cxb/project_scc/curs_vcgj_4_tari/venv/bin/activate
 
+echo "Current directory: $(pwd)"
+echo "Script location check: $(ls -la ./activeaza_venv)"
+echo "Shell being used: $SHELL"
 
 # venv-ul va ramane activat in acest caz
 if [ $? -eq 0 ]
