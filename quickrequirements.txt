@@ -1,5 +1,5 @@
 flask
 pytest
 pylint
-matplotlib
 gunicorn
+matplotlib
