@@ -1,27 +1,9 @@
-# curs_vcgj_4_tari
-Proiect DevOps, virtualizare, containerizare, github, jenkins. 
-Tema proiect: Tari.
-3 URL-uri: "/" -> descrierea; "/capitala" -> capitala ; "/steag" -> steagul
+Aici va fii descrierea individuala
 
-Teme luate: 
-    Grecia: Roberta, 
-    Spania: Carla,
-    Canada: Vali,
-    Kosovo: Alexandra,
-    Franta: Stefi,
-    Brazilia: Andreea,
-    Lituania: Calcan,
-    Egipt: Monica,
-    Italia: Daria,
-    Japonia: Ilie,
-    Danemarca: Razvan,
-    Malta: Ana,
-    Germania: Gutescu,
-    Olanda: Daniela,
-    Romania: Iacob,
-    Cristiana: Bulgaria,
-    Sasha: Guatemala,
-    Luxemburg: Buta,
-    Vatican: Miron
-
-  Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
+Lucrul cu docker
+-afisare containere: docker ps -a
+-creare container: docker build -t tari:v1 /home/user/SCC/curs_vcgj_4_tari
+-rulare container: docker run -d --name tari_cont -p 8020:5011 tari:v1
+-oprire container: docker stop tari_cont
+-stergere container: docker rm tari_cont
+-accesare container: docker exec -it tari_cont /bin/sh       ///iesire cu exit
