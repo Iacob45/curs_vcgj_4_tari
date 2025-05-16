@@ -1,0 +1,8 @@
+#!/bin/bash
+#LINUX
+export FLASK_APP=tari
+
+#WINDOWS
+#set FLASK_APP=tari
+
+flask run -p 5011 --reload
