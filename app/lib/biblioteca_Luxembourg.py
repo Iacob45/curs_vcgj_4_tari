@@ -19,7 +19,7 @@ def capitala_luxembourg() -> str:
 </div>
 <p>Orașul Luxembourg (Luxemburg), cunoscut și ca Luxembourg City, este capitala Marelui Ducat de Luxembourg și cea mai mare localitate din țară. Găzduiește aproximativ 124.500 de locuitori (2023) și este un important centru financiar și administrativ.</p>
 <p>În orașul Luxembourg se află sediile mai multor instituții europene, inclusiv Curtea de Justiție a Uniunii Europene și Curtea Europeană de Conturi. Centrul vechi istoric al orașului, cu fortărețele, bastionul și castelul vechi, este listat în patrimoniul mondial UNESCO din 1994.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Luxembourg_City_Center.jpg/800px-Luxembourg_City_Center.jpg" alt="Luxembourg City" style="max-width: 100%; height: auto;">
+
             </div>
             <footer>
                 <p>© 2025 | Luxembourg Information Portal</p>

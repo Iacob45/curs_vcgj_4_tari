@@ -1,28 +1,31 @@
 import sys
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania
+from flask import Flask, url_for, send_from_directory
+from app.lib import biblioteca_header, biblioteca_Luxembourg
 
 
 api = Flask(__name__)
 
-@api.route("/romania", methods=['GET'])
+@api.route("/luxembourg", methods=['GET'])
 def index() -> str:
     text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
+    text += biblioteca_Luxembourg.descriere_luxembourg()
     return text
 
-@api.route("/romania/capitala", methods=['GET'])
+@api.route("/luxembourg/capitala", methods=['GET'])
 def capitala() -> str:
     text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
+    text += biblioteca_Luxembourg.capitala_luxembourg()
     return text
 
-@api.route("/romania/steag", methods=['GET'])
+@api.route("/luxembourg/steag", methods=['GET'])
 def steag() -> str:
     text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
+    text += biblioteca_Luxembourg.steag_luxembourg()
     return text
 
+@api.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 @api.cli.command()
 def test():

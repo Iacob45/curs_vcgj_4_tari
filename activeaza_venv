@@ -1,5 +1,5 @@
 # venv-ul se gaseste in directorul parinte: .venv
-# source ../.venv/bin/activate
+source /home/cxb/proiect_scc/curs_vcgj_4_tari/venv/bin/activate
 . .venv/bin/activate
 
 # daca comanda de mai sus esueaza, creaza .venv si instaleaza dependintele
