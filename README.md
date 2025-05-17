@@ -49,8 +49,8 @@ pip install -r requirements.txt
 
   flask run -p 5011 –reload
 
+![Continut proiect](continut.png)
 **Descrierea generală a fişierului tari.py:**
-**
 \
 Fișierul tari.py are rolul de a configura aplicația web Flask și de a defini rutele prin care utilizatorii pot accesa informații despre Danemarca. Aplicația răspunde la cereri HTTP și afișează pagini HTML generate din șabloane, oferind conținut dinamic legat de descrierea țării, capitala acesteia șisteagul național.
 
