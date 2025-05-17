@@ -8,4 +8,4 @@ def capitala_spania() -> str:
     return "Madrid"
 
 def steag_spania() -> str:
-    return """<img src="/static/Steag-Spania-768x512-3700220658.png" alt="Steagul Spaniei" width="1000" height="600">"""
+    return """<img src="/static/Steag-Spania-768x512-3700220658.png" alt="Steagul Spaniei" width="800" height="500">"""
