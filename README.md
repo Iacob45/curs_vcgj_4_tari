@@ -5,7 +5,7 @@
 
 - [Element adăugat](#element-adăugat)
 - [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
-- [Integrare și colaborare GitHub](### Integrare-și-colaborare-GitHub)
+- [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
 - [Pull Request-uri proprii:](#Pull-Request-uri-proprii:)
 - [Review-uri efectuate:](#Review-uri-efectuate:)
 - [Implementare funcționalitate](#implementare-funcționalitate)
