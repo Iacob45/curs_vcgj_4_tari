@@ -3,10 +3,7 @@ from app.lib import biblioteca_header, biblioteca_lituania
 import sys
 
 api = Flask(__name__)
-@api.route("/", methods=['GET'])
-def home() -> str:
-    # Redirecționează automat către /lituania
-    return redirect(url_for('index'))
+
 
 @api.route("/lituania", methods=['GET'])
 def index() -> str:
