@@ -51,7 +51,6 @@ pip install -r requirements.txt
 
 ![Continut proiect](/static/continut.png)
 
-
 **Descrierea generală a fişierului tari.py:**
 \
 Fișierul tari.py are rolul de a configura aplicația web Flask și de a defini rutele prin care utilizatorii pot accesa informații despre Danemarca. Aplicația răspunde la cereri HTTP și afișează pagini HTML generate din șabloane, oferind conținut dinamic legat de descrierea țării, capitala acesteia șisteagul național.
@@ -78,6 +77,8 @@ Aplicația oferă trei rute principale, fiecare corespunzând unei pagini distin
 Containerizarea aplicației folosind Docker, executată din folderul cu Dockerfile-ul:
 
 Creare imagine Docker:
+
+![Imaginicontainer](/static/imagini_docker.png)
 
 sudo docker build -t tari:v01 .
 
