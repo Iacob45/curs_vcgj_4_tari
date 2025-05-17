@@ -1,4 +1,4 @@
-from app import descriere, capitala, steag
+from tari import descriere, capitala, steag
 
 def test_descriere():
     assert "Norvegia" in descriere()
