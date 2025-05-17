@@ -28,7 +28,7 @@ git config --global user.email "email"
 
 - Clonare repository în directorul local:
 
-git clone https://github.com/<user>/curs_vcgj_4_tari.git
+git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 
 cd curs_vcgj_4_tari
 
