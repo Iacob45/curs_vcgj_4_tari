@@ -20,7 +20,7 @@ def test_capitala_spania():
         logger.info("Nu merge functia capitala_spania")
         assert False
 def test_steag_spania():
-    if steag_spania() == """<img src="/static/Steag-Spania-768x512-3700220658.png" alt="Steagul Spaniei" width="1000" height="600">""":
+    if steag_spania() == """<img src="/static/Steag-Spania-768x512-3700220658.png" alt="Steagul Spaniei" width="800" height="500">""":
         logger.info("Merge functia steag_spania")
         assert True
     else:
