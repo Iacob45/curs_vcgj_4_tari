@@ -50,6 +50,8 @@ pip install -r requirements.txt
   flask run -p 5011 –reload
 
 ![Continut proiect](/static/continut.png)
+
+
 **Descrierea generală a fişierului tari.py:**
 \
 Fișierul tari.py are rolul de a configura aplicația web Flask și de a defini rutele prin care utilizatorii pot accesa informații despre Danemarca. Aplicația răspunde la cereri HTTP și afișează pagini HTML generate din șabloane, oferind conținut dinamic legat de descrierea țării, capitala acesteia șisteagul național.
@@ -123,6 +125,8 @@ Aplicația este pornită cu ajutorul script-ului dockerstart.sh, care execută c
 
 **Testarea cu pytest:**
 
+![Exemplu Pytest](/static/pytest.png)
+
 **Jenkins:**
 
 În cadrul Jenkins, testele sunt automatizate şi vor rula prin intermediul fişierului Jenkinsfile. Acesta va asigura ulterior configurarea pipeline-ului.
@@ -137,9 +141,18 @@ Aplicația este pornită cu ajutorul script-ului dockerstart.sh, care execută c
 
 Configurare proiect Jenkins pipeline:
 
+![Acces Jenkins](/static/crearejenkins.png)
+
+![Configurare Pipeline](/static/configurarejenkins.png)
+
+
 Descriere Jenkinsfile: Jenkinsfile definește pipeline-ul de integrare continuă (CI) și livrare continuă (CD) pentru aplicația Flask, automatizând procesul de construire, testare și livrare.
 
 **Etapele pipeline-ului:**
+
+![Pipeline](/static/pipeline.png)
+
+![blueocean](/static/blueocean.png)
 
 - Build
 
@@ -164,3 +177,4 @@ Descriere Jenkinsfile: Jenkinsfile definește pipeline-ul de integrare continuă
 - Post
 
   Asigură curățarea mediului prin oprirea și eliminarea automată a containerelor rămase active după rularea pipeline-ului.
+
