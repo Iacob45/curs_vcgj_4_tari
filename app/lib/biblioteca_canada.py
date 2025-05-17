@@ -2,48 +2,54 @@ def descriere_canada() -> str:
     text = """
     <style>
         body {
-            background-color: #f5f7fa;
-            font-family: 'Helvetica Neue', sans-serif;
-            color: #333;
             margin: 0;
-            padding: 2em;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
             padding: 2em;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            max-width: 900px;
-            margin: auto;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
         }
         h1 {
-            color: #e53935;
-            margin-top: 0;
+            color: #b71c1c;
+        }
+        p {
+            font-size: 18px;
+            color: #4e0000;
+            line-height: 1.7;
         }
         .btn-group {
-            margin-top: 1em;
+            margin-top: 1.5em;
         }
         a button {
-            background-color: #e53935;
-            color: white;
-            border: none;
-            padding: 10px 16px;
+            padding: 10px 18px;
             font-size: 15px;
-            margin-right: 10px;
+            border: none;
             border-radius: 6px;
             cursor: pointer;
+            margin-right: 10px;
+            background-color: #c62828;
+            color: white;
         }
         a button:hover {
-            background-color: #c62828;
+            background-color: #8e0000;
         }
     </style>
 
     <div class="card">
         <h1>Canada 🇨🇦</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele sale vaste, 
-            natura sălbatică, multiculturalismul și nivelul ridicat de trai. Este o țară bilingvă, 
-            cu engleza și franceza ca limbi oficiale.
+            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
+            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
         </p>
         <div class="btn-group">
             <a href="/canada/capitala"><button>Capitala</button></a>
@@ -52,46 +58,57 @@ def descriere_canada() -> str:
     </div>
     """
     return text
-
 def capitala_canada() -> str:
     text = """
     <style>
         body {
-            background-color: #eef2f3;
-            font-family: 'Verdana', sans-serif;
-            color: #2e3c4e;
-            padding: 2em;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .card {
-            background: #ffffff;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
             padding: 2em;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
             max-width: 800px;
-            margin: auto;
         }
         h1 {
-            color: #3949ab;
-            margin-bottom: 1em;
+            color: #c62828;
         }
-        .btn-group a button {
-            background-color: #3949ab;
-            color: white;
+        p {
+            font-size: 18px;
+            color: #6d0000;
+            line-height: 1.6;
+        }
+        .btn-group {
+            margin-top: 1.5em;
+        }
+        a button {
+            padding: 10px 18px;
+            font-size: 15px;
             border: none;
-            padding: 10px 15px;
-            margin-right: 10px;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            margin-right: 10px;
+            background-color: #e53935;
+            color: white;
         }
-        .btn-group a button:hover {
-            background-color: #283593;
+        a button:hover {
+            background-color: #b71c1c;
         }
     </style>
 
     <div class="card">
         <h1>Capitala Canadei: Ottawa</h1>
         <p>
-            Ottawa este capitala Canadei, situată în provincia Ontario. Este un oraș elegant, cu clădiri oficiale, muzee naționale și spații verzi extinse.
+            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
         </p>
         <div class="btn-group">
             <a href="/canada"><button>Descriere</button></a>
@@ -105,45 +122,50 @@ def steag_canada() -> str:
     text = """
     <style>
         body {
-            background-color: #fafafa;
-            font-family: 'Arial', sans-serif;
-            color: #1b2a3b;
-            padding: 2em;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
             padding: 2em;
-            border-radius: 12px;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-            max-width: 750px;
-            margin: auto;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            max-width: 700px;
             text-align: center;
         }
         h1 {
-            color: #00796b;
-            margin-bottom: 1em;
+            color: #b71c1c;
         }
         .btn-group {
             margin-bottom: 1.5em;
         }
         a button {
-            background-color: #009688;
-            color: white;
-            padding: 10px 16px;
+            padding: 10px 18px;
+            font-size: 15px;
             border: none;
             border-radius: 6px;
-            margin-right: 10px;
             cursor: pointer;
+            margin: 0 10px;
+            background-color: #ef5350;
+            color: white;
         }
         a button:hover {
-            background-color: #00695c;
+            background-color: #d32f2f;
         }
         img {
             margin-top: 20px;
             max-width: 100%;
             height: auto;
             border: 4px solid #ccc;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
     </style>
 

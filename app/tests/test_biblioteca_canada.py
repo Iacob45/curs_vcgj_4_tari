@@ -8,54 +8,60 @@ def test_descriere_canada():
     expected_descriere = """
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f7;
-            color: #2c3e50;
-            padding: 40px;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 2em;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
         }
         h1 {
-            color: #d32f2f;
-            margin-bottom: 10px;
+            color: #b71c1c;
         }
         p {
             font-size: 18px;
-            line-height: 1.8;
-            max-width: 800px;
+            color: #4e0000;
+            line-height: 1.7;
         }
-        .button-group {
-            margin-bottom: 30px;
+        .btn-group {
+            margin-top: 1.5em;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-right: 10px;
-            background-color: #d32f2f;
-            color: white;
+        a button {
+            padding: 10px 18px;
+            font-size: 15px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            margin-right: 10px;
+            background-color: #c62828;
+            color: white;
         }
-        button:hover {
-            background-color: #a52727;
+        a button:hover {
+            background-color: #8e0000;
         }
     </style>
 
-    <div class="button-group">
-        <a href="/canada/capitala">
-            <button>Capitala</button>
-        </a>
-        <a href="/canada/steag">
-            <button>Steag</button>
-        </a>
+    <div class="card">
+        <h1>Canada 🇨🇦</h1>
+        <p>
+            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
+            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+        </p>
+        <div class="btn-group">
+            <a href="/canada/capitala"><button>Capitala</button></a>
+            <a href="/canada/steag"><button>Steag</button></a>
+        </div>
     </div>
-
-    <h1>Canada</h1> 
-    <p> 
-        Canada este a doua cea mai mare țară din lume, situată în nordul Americii de Nord. Este renumită pentru peisajele sale spectaculoase, 
-        pădurile vaste, munții impunători și lacurile cristaline. Cu o populație diversă și tolerantă, Canada promovează multiculturalismul 
-        și oferă unul dintre cele mai ridicate standarde de viață din lume. Este o țară bilingvă, cu engleza și franceza ca limbi oficiale.
-    </p>
     """
 
     if descriere_canada().strip() == expected_descriere.strip():
@@ -69,40 +75,60 @@ def test_descriere_canada():
 def test_capitala_canada():
     expected_html = """
     <style>
-        h1 { color: #1a237e; margin-bottom: 10px; }
-        p { font-size: 18px; line-height: 1.6; }
-        .button-group { margin-bottom: 30px; }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-right: 10px;
-            background-color: #3949ab;
-            color: white;
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 2em;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        h1 {
+            color: #c62828;
+        }
+        p {
+            font-size: 18px;
+            color: #6d0000;
+            line-height: 1.6;
+        }
+        .btn-group {
+            margin-top: 1.5em;
+        }
+        a button {
+            padding: 10px 18px;
+            font-size: 15px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            margin-right: 10px;
+            background-color: #e53935;
+            color: white;
         }
-        button:hover {
-            background-color: #283593;
+        a button:hover {
+            background-color: #b71c1c;
         }
     </style>
 
-    <div class="button-group">
-        <a href="/canada">
-            <button>Descriere</button> 
-        </a>
-        <a href="/canada/steag">
-            <button>Steag</button> 
-        </a>
+    <div class="card">
+        <h1>Capitala Canadei: Ottawa</h1>
+        <p>
+            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+        </p>
+        <div class="btn-group">
+            <a href="/canada"><button>Descriere</button></a>
+            <a href="/canada/steag"><button>Steag</button></a>
+        </div>
     </div>
-
-    <h1>Capitala Canadei: OTTAWA</h1> 
-    <p>
-        Ottawa este capitala Canadei și se află în provincia Ontario. Este un oraș elegant, 
-        cu clădiri guvernamentale impresionante, muzee naționale, parcuri și canale. 
-        Reprezintă centrul politic al țării și reflectă diversitatea culturală canadiană.
-    </p>
     """
 
     if capitala_canada().strip() == expected_html.strip():
@@ -116,42 +142,62 @@ def test_capitala_canada():
 def test_steag_canada():
     expected_html = """
     <style>
-        h1 { color: #00695c; margin-bottom: 10px; }
-        .button-group { margin-bottom: 30px; }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-right: 10px;
-            background-color: #00897b;
-            color: white;
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffffff, #e53935);
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 2em;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            max-width: 700px;
+            text-align: center;
+        }
+        h1 {
+            color: #b71c1c;
+        }
+        .btn-group {
+            margin-bottom: 1.5em;
+        }
+        a button {
+            padding: 10px 18px;
+            font-size: 15px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            margin: 0 10px;
+            background-color: #ef5350;
+            color: white;
         }
-        button:hover {
-            background-color: #004d40;
+        a button:hover {
+            background-color: #d32f2f;
         }
         img {
             margin-top: 20px;
             max-width: 100%;
             height: auto;
             border: 4px solid #ccc;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
     </style>
 
-    <div class="button-group">
-        <a href="/canada/capitala">
-            <button>Capitala</button> 
-        </a>
-        <a href="/canada">
-            <button>Descriere</button> 
-        </a>
+    <div class="card">
+        <h1>Steagul Canadei</h1>
+        <div class="btn-group">
+            <a href="/canada/capitala"><button>Capitala</button></a>
+            <a href="/canada"><button>Descriere</button></a>
+        </div>
+        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
     </div>
-
-    <h1>Steagul Canadei</h1>
-    <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
     """
 
     if steag_canada().strip() == expected_html.strip():
