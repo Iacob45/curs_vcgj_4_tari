@@ -6,8 +6,8 @@
 - [Element adăugat](#element-adăugat)
 - [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
 - [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
-  - [Pull Request-uri proprii:](#Pull-Request-uri-proprii:)
-  - [Review-uri efectuate:](#Review-uri-efectuate:)
+  - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
+  - [Review-uri efectuate](#Review-uri-efectuate)
 - [Implementare funcționalitate](#implementare-funcționalitate)
 - [Rulare locală a aplicației](#rulare-locală-a-aplicației)
 - [Rulare aplicație cu Docker](#rulare-aplicație-cu-docker)
@@ -54,11 +54,11 @@ Fiecare Pull Request a fost supus unui proces de revizuire (`code review`) din p
 - La deschiderea Pull Request-ului către `main`, am inclus rezultatele rulării testelor automate în Jenkins (capturi + status PASS).
 - După validarea codului, PR-ul a fost aprobat și integrat.
 
-### Pull Request-uri proprii:
+### Pull Request-uri proprii
 
 - ✅ PR #9 - Devel manta valentina
 
-### Review-uri efectuate:
+### Review-uri efectuate
 
 - 🔍 PR
 
