@@ -15,6 +15,7 @@ def capitala() -> str:
     return biblioteca_brazilia.capitala_brazilia()
 
 
+
 @api.route("/brazilia/steag", methods=['GET'])
 def steag() -> str:
     return biblioteca_brazilia.steag_brazilia()
