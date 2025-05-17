@@ -42,25 +42,25 @@ Pentru dezvoltarea funcționalității, am utilizat un flux de lucru organizat p
 
 Inițial, am implementat codul în branch-ul personal de dezvoltare: `devel_manta_valentina`. După ce funcționalitatea a fost testată local, analizată cu `pylint` și validată prin teste automate cu `pytest` și Jenkins, codul a fost integrat progresiv:
 
- **PR intern** – am realizat un *Pull Request* de la `devel_manta_valentina` către `main_manta_valentina` (ramura personală principală), pentru a valida integritatea codului meu și a simula procesul de integrare.
+ **PR intern** – am realizat un *Pull Request* de la `devel_manta_valentina` către `main_manta_valentina` pentru a valida integritatea codului meu și a simula procesul de integrare.
 
-Fiecare Pull Request a fost supus unui proces de revizuire (`code review`) din partea colegilor de grupă, conform cerințelor proiectului. Acest flux a asigurat o integrare controlată și o dezvoltare colaborativă coerentă.
+Fiecare Pull Request a fost supus unui proces de revizuire (`code review`) din partea colegilor de grupă. Acest flux a asigurat o integrare controlată și o dezvoltare colaborativă coerentă.
 
 ## Integrare și colaborare GitHub
 
 În cadrul procesului de colaborare și validare a codului, am respectat cerințele impuse pentru integrarea prin Pull Request-uri (PR):
 
-- Branch-ul personal de dezvoltare (`devel_manta_valentina`) conține fișierul `Jenkinsfile`, configurat pentru testarea automată cu `pytest` și verificarea codului cu `pylint`.
 - La deschiderea Pull Request-ului către `main`, am inclus rezultatele rulării testelor automate în Jenkins (capturi + status PASS).
 - După validarea codului, PR-ul a fost aprobat și integrat.
 
 ### Pull Request-uri proprii
 
 - ✅ PR #9 - Devel manta valentina
+- ✅ PR #22 - Actualizare aplicatie 2
 
 ### Review-uri efectuate
 
-- 🔍 PR
+- 🔍 PR #23 - Test PR 1
 
 ## Rulare locală a aplicației
 
