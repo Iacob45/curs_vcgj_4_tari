@@ -70,7 +70,48 @@ sudo docker run --name tari -p 8020:5011 tari:v04
 ```
 
 Această comandă pornește aplicația în mod izolat și o expune local la adresa:
-
 ```
 http://127.0.0.1:8020/franta
 ```
+---
+
+### 4. Testarea aplicației
+
+###  Testare automată cu Pytest
+
+Pentru a valida funcționalitatea aplicației, au fost dezvoltate teste unitare utilizând framework-ul **pytest**. Acestea verifică dacă funcțiile `descriere_franta()`, `capitala_franta()` și `steag_franta()` returnează conținutul HTML corect conform cerințelor.
+
+Testele sunt definite în fișierul `app/tests/test_biblioteca_franta.py`, iar execuția acestora se realizează prin comanda:
+
+```bash
+pytest
+```
+După rulare, în consolă vor fi afișate rezultatele fiecărui test:
+- `PASSED` pentru testele validate corect
+- `FAILED` pentru testele care nu îndeplinesc așteptările
+
+![Testare Pytest](static/pytest.jpg)
+
+---
+
+###  Verificare calitate cod cu Pylint
+
+Pentru analiza stilului de programare și a calității codului sursă, a fost utilizat instrumentul **pylint**. Acesta evaluează:
+
+- Respectarea convențiilor PEP8
+- Utilizarea eficientă a funcțiilor și variabilelor
+- Complexitatea codului
+
+Comanda utilizată:
+
+```bash
+pylint tari.py
+```
+După execuție, pylint generează un raport cu:
+- Scorul general al codului (0–10)
+- Recomandări pentru îmbunătățiri
+- Erori sau avertismente identificate
+
+📷 *Exemplu captură analiză pylint:*
+![Analiză Pylint](static/Spylint.jpg)
+
