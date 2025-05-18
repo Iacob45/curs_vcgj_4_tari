@@ -12,11 +12,12 @@
 - [Descriere `tari.py`](#descriere-taripy) 
 - [Gestionarea codului cu Git & GitHub](#gestionarea-codului-cu-git--github) 
 - [Containerizare cu Docker](#containerizare-cu-docker) 
-- [Descriere Dockerfile](#descriere-dockerfile) 
-- [Testare unitara cu pytest](#testare-unitara-cu-pytest) 
-- [Configurație `pytest.ini`](#configurație-pytestini) 
-- [Testare & CI cu Jenkins](#testare--ci-cu-jenkins) 
-- [Descriere Jenkinsfile](#descriere-jenkinsfile) 
+  - [Descriere Dockerfile](#descriere-dockerfile) 
+- [Testare](#testare)
+  - [Testare unitara cu pytest](#testare-unitara-cu-pytest) 
+  - [Configurație `pytest.ini`](#configurație-pytestini) 
+  - [Testare & CI cu Jenkins](#testare--ci-cu-jenkins) 
+  - [Descriere Jenkinsfile](#descriere-jenkinsfile) 
 
 ## Descriere
 
@@ -43,17 +44,15 @@ Proiectul include si testarea automata folosind Jenkins, integrarea codului prin
  python3 -m venv .venv
  source .venv/bin/activate
 ```
-## Crearea directoarelor si fisierelor necesare proiectului 
-Structura proiect:
+## Structura și fișierele proiectului
 
 ![Structura](/static/structura.png)
 
-
-Instalarea dependentelor
+## Instalarea dependentelor
 ```bash
 pip install -r requirements.txt
 ```
-Pornirea aplicatiei Flask
+## Pornirea aplicatiei Flask
 ```bash
 export FLASK_APP=tari
 flask run -p 5011 --reload
@@ -155,7 +154,7 @@ Un Pull Request include de obicei următoarele etape:
 
 5. **Fuzionarea (merge)**: După ce PR-ul a fost revizuit și aprobat, modificările sunt integrate în branch-ul principal.
 
-## Rularea aplicatiei cu Docker
+## Containerizare cu Docker
 
 **In folderul in care se afla Dockerfile:**
 
@@ -191,7 +190,7 @@ Acest container asigură un mediu curat și izolat, oferind o metodă ușoară d
 ```bash
 pytest app/tests/
 ```
-Explicații pentru fișierul `pytest.ini`
+### Configurație `pytest.ini`
 
 Fișierul **`pytest.ini`** este un fișier de configurare folosit de framework-ul de testare **pytest** pentru a controla comportamentul testelor. Iată o descriere detaliată a fiecărei linii din acest fișier.
 
@@ -237,7 +236,7 @@ Cum ajută aceste setări în procesul de testare:
 
 Aceste configurări sunt esențiale pentru a avea o experiență mai eficientă și clară în rularea și monitorizarea testelor în cadrul proiectului tău.
 
-### Testare cu Jenkins
+### Testare & CI cu Jenkins
 Testele sunt automatizate si vor rula pe Jenkins, folosind fisierul Jenkinsfile pentru a configura pipeline-ul.
 Pornirea serverului de Jenkins
 ```bash
@@ -248,7 +247,7 @@ Configurare proiect Jenkins
 ![Structura](/static/2.png)
 ![Structura](/static/3.png)
 
-Descriere Jenkinsfile
+### Descriere Jenkinsfile
 
 Acest **Jenkinsfile** configurează pipeline-ul pentru integrarea continuă (CI) și livrarea continuă (CD) a aplicației Flask.
 
