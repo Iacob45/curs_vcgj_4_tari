@@ -1,64 +1,58 @@
 pipeline {
     agent any
 
+    environment {
+        // Adaugăm venv în PATH astfel încât python, pip, pytest, pylint din .venv să fie disponibile
+        VENV_DIR = "${WORKSPACE}/.venv"
+        PATH = "${WORKSPACE}/.venv/bin:${env.PATH}"
+    }
+
     stages {
-        stage('Build') {
-            agent any
+        stage('Setup Python venv') {
             steps {
-                echo 'Building...'
+                echo 'Creating and activating virtualenv…'
                 sh '''
-                    pwd;
-                    ls -l;
-                    . ./activeaza_venv_jenkins;
-                    docker build -t tari:v${BUILD_NUMBER} .
+                    python3 -m venv .venv
+                    . .venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('pylint - calitate cod') {
-            agent any
+        stage('Build Docker Image') {
             steps {
+                echo "Building Docker image tari:v${BUILD_NUMBER}…"
+                sh 'docker build -t tari:v${BUILD_NUMBER} .'
+            }
+        }
+
+        stage('Code Quality (pylint)') {
+            steps {
+                echo 'Running pylint…'
                 sh '''
-                    . ./activeaza_venv;
+                    . .venv/bin/activate
                     export PYTHONPATH=.
-                    
-                    echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero $(find app/lib -name "*.py");
-
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero $(find app/tests -name "*.py");
-
-                    echo '\n\nVerificare tari.py cu pylint';
-                    pylint --exit-zero tari.py;
+                    pylint --exit-zero $(find app/lib -name "*.py")
+                    pylint --exit-zero $(find app/tests -name "*.py")
+                    pylint --exit-zero tari.py
                 '''
             }
         }
 
-        stage('Unit Testing cu pytest') {
-            agent any
+        stage('Unit Tests (pytest)') {
             steps {
-                echo 'Unit testing with Pytest...'
+                echo 'Running pytest…'
                 sh '''
-                    . ./activeaza_venv;
-                    pytest app/tests/
+                    . .venv/bin/activate
+                    pytest -q app/tests/
                 '''
             }
         }
 
-        stage('Deploy') {
-            agent any
+        stage('Run Container') {
             steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                sh '''
-                    docker build -t tari:v${BUILD_NUMBER} .
-                '''
-            }
-        }
-        
-   stage('Running') {
-            steps {
-                echo "Pornesc containerul"
+                echo "Starting container tari${BUILD_NUMBER} on host port 8020…"
                 sh '''
                     docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
@@ -68,12 +62,12 @@ pipeline {
 
     post {
         always {
-            echo "Cleanup: Oprire container Docker"
+            echo 'Cleaning up Docker container…'
             sh '''
-                # Încearcă să oprești și să elimini orice container care a fost lăsat activ
                 docker stop tari${BUILD_NUMBER} || true
                 docker rm tari${BUILD_NUMBER} || true
             '''
         }
     }
 }
+
