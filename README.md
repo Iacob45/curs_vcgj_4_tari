@@ -26,12 +26,12 @@ Fișierul principal al aplicației, `tari.py`, definește trei rute, implementat
 
 ## Tehnologii utilizate
 
--Mașină virtuală Ubuntu – Mediu de dezvoltare și testare configurat pe o distribuție Linux (Ubuntu), utilizat pentru rularea aplicației și a serviciilor.
+- Mașină virtuală Ubuntu – Mediu de dezvoltare și testare configurat pe o distribuție Linux (Ubuntu), utilizat pentru rularea aplicației și a serviciilor.
 
--Flask – Framework web scris în Python, utilizat pentru dezvoltarea aplicației și definirea endpoint-urilor.
+- Flask – Framework web scris în Python, utilizat pentru dezvoltarea aplicației și definirea endpoint-urilor.
 
--GitHub – Platformă pentru versionarea codului sursă și colaborarea în echipă.
+- GitHub – Platformă pentru versionarea codului sursă și colaborarea în echipă.
 
--Docker – Utilizat pentru containerizarea aplicației, oferind un mediu de rulare izolat și ușor de reprodus.
+- Docker – Utilizat pentru containerizarea aplicației, oferind un mediu de rulare izolat și ușor de reprodus.
 
--Jenkins – Instrument de integrare continuă, folosit pentru automatizarea procesului de testare și livrare a aplicației.
+- Jenkins – Instrument de integrare continuă, folosit pentru automatizarea procesului de testare și livrare a aplicației.
