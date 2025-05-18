@@ -1,34 +1,46 @@
+# Folosește imaginea oficială Python 3.10 Alpine
 FROM python:3.10-alpine
 
-ENV FLASK_APP tari
+# Setăm variabila de mediu pentru Flask
+ENV FLASK_APP=tari
 
-
-#3.8 alpine
+# Creăm utilizatorul non-root
 RUN adduser -D tari
 
-RUN mkdir -p /home/ana/proiect_scc/curs_vcgj_4_tari
-RUN chown -R tari /home/ana/proiect_scc
+# Creăm și setăm calea de lucru pentru aplicație
+RUN mkdir -p /home/ana/proiect_scc/curs_vcgj_4_tari/
+RUN chown -R tari /home/ana/proiect_scc/
 
+# Setăm directorul de lucru
+WORKDIR /home/ana/proiect_scc/curs_vcgj_4_tari/
 
-WORKDIR /home/ana/proiect_scc/curs_vcgj_4_tari
-
+# Copiem fișierele aplicației
 COPY app/ app/
+COPY tari.py tari.py
+COPY requirements.txt requirements.txt
+COPY static/ static/
 COPY dockerstart.sh dockerstart.sh
 COPY pytest.ini pytest.ini
-COPY requirements.txt requirements.txt
-COPY tari.py tari.py
-COPY static/ static/
 
-RUN chmod -R 777 static/
+# Setăm permisiunile pentru fișierele de statice
+RUN chmod -R 755 static/
 RUN chmod +x dockerstart.sh
 
+# Comutăm utilizatorul pentru a lucra cu permisiuni mai mici
 USER tari
 
+# Creăm mediul virtual
+#RUN python3 -m venv .venv
+
+# Instalăm dependențele din requirements.txt
+#RUN .venv/bin/pip install --upgrade pip
+#RUN .venv/bin/pip install -r requirements.txt
 RUN python3 -m venv .venv
 RUN .venv/bin/pip install -r requirements.txt
-
-
-# runtime configuration
+# Expunem portul pe care va rula aplicația Flask
 EXPOSE 5011
+
+# Comanda pentru a porni aplicația Flask
 ENTRYPOINT ["./dockerstart.sh"]
-#CMD sh
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5011"]
+
