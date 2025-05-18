@@ -134,8 +134,6 @@ http://localhost:8080
 ```
 
 În platforma web Jenkins a fost creat un pipeline dedicat proiectului, conectat la repository-ul GitHub. Vizualizarea etapelor și starea fiecărei execuții este realizată cu ajutorul interfeței **Blue Ocean**, care oferă un tablou grafic intuitiv al fluxului de testare.
-
-📷 *Exemplu captură pipeline:*
 ![Captură Jenkins](static/pipeline.jpg)
 
 ---
@@ -162,12 +160,23 @@ Fișierul `Jenkinsfile`, aflat la rădăcina proiectului, descrie pașii automat
   ```
   http://127.0.0.1:8020/franta
   ```
-
-📷 *Exemplu vizualizare Blue Ocean:*
 ![Captură Blue Ocean](static/blueocean.jpg)
 
 ---
 
 Această automatizare completă permite detectarea rapidă a erorilor și asigură o integrare ușoară a noilor funcționalități în proiect.
+---
+
+## Integrare și colaborare pe GitHub
+
+Proiectul a fost dezvoltat în branch-ul `devel_serban_stefania`, unde au fost implementate funcționalitățile și testele aferente aplicației pentru Franța.
+
+### Pull Request-uri proprii
+
+- **PR #31** – `devel_serban_stefania`: Integrarea funcționalităților principale ale aplicației (descriere, capitală, steag), testare automată și containerizare.
+
+### Review-uri efectuate
+
+- **PR #34** – `readme - final`: Verificarea și validarea descrierii finale pentru README, contribuind la documentarea completă a proiectului.
 
 
