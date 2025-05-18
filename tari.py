@@ -1,5 +1,4 @@
 import sys
-import pytest
 from flask import Flask
 from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
 
@@ -31,4 +30,5 @@ def test():
     Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
 
     """
+    import pytest
     sys.exit(pytest.main(["."]))
