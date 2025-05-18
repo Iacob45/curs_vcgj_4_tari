@@ -41,4 +41,36 @@ După rularea aplicației, aceasta poate fi accesată în browser la următoarel
 ![Capitala Franta](static/capitala.jpg)
 - [http://127.0.0.1:5011/franta/steag](http://127.0.0.1:5011/franta/steag) 
 ![Steag Franta](static/screenshot.jpg)
+---
 
+###3. Containerizarea aplicației cu Docker
+
+Pentru a asigura portabilitatea și rularea aplicației într-un mediu izolat, proiectul a fost containerizat folosind **Docker**. Procesul presupune construirea unei imagini Docker care include codul aplicației, toate dependențele necesare și configurațiile de execuție.
+
+#### Creare imagine Docker
+
+Se creează o imagine Docker locală folosind comanda:
+
+```bash
+sudo docker build -t tari:v04 .
+```
+![Docker](static/docker.jpg)
+
+Aceasta va construi imaginea `tari:v04`, care va conține:
+- Codul aplicației Flask
+- Scriptul de pornire `dockerstart.sh`
+- Mediul virtual Python și toate dependențele din `requirements.txt`
+
+#### Rulare container
+
+După ce imaginea a fost construită, aplicația poate fi rulată într-un container:
+
+```bash
+sudo docker run --name tari -p 8020:5011 tari:v04
+```
+
+Această comandă pornește aplicația în mod izolat și o expune local la adresa:
+
+```
+http://127.0.0.1:8020/franta
+```
