@@ -87,7 +87,7 @@ source activeaza_venv
 docker build -t tari:v01 .
 ```
 
-#### - Crearea si rularea containerului pe baza imaginii:
+- ####  Crearea si rularea containerului pe baza imaginii:
 
 ```bash
 sudo docker run --name tari -p 8020:5011 tari:v01
