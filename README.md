@@ -104,7 +104,7 @@ docker start tari1
 
 #### Pentru testarea folosim framework-ul python **pytest**, pentru a verifica funcțiile de ``descriere_lituania(), capitala_lituania() dar și steag_lituania()``, dacă totul merge bine și nu avem erori o să vedem în terminal ``live log call `` ``` Merge funcția header_steag PASSED `` (acest live log este pentru fiecare)
 
-- ### Folosim următoarea comandă:
+- #### Folosim următoarea comandă:
 ```bash
 PYTHONPATH=$(pwd) pytest
 ```
