@@ -64,8 +64,11 @@ source ruleaza_aplicatia
 ```
 
 ![SS1](poze_readme/1.png)
+`Terminal + pagina steag`
 ![SS2](poze_readme/2.png)
+`Pagina capitala`
 ![SS3](poze_readme/3.png)
+`Pagina descriere`
 
 # Rulare aplicatie Docker
 [cuprins](#cuprins)
@@ -75,8 +78,10 @@ Ca aplicatia sa ruleze in container, trebuie creata imaginea docker
 ```bash
 docker build -t tari:v1 .
 ```
+
  
- ![SS4](poze_readme/4.png)
+![SS4](poze_readme/4.png)
+`Captura din linia de comanda cu imaginile docker existente`
  
 Pentru a creea cointainerul pe baza imaginii trebuie folosita urmatoarea comanda:
  
@@ -91,7 +96,8 @@ docker start tari1
 ```
  
 ![SS5](poze_readme/5.png)
- 
+`Aplicatia rulata in container + linia de comanda`
+
 # Testare cu pytest
 [cuprins](#cuprins)
 
@@ -106,6 +112,7 @@ PYTHONPATH=$(pwd) pytest
 ```
 
 ![SS6](poze_readme/6.png)
+`Log-uri pytest din linia de comanda`
 
 
 # Verificare statica cu pylint
@@ -122,6 +129,7 @@ pylint tari.py
 ```
 
 ![SS7](poze_readme/7.png)
+`Verificare statica cu pylint, captura din linia de comanda`
 
 # Testare cu Jenkins
 [cuprins](#cuprins)
@@ -144,6 +152,7 @@ In urma rularii putem folosi pluginul Jenkins numit `Blue Ocean` pentru o vizual
 Avem 4 pasi: `Build`, `pylint-calitate cod`, `Unit Testing cu pytest`, `Deploy` si `Running`. 
 
 ![SS8](poze_readme/8.png)
+`Captura din Jenkins cu toati pasi de rulare fara erori`
 
 # Bibliografie
 [cuprins](#cuprins)
