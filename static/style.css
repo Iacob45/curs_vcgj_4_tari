@@ -1,0 +1,159 @@
+/* Luxembourg Information Web App Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #e1e1e1;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #d03e3e;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #d03e3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px !important;
+    font-size: 16px !important;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #b32c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+img:hover {
+    transform: scale(1.01);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e1e1e1;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Luxembourg flag colors - use as accents */
+.flag-colors {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.color-bar {
+    height: 10px;
+    flex: 1;
+}
+
+.color-red {
+    background-color: #ED2939;
+}
+
+.color-white {
+    background-color: #FFFFFF;
+}
+
+.color-blue {
+    background-color: #00A1DE;
+}
+
+.country-info {
+    background-color: rgba(237, 41, 57, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.capital-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+.flag-info {
+    text-align: center;
+}
+
+.info-box {
+    background-color: rgba(0, 161, 222, 0.05);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid #00A1DE;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}

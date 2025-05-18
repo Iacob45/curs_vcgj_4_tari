@@ -1,73 +1,77 @@
-/*Jenkins*/
 pipeline {
     agent any
 
     stages {
         stage('Build') {
-            agent any
             steps {
                 echo 'Building...'
                 sh '''
-                    pwd;
-                    ls -l;
+                    pwd
+                    ls -l
                     . ./activeaza_venv_jenkins
-                    '''
+                '''
             }
         }
-        
 
         stage('pylint - calitate cod') {
-            agent any
             steps {
                 sh '''
-                    . ./activeaza_venv;
-					export PYTHONPATH=.
-					
-                    echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero $(find app/lib -name "*.py");
-
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero $(find app/tests -name "*.py");
-
-                    echo '\n\nVerificare tari.py cu pylint';
-                    pylint --exit-zero tari.py;
+                    . ./activeaza_venv
+                    export PYTHONPATH=.
+                    echo '***** Verificare lib/*.py cu pylint *****'
+                    pylint --exit-zero $(find app/lib -name "*.py")
+                    echo '***** Verificare tests/*.py cu pylint *****'
+                    pylint --exit-zero $(find app/tests -name "*.py")
+                    echo '***** Verificare tari.py cu pylint *****'
+                    pylint --exit-zero tari.py
                 '''
             }
         }
 
         stage('Unit Testing cu pytest') {
-            agent any
             steps {
                 echo 'Unit testing with Pytest...'
                 sh '''
-                    . ./activeaza_venv;
-                    flask --app tari test;
-                    
+                    . ./activeaza_venv
+                    flask --app tari test
                 '''
             }
         }
-        
+
         stage('Deploy') {
-            agent any
             steps {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
-				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
+                // docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
             }
-			
         }
-		stage('Running') {
-            agent any
+
+        stage('Running') {
             steps {
                 echo "Pornesc containerul"
                 sh '''
                     docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
-			
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up...'
+            sh '''
+                docker ps -a | grep tari | grep -v ${BUILD_NUMBER} | awk '{print $1}' | xargs -r docker stop
+                docker ps -a | grep tari | grep -v ${BUILD_NUMBER} | awk '{print $1}' | xargs -r docker rm
+            '''
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
