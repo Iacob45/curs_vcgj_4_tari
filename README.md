@@ -6,17 +6,14 @@ Stadiul implementării: funcționalitate completă, testare finalizată, integra
 ## Cuprins
 
 - [Introducere](#introducere)
-- [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
-- [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
-  - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
-  - [Review-uri efectuate](#Review-uri-efectuate)
-- [Implementare funcționalitate](#implementare-funcționalitate)
-- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
-- [Rulare aplicație cu Docker](#rulare-aplicație-cu-docker)
-- [Testare cu pytest](#testare-cu-pytest)
-- [Testare calitate cod cu pylint](#testare-calitate-cod-cu-pylint)
-- [Testare automată cu Jenkins](#testare-automată-cu-jenkins)
-  - [Etapele testării](#etapele-testării)
+- [Structura Modulului Italia](#Structura-Modulului-Italia)
+- [Gestionarea Versiunilor și Integrarea Codului](#Gestionarea-Versiunilor-și-Integrarea-Codului)
+- [Testare Funcționalitate](#Testare-Funcționalitate)
+- [Rulare Locală – Mediu de Dezvoltare](#Rulare-Locală–Mediu-de-Dezvoltare)
+- [Containerizare și Executare Izolată](#Containerizare-și-Executare-Izolată)
+- [Integrare Continuă cu Jenkins](#Integrare-Continuă-cu-Jenkins)
+- [Concluzie](#Concluzie)
+
 
 1. Introducere
 Această lucrare detaliază integrarea componentei dedicate Italiei în cadrul aplicației web realizate cu Flask, în contextul unui proiect colaborativ. Scopul a fost afișarea informațiilor despre Italia într-un mod structurat și accesibil printr-o interfață web, urmând principiile modularității, testabilității și automatizării.
@@ -41,15 +38,6 @@ Rută Flask	Tip HTTP	Funcție apelată
 3.1 Ramuri și dezvoltare locală
 Funcționalitatea a fost dezvoltată pe ramura devel_stoica_daria. După finalizarea și validarea codului, s-a creat un Pull Request către main_stoica_daria.
 
-3.2 Pull Request-uri
-PR #9: Integrare inițială modul Italia
-
-PR #22: Refactorizare + actualizare descriere
-
-3.3 Code Review
-PR #23: Verificare coleg – Mirescu Monica
-
-PR #26: Supraveghere modificări Spania
 
 4. Testare Funcționalitate
 4.1 Testare unitară
