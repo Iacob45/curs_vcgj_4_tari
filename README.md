@@ -35,3 +35,19 @@ Fișierul principal al aplicației, `tari.py`, definește trei rute, implementat
 - Docker – Utilizat pentru containerizarea aplicației, oferind un mediu de rulare izolat și ușor de reprodus.
 
 - Jenkins – Instrument de integrare continuă, folosit pentru automatizarea procesului de testare și livrare a aplicației.
+
+## Github
+
+Pentru a stoca și pentru a eficienza modalitatea de migrare + lucrare în echipa am folosit Github,, pentru a respecta praticile de colaborare intre persoane și pentru a nu ne încurcă intre noi am folosit branch-uri (ramuri pentru fiecare persoană `main` și `devel`)
+
+## Github Local Configurare
+Proiectul a fost luat de pe Github cu ajutorul comenzii `git clone https://github.com/Iacob45/curs_vcgj_4_tari.git` în fișierul de pe Desktop pe mașină Virtuala.
+Proiectul a fost implementat initial branch-ul personal `devel_calcan_cristian`.Au fost câteva probleme deoarece nu puteam să urc pe Github deoarece nu îmi găsea username-ul (am încercat cu config dar nu mers) și am rezolvat problema generând o cheie ssh
+
+```
+ssh-keygen -t ed25519 -C "cristi21cristi2124@gmail.com"
+ls ~/.ssh
+cat ~/.ssh/id_ed25519.pub
+git remote set-url origin git@github.com:Iacob45/curs_vcgj_4_tari.git
+git push --set-upstream origin devel_calcan_cristian
+```
