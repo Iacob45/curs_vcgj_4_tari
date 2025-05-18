@@ -42,7 +42,7 @@ Pentru a stoca și pentru a eficienza modalitatea de migrare + lucrare în echip
 
 ## Github Local Configurare
 Proiectul a fost luat de pe Github cu ajutorul comenzii `git clone https://github.com/Iacob45/curs_vcgj_4_tari.git` în fișierul de pe Desktop pe mașină Virtuala.
-Proiectul a fost implementat initial branch-ul personal `devel_calcan_cristian`.Au fost câteva probleme deoarece nu puteam să urc pe Github deoarece nu îmi găsea username-ul (am încercat cu config dar nu mers) și am rezolvat problema generând o cheie ssh
+Proiectul a fost implementat initial branch-ul personal `devel_calcan_cristian`.Au fost câteva probleme deoarece nu puteam să urc pe Github deoarece nu îmi găsea username-ul (am încercat cu config dar nu mers) și am rezolvat problema generând o cheie ssh (aceasta cheie a fost adăugată în contul de GitHub la setări ) prin următoarele comenzi fiecare rulată pe rând.
 
 ```
 ssh-keygen -t ed25519 -C "cristi21cristi2124@gmail.com"
