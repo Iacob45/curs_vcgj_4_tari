@@ -57,6 +57,8 @@ source ruleaza_aplicatia
 ```
 
 **Conţinutul proiectului (pentru a crea directoarele şi fişierele am folosit comenzile mkdir şi touch):**
+
+![Continutul proiectului](/static/continut.png)
 ---
 **Descrierea generală a fişierului tari.py:**
 ---
@@ -85,18 +87,21 @@ Prezintă informații legate de steagul național. Informațiile sunt furnizate 
 ```bash
 sudo docker build -t tari:v01 .
 ```
+![Imagine docker](/static/imagine_docker.png)
+
+![Imagini docker](/static/imagini_docker.png)
 
 2. Rulare container:
 
 ```bash
 sudo docker run --name tari -p 8020:5011 tari:v01
 ```
-
 3. Acces browser:
 
 ```
 http://127.0.0.1:8020/danemarca
 ```
+![Rulare container](/static/browser_container.png)
 
 **Prezentare Dockerfile:**
 ---
@@ -128,7 +133,10 @@ Aplicația este pornită cu ajutorul scriptului `dockerstart.sh`, care execută 
 ---
 Pentru verificarea funcţiilor şi a conţinutului prezentat de acestea în format HTML, vom implementa teste prin framework-ul Python `pytest`. În urma efectuării unui test, va fi afişat rezultatul `PASS` pentru testele validate, iar în cazul unui test eronat va fi prezentat rezultatul `FAIL`.
 
+![Testare pytest](/static/pytest.png)
+
 **Testare cu pylint:**
+![Testare pylint](/static/testare_pylint.png)
 ---
 Analiză statică a codului pentru stil și calitate.
 
@@ -153,10 +161,17 @@ localhost:8080
 ```
 
 **Configurare proiect Jenkins pipeline:**
+![Creare Jenkins](/static/crearejenkins.png)
+
+![Configurare Jenkins](/static/configurarejenkins.png)
 
 `Jenkinsfile` definește pipeline-ul de integrare continuă (CI) și livrare continuă (CD) pentru aplicația Flask, automatizând procesul de construire, testare și livrare.
 
 **Etapele pipeline-ului:**
+
+![Pipeline](/static/pipeline.png)
+
+![BlueOcean](/static/blueocean.png)
 
 - **Build** – Creează imaginea Docker a aplicației folosind `Dockerfile` și o etichetează cu numărul curent al build-ului.
 - **Verificare calitate cod (pylint)** – Analizează codul sursă cu `pylint`.
