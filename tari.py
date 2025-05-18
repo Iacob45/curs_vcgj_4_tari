@@ -25,3 +25,14 @@ def steag() -> str:
     text += biblioteca_CoreeaDeNord.steag_CoreeaDeNord()
     return text
 
+@api.cli.command()
+def test():
+    """
+    Rulare 'unit tests'
+
+    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
+
+    """
+    import pytest
+    sys.exit(pytest.main(["."]))
+
