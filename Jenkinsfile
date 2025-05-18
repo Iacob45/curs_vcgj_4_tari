@@ -1,4 +1,3 @@
-/*Jenkins*/
 pipeline {
     agent any
 
@@ -10,17 +9,19 @@ pipeline {
                 sh '''
                     pwd;
                     ls -l;
-                    . ./activeaza_venv_jenkins
-                    '''
+                    . ./activeaza_venv_jenkins;
+                    docker build -t tari:v${BUILD_NUMBER} .
+                '''
             }
         }
-        
 
         stage('pylint - calitate cod') {
             agent any
             steps {
                 sh '''
                     . ./activeaza_venv;
+                    export PYTHONPATH=.
+                    
                     echo '\n\nVerificare lib/*.py cu pylint\n';
                     pylint --exit-zero $(find app/lib -name "*.py");
 
@@ -39,12 +40,11 @@ pipeline {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     . ./activeaza_venv;
-                    flask --app tari test;
-                    
+                    pytest app/tests/
                 '''
             }
         }
-        
+
         stage('Deploy') {
             agent any
             steps {
@@ -53,19 +53,27 @@ pipeline {
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
-				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
             }
-			
         }
-		stage('Running') {
-            agent any
+        
+   stage('Running') {
             steps {
                 echo "Pornesc containerul"
                 sh '''
                     docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
-			
+        }
+    }
+
+    post {
+        always {
+            echo "Cleanup: Oprire container Docker"
+            sh '''
+                # Încearcă să oprești și să elimini orice container care a fost lăsat activ
+                docker stop tari${BUILD_NUMBER} || true
+                docker rm tari${BUILD_NUMBER} || true
+            '''
         }
     }
 }
