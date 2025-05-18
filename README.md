@@ -1,4 +1,3 @@
-<!-- README gol -->
 ## ITALIA - Stoica Daria-Andreea
 
 Stadiul implementării: funcționalitate completă, testare finalizată, integrare realizată în branch-ul principal `main_daria_stoica`.
