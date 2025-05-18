@@ -1,181 +1,168 @@
-**Proiect SCC – Danemarca**
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Proiect SCC – Danemarca</span>  
+Dezvoltator: Marcu Răzvan-Daniel
 
-**Descriere:**
+---
 
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Descriere:</span>  
 În cadrul cursului Servicii de cloud şi containerizare, se va realiza proiectul pentru tema “Ţări” prin implementarea unor tehnologii, precum: Flask, Docker, Jenkins şi GitHub.
 
-**Obiectivul proiectului:**
+---
 
-Realizarea unei aplicaţii web pentru Danemarca, care conţine trei endpoint-uri:”/danemarca”, “/danemarca/capitala”, “/danemarca/steag”). Folosind Flask, vor fi afişate informaţii corespunzătoarea fiecărui endpoint. De asemenea, proiectul cuprinde o parte dedicată testării automate prin intermediul Jenkins, iar secţiunea dedicată containerizării se va realiza prin Docker. 
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Obiectivul proiectului:</span>  
+Realizarea unei aplicaţii web pentru Danemarca, care conţine trei endpoint-uri:  
+`/danemarca`, `/danemarca/capitala`, `/danemarca/steag`  
+Folosind Flask, vor fi afişate informaţii corespunzătoare fiecărui endpoint.  
+Proiectul include testare automată prin Jenkins și containerizare cu Docker.
 
-**Platforme şi tehnologii aplicate:**
+---
 
-->Flask: Framework Python pentru dezvoltarea aplicaţiei web
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Platforme şi tehnologii aplicate:</span>  
+- **Flask**: Framework Python pentru dezvoltarea aplicaţiei web  
+- **GitHub**: Gestionarea codului sursă şi a versiunilor  
+- **Docker**: Rulare în containere, mediu izolat  
+- **Jenkins**: Automatizare testare și livrare continuă
 
-->GitHub: Permite gestionarea codului sursă şi a versiunilor în cadrul unei echipe 
+---
 
-->Docker: Permite rularea aplicaţiei în containere, asigurând un mediu izolat şi reproductibil
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Setare aplicaţie local:</span>
 
-->Jenkins: Folosit pentru automatizarea proceselor de testare şi livrare continuă a aplicaţiei
-
-**Setare aplicaţie local:**
-
-- Configurare Git:
-
+**1. Configurare Git:**
+```bash
 git config --global user.name "username"
-
 git config --global user.email "email"
+```
 
-- Clonare repository în directorul local:
-
+**2. Clonare repository în directorul local:**
+```bash
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
-
 cd curs_vcgj_4_tari
+git checkout devel_marcu_razvan
+```
 
-- Setare mediul virtual de lucru:
+**3. Activare venv şi rularea aplicaţiei:**
+```bash
+source activeaza_venv
+source ruleaza_aplicatia
+```
 
-python3 -m venv .venv
+---
 
-source .venv/bin/activate
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Structura proiectului:</span>  
+Pentru a crea directoarele și fișierele s-au folosit:
+```bash
+mkdir
+touch
+```
 
-**Conţinutul proiectului** (pentru a crea directoarele şi fişierele am folosit comenzile mkdir şi touch):
+---
 
-- Instalarea dependenţelor:
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Descrierea fișierului `tari.py`:</span>  
+Fișierul `tari.py` configurează aplicația Flask și definește rutele HTTP pentru informații despre Danemarca:
 
-pip install -r requirements.txt
+- `/danemarca` – descriere generală  
+- `/danemarca/capitala` – informații despre Copenhaga  
+- `/danemarca/steag` – descriere steag
 
-- Lansare aplicaţie Flask:
-  export FLASK_APP=tari
+Funcțiile implementate:
+```python
+descriere_danemarca()
+capitala_danemarca()
+steag_danemarca()
+```
 
-  flask run -p 5011 –reload
+---
 
-![Continut proiect](/static/continut.png)
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Containerizarea aplicației folosind Docker:</span>  
 
-**Descrierea generală a fişierului tari.py:**
-\
-Fișierul tari.py are rolul de a configura aplicația web Flask și de a defini rutele prin care utilizatorii pot accesa informații despre Danemarca. Aplicația răspunde la cereri HTTP și afișează pagini HTML generate din șabloane, oferind conținut dinamic legat de descrierea țării, capitala acesteia șisteagul național.
-
-Rutele definite în aplicație
-
-Aplicația oferă trei rute principale, fiecare corespunzând unei pagini distincte:
-
-1. Ruta pentru pagina principală ("/danemarca")
-
-- Afișează o descriere generală a Danemarca.
-- Informațiile sunt preluate din funcțiile index() și descriere_danemarca().
-
-2. Ruta pentru capitala Danemarca ("/damemarca/capitala")
-
-- Oferă detalii despre capitala țării, Copenhaga.
-- Datele afișate sunt generate prin funcțiile capitala() și capitala_danemarca().
-
-3. Ruta pentru steagul Danemarcei ("/danemarca/steag")
-
-- Prezintă informații legate de steagul național.
-- Informațiile sunt furnizate de funcțiile steag() și steag_danemarca().
-
-Containerizarea aplicației folosind Docker, executată din folderul cu Dockerfile-ul:
-
-Creare imagine Docker:
-
-![Imaginicontainer](/static/imagini_docker.png)
-
+**1. Crearea imaginii Docker:**
+```bash
 sudo docker build -t tari:v01 .
+```
 
-Rulare container: 
-
+**2. Rulare container:**
+```bash
 sudo docker run --name tari -p 8020:5011 tari:v01
+```
 
-Acces browser:
+**3. Acces aplicație în browser:**
+```text
+http://127.0.0.1:8020/danemarca
+```
 
-<http://127.0.0.1:8020/danemarca>
+---
 
-**Prezentare Dockerfile:**
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Prezentare Dockerfile:</span>  
 
-- Selectarea imaginii de pornire
+1. Imagine de bază:
+```dockerfile
+FROM python:3.10-alpine
+```
 
-Se utilizează python:3.10-alpine, o imagine compactă și eficientă pentru rularea aplicației.
+2. Setare aplicație Flask:
+```bash
+ENV FLASK_APP=tari
+```
 
-- Definirea aplicației Flask
+3. Rulare cu utilizator non-root  
+4. Structurare workspace  
+5. Instalare dependențe în mediu virtual  
+6. Setare permisiuni  
+7. Expunere port:
+```dockerfile
+EXPOSE 5011
+```
 
-Este setată variabila de mediu FLASK_APP tari pentru a indica fișierul principal al aplicației.
+8. Pornire server Flask:
+```bash
+./dockerstart.sh
+```
 
-- Rularea cu utilizator non-administrator
+---
 
-Pentru o mai bună securitate, aplicația este rulată sub un utilizator non-root, numit ţări.
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Testarea cu pytest:</span>  
+Pentru validarea funcționalității se folosesc teste `pytest`. Rezultatul va fi `PASS` sau `FAIL`.
 
-- Structurarea spațiului de lucru al aplicației
+---
 
-Se creează un director dedicat aplicației, iar fișierele necesare sunt copiate în container.
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Testare cu pylint:</span>  
+Se analizează stilul și calitatea codului Python.
 
-- Gestionarea pachetelor necesare
+---
 
-Dependențele sunt instalate într-un mediu virtual Python, izolat de sistemul de bază.
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">Jenkins:</span>  
 
-- Configurarea permisiunilor fișierelor
+**1. Pornire server Jenkins:**
+```bash
+systemctl status Jenkins
+jenkins
+```
 
-Sunt aplicate permisiuni adecvate pentru script-uri, fișiere statice și directoare.
+**2. Acces Jenkins:**
+```text
+http://localhost:8080
+```
 
-- Publicarea portului aplicației
+**Etapele pipeline-ului definit în Jenkinsfile:**
 
-Este expus portul 5011, permițând accesul din afara containerului.
+- **Build**: creare imagine Docker  
+- **pylint**: verificare calitate cod  
+- **pytest**: rulare teste  
+- **Deploy**: construire imagine finală  
+- **Running**: rulare container pe portul 8020
 
-- Inițializarea serverului Flask
+---
 
-Aplicația este pornită cu ajutorul script-ului dockerstart.sh, care execută comanda necesară pentru lansarea serverului Flask.
+<span style="font-size:16px; font-family:'Times New Roman'; font-weight:bold;">GitHub şi Pull Request:</span>  
 
-**Testarea cu pytest:**
+Proiectul a fost dezvoltat în branch-ul `devel_marcu_razvan` și testat local cu `pytest` și `Jenkins`.
 
-![Exemplu Pytest](/static/pytest.png)
+**Pull Request-uri proprii:**
+```text
+PR #23 - Test PR 1
+```
 
-**Jenkins:**
-
-În cadrul Jenkins, testele sunt automatizate şi vor rula prin intermediul fişierului Jenkinsfile. Acesta va asigura ulterior configurarea pipeline-ului.
-
-- Pornire server Jenkins:
-
-  jenkins
-
-- Accesare Jenkins:
-
-  localhost:8080
-
-Configurare proiect Jenkins pipeline:
-
-![Acces Jenkins](/static/crearejenkins.png)
-
-![Configurare Pipeline](/static/configurarejenkins.png)
-
-
-Descriere Jenkinsfile: Jenkinsfile definește pipeline-ul de integrare continuă (CI) și livrare continuă (CD) pentru aplicația Flask, automatizând procesul de construire, testare și livrare.
-
-**Etapele pipeline-ului:**
-
-![Pipeline](/static/pipeline.png)
-
-![blueocean](/static/blueocean.png)
-
-- Build
-
-  Creează imaginea Docker a aplicației folosind Dockerfile-ul din proiect și o etichetează cu numărul curent al build-ului.
-
-- Verificare calitate cod (pylint)
-
-  Analizează codul sursă cu pylint pentru a identifica erori de stil și probleme potențiale, contribuind la menținerea unui cod curat și conform standardelor.
-
-- Testare unitară (pytest)
-
-  Rulează testele unitare cu pytest pentru a valida funcționalitatea aplicației și a preveni regresiile.
-
-- Deploy
-
-  Construiește imaginea finală a aplicației, pregătită pentru rulare într-un container Docker.
-
-- Running
-
-  Lansează containerul Docker și expune aplicația local pe portul 8020, făcând-o accesibilă pentru testare sau utilizare.
-
-- Post
-
-  Asigură curățarea mediului prin oprirea și eliminarea automată a containerelor rămase active după rularea pipeline-ului.
+**Pull Request-uri efectuate:**
+```text
+PR #22 – Actualizare aplicaţie 2
+```
 
