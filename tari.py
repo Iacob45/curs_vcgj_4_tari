@@ -1,37 +1,38 @@
-import sys
-from flask import Flask, url_for
-from app.lib import biblioteca_header, biblioteca_romania
+"""Aplicație Flask care afișează descrierea, capitala și steagul Franței."""
 
+import sys
+import pytest  # import mutat sus
+from flask import Flask
+from app.lib import biblioteca_franta
 
 api = Flask(__name__)
 
-@api.route("/romania", methods=['GET'])
+
+@api.route("/franta", methods=['GET'])
 def index() -> str:
-    text = biblioteca_header.header_descriere()
-    text += biblioteca_romania.descriere_romania()
+    """Afișează descrierea Franței împreună cu headerul HTML."""
+    text = biblioteca_franta.header_descriere()
+    text += biblioteca_franta.descriere_franta()
     return text
 
-@api.route("/romania/capitala", methods=['GET'])
+
+@api.route("/franta/capitala", methods=['GET'])
 def capitala() -> str:
-    text = biblioteca_header.header_capitala()
-    text += biblioteca_romania.capitala_romania()
+    """Afișează pagina cu informații despre capitala Franței."""
+    text = biblioteca_franta.header_capitala()
+    text += biblioteca_franta.capitala_franta()
     return text
 
-@api.route("/romania/steag", methods=['GET'])
+
+@api.route("/franta/steag", methods=['GET'])
 def steag() -> str:
-    text = biblioteca_header.header_steag()
-    text += biblioteca_romania.steag_romania()
+    """Afișează pagina cu imaginea steagului Franței."""
+    text = biblioteca_franta.header_steag()
+    text += biblioteca_franta.steag_franta()
     return text
 
 
 @api.cli.command()
 def test():
-    """
-    Rulare 'unit tests'
-
-    Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
-
-    """
-    import pytest
+    """Rulează testele unitare folosind pytest."""
     sys.exit(pytest.main(["."]))
-
