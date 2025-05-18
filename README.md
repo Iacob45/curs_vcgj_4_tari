@@ -134,14 +134,12 @@ Aplicația este pornită cu ajutorul scriptului `dockerstart.sh`, care execută 
 Pentru verificarea funcţiilor şi a conţinutului prezentat de acestea în format HTML, vom implementa teste prin framework-ul Python `pytest`. În urma efectuării unui test, va fi afişat rezultatul `PASS` pentru testele validate, iar în cazul unui test eronat va fi prezentat rezultatul `FAIL`.
 
 ![Testare pytest](/static/pytest.png)
-
 ---
 
 **Testare cu pylint:**
 ---
 
 ![Testare pylint](/static/testare_pylint.png)
-
 ---
 
 **Jenkins:**
