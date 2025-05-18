@@ -1,7 +1,4 @@
-# Proiect DevOps, virtualizare, containerizare, GitHub, Jenkins
-
-- **Țară implementată**: Germania  
-- **Dezvoltator**: Gutescu Andrei-Dan
+## GERMANIA - Gutescu Andrei-Dan
 
 ---
 
