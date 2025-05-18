@@ -1,6 +1,20 @@
-**Proiect SCC – Danemarca**
+**DANEMARCA - Marcu Razvan-Daniel**
 ---
-**Dezvoltator: Marcu Răzvan-Daniel**
+
+**Cuprins**
+---
+- [Descriere](#descriere)
+- [Obiectivul proiectului](#obiectivul-proiectului)
+- [Platforme şi tehnologii aplicate](#platforme-şi-tehnologii-aplicate)
+- [Setare aplicaţie local](#setare-aplicaţie-local)
+- [Conţinutul proiectului](#conţinutul-proiectului)
+- [Descrierea fişierului tari.py](#descrierea-fișierului-taripy)
+- [Containerizarea aplicației folosind Docker](#containerizarea-aplicației-folosind-docker)
+- [Prezentare Dockerfile](#prezentare-dockerfile)
+- [Testarea cu pytest](#testarea-cu-pytest)
+- [Testare cu pylint](#testare-cu-pylint)
+- [Jenkins](#jenkins)
+- [GitHub şi Pull Request](#github-şi-pull-request)
 ---
 **Descriere:**
 ---
@@ -80,7 +94,7 @@ Oferă detalii despre capitala țării, Copenhaga. Datele afișate sunt generate
 
 Prezintă informații legate de steagul național. Informațiile sunt furnizate de funcțiile `steag()` și `steag_danemarca()`.
 
-**Containerizarea aplicației folosind Docker - executată din folder-ul cu Dockerfile-ul:**
+**Containerizarea aplicației folosind Docker**
 ---
 1. Crearea imaginii Docker (include codul aplicaţiei, configuraţiile care asigură execuţia şi dependenţele Python):
 
