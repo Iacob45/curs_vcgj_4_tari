@@ -1,33 +1,32 @@
-
 def header_descriere() -> str:
     return """
-    <a href="/capitala">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Capitale</button>
+    <a href="/andorra/capitala">
+        <button style="padding: 10px 20px; font-size: 16px;">Vezi Capitala</button>
     </a>
-    <a href="/steag">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steaguri</button>
+    <a href="/andorra/steag">
+        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steag</button>
     </a><br><br>
-    <h1>Acestea sunt descrierile tarilor</h1><br><br>
+    <h1>Aceasta este descrierea andorrei</h1><br><br>
     """
 
 def header_capitala() -> str:
     return """
-    <a href="/">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descrieri</button>
+    <a href="/andorra">
+        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descriere</button>
     </a>
-    <a href="/steag">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steaguri</button>
+    <a href="/andorra/steag">
+        <button style="padding: 10px 20px; font-size: 16px;">Vezi Steag</button>
     </a><br><br>
-    <h1>Acestea sunt capitalele tarilor</h1><br><br>
+    <h1>Aceasta este capitala andorrei</h1><br><br>
     """
 
 def header_steag() -> str:
     return """
-    <a href="/">
-        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descrieri</button>
+    <a href="/andorra">
+        <button style="padding: 10px 20px; font-size: 16px;">Vezi Descriere</button>
     </a>
-    <a href="/capitala">
+    <a href="/andorra/capitala">
         <button style="padding: 10px 20px; font-size: 16px;">Vezi Capitala</button>
     </a><br><br>
-    <h1>Acestea sunt steagurile tarilor</h1><br><br>
+    <h1>Acesta este steagul andorrei</h1><br><br>
     """
