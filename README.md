@@ -1,20 +1,6 @@
 - **Dezvoltator**: Valentina Manta
 - **Funcție implementată**: Canada
 
-## Cuprins
-
-- [Element adăugat](#element-adăugat)
-- [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
-- [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
-  - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
-  - [Review-uri efectuate](#Review-uri-efectuate)
-- [Implementare funcționalitate](#implementare-funcționalitate)
-- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
-- [Rulare aplicație cu Docker](#rulare-aplicație-cu-docker)
-- [Testare cu pytest](#testare-cu-pytest)
-- [Testare calitate cod cu pylint](#testare-calitate-cod-cu-pylint)
-- [Testare automată cu Jenkins](#testare-automată-cu-jenkins)
-  - [Etapele testării](#etapele-testării)
 
 ## Element adăugat
 
@@ -40,27 +26,28 @@ Modulul a fost integrat în aplicația existentă astfel încât să respecte ar
 
 Pentru dezvoltarea funcționalității, am utilizat un flux de lucru organizat pe ramuri (branch-uri), care respectă bunele practici de colaborare GitHub.
 
-Inițial, am implementat codul în branch-ul personal de dezvoltare: `devel_manta_valentina`. După ce funcționalitatea a fost testată local, analizată cu `pylint` și validată prin teste automate cu `pytest` și Jenkins, codul a fost integrat progresiv:
+Inițial, am implementat codul în branch-ul personal de dezvoltare: `devel_manta_valentina`. După ce funcționalitatea a fost testată local, analizată cu `pylint` și validată prin teste cu `pytest` și Jenkins, codul a fost integrat progresiv:
 
- **PR intern** – am realizat un *Pull Request* de la `devel_manta_valentina` către `main_manta_valentina` (ramura personală principală), pentru a valida integritatea codului meu și a simula procesul de integrare.
+ **PR intern** – am realizat un *Pull Request* de la `devel_manta_valentina` către `main_manta_valentina` pentru a valida integritatea codului meu și a simula procesul de integrare.
 
-Fiecare Pull Request a fost supus unui proces de revizuire (`code review`) din partea colegilor de grupă, conform cerințelor proiectului. Acest flux a asigurat o integrare controlată și o dezvoltare colaborativă coerentă.
+Fiecare Pull Request a fost supus unui proces de revizuire (`code review`) din partea colegilor de grupă. Acest flux a asigurat o integrare controlată și o dezvoltare colaborativă coerentă.
 
 ## Integrare și colaborare GitHub
 
 În cadrul procesului de colaborare și validare a codului, am respectat cerințele impuse pentru integrarea prin Pull Request-uri (PR):
 
-- Branch-ul personal de dezvoltare (`devel_manta_valentina`) conține fișierul `Jenkinsfile`, configurat pentru testarea automată cu `pytest` și verificarea codului cu `pylint`.
-- La deschiderea Pull Request-ului către `main`, am inclus rezultatele rulării testelor automate în Jenkins (capturi + status PASS).
+- La deschiderea Pull Request-ului către `main_manta_valentina`, am inclus rezultatele rulării testelor automate în Jenkins (capturi + status PASS).
 - După validarea codului, PR-ul a fost aprobat și integrat.
 
 ### Pull Request-uri proprii
 
-- ✅ PR #9 - Devel manta valentina
+- PR #9 - Devel manta valentina
+- PR #22 - Actualizare aplicatie 2
 
 ### Review-uri efectuate
 
-- 🔍 PR
+- PR #23 - Test PR 1
+- PR #26 - Devel barbu andreea
 
 ## Rulare locală a aplicației
 
@@ -150,7 +137,7 @@ jenkins
 Fișierul `Jenkinsfile` conține cele 5 etape de testare automată prin care va trece programul pentru a analiza complet aplicația.
 
 1. **Build** ~
-Are rolul de a crea mediul de lucru necesar aplicației, prin activarea mediului virtualizat (.venv).localhost
+Are rolul de a crea mediul de lucru necesar aplicației, prin activarea mediului virtualizat (.venv).
 
 2. **pylint-calitate cod** ~
 Testează calitatea codului prin rularea pylint pe fișierele din `app/lib/`, `app/tests/`, `tari.py`. Flow-ul de testare nu va fi oprit în cazul erorilor.
