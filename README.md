@@ -1,6 +1,21 @@
-- **Dezvoltator**: Valentina Manta
-- **Funcție implementată**: Canada
+## CANADA - Manta Valentina-Elena
 
+Stadiul implementării: funcționalitate completă, testare finalizată, integrare realizată în branch-ul principal `main_manta_valentina`.
+
+## Cuprins
+
+- [Element adăugat](#element-adăugat)
+- [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
+- [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
+  - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
+  - [Review-uri efectuate](#Review-uri-efectuate)
+- [Implementare funcționalitate](#implementare-funcționalitate)
+- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
+- [Rulare aplicație cu Docker](#rulare-aplicație-cu-docker)
+- [Testare cu pytest](#testare-cu-pytest)
+- [Testare calitate cod cu pylint](#testare-calitate-cod-cu-pylint)
+- [Testare automată cu Jenkins](#testare-automată-cu-jenkins)
+  - [Etapele testării](#etapele-testării)
 
 ## Element adăugat
 
