@@ -22,8 +22,8 @@ Pentru a testa funcționalitatea aplicației în mod local, se recomandă utiliz
 ### 1. Creare director de lucru și clonare repository
 
 ```bash
-mkdir proiect_SCC
-cd proiect_SCC
+mkdir proiectSCC
+cd proiectSCC
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 cd curs_vcgj_4_tari
 git checkout devel_serban_stefania 
