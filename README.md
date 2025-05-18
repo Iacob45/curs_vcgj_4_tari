@@ -6,8 +6,7 @@
 - [Contribuții  la Implementare](#Contribuții-la-Implementare)
 - [Tehnologii utilizate](#Tehnologii-utilizate)
 - [Github](#github)
-  - [Github Local Configurare](#Github-Local-Configurare)
-  - [PR & Review-uri](#PR--Review-uri)
+  - [Github Local Configurare + Pull Request](#Github-Local-Configurare-Pull-Request)
 - [Rulare aplicatie Local](#Rulare-aplicatie-Local)
 - [Rulare aplicatie Docker](#Rulare-aplicatie-Docker)
 - [Testare cu pytest](#Testare-cu-pytest)
@@ -40,7 +39,7 @@ Fișierul principal al aplicației, `tari.py`, definește trei rute, implementat
 
 Pentru a stoca și pentru a eficienza modalitatea de migrare + lucrare în echipa am folosit Github,, pentru a respecta praticile de colaborare intre persoane și pentru a nu ne încurcă intre noi am folosit branch-uri (ramuri pentru fiecare persoană `main` și `devel`)
 
-## Github Local Configurare
+## Github Local Configurare + Pull Request
 Proiectul a fost luat de pe Github cu ajutorul comenzii `git clone https://github.com/Iacob45/curs_vcgj_4_tari.git` în fișierul de pe Desktop pe mașină Virtuala.
 Proiectul a fost implementat initial branch-ul personal `devel_calcan_cristian`.Au fost câteva probleme deoarece nu puteam să urc pe Github deoarece nu îmi găsea username-ul (am încercat cu config dar nu mers) și am rezolvat problema generând o cheie ssh (aceasta cheie a fost adăugată în contul de GitHub la setări ) prin următoarele comenzi fiecare rulată pe rând.
 
@@ -51,3 +50,26 @@ cat ~/.ssh/id_ed25519.pub
 git remote set-url origin git@github.com:Iacob45/curs_vcgj_4_tari.git
 git push --set-upstream origin devel_calcan_cristian
 ```
+
+### Pull Requesturi
+
+După ce am terminat tot proiectul care este adăugat în branch-ul local și cel de pe git numit  ``devel``  am realizat Pull Request din ``devel_calcan_cristian`` în ``main_calcan_cristian``
+Putem să facem merge direct din git terminal cu ``git merge devel_calcan_cristian`` dar din cauza că avem restricție de aprobare trebuie făcut de pe ``https://github.com/Iacob45/curs_vcgj_4_tari/pull``, pentru realizarea acestuia unul din colegi trebuie să ne dea ``aproved`` la merge.
+- PR Devel calcan cristian #16 
+- PR Final Merge #15
+- PR auto index delete #19
+
+
+## Rulare aplicatie Local
+
+Pentru a testa funcționalitatea implementată, aplicația poate fi rulată local într-un mediu virtual Python ``.venv``
+
+### Configurare mediu de lucru 
+  - Repository-ul a fost colonat de pe Github
+     ``` git clone https://github.com/Iacob45/curs_vcgj_4_tari.git ```
+    
+  -  Mediul virtual Python a fost creat astfel folosind comenzile următoare `în terminal`:
+     ``` source activeaza_venv ```
+     ``` source ruleaza_aplicatia ```
+
+![POZA1 RLOCAL](static/Activeaza_venv.png)
