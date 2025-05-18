@@ -1,63 +1,131 @@
-# Proiect SCC - Țări: Spania
+# Proiect SCC – Țări: Spania
+### Spania – Balan Carla
 
-## Autor
-**Balan Carla**  
-Tema: Spania
+## Cuprins
+- [Descriere generală](#descriere-generală)
+- [Funcționalitate implementată](#funcționalitate-implementată)
+- [Stadiu dezvoltare](#stadiu-dezvoltare)
+- [Testare manuală în browser](#testare-manuală-în-browser)
+- [Testare automată cu pytest](#testare-automată-cu-pytest)
+- [Validare cod cu pylint](#validare-cod-cu-pylint)
+- [Testare cu Docker](#testare-cu-docker)
+- [Testare cu Jenkins](#testare-cu-jenkins)
+- [Resurse](#resurse)
 
 ## Descriere generală
-Tema comună a grupei 444D este "Țări", iar eu mi-am ales țara "Spania".  
+Tema comună a grupei 444D este „Țări”, iar eu am ales să implementez funcționalități legate de **Spania**. Aplicația este construită folosind framework-ul Flask și a fost testată, containerizată și integrată într-un mediu de tip DevOps cu ajutorul Jenkins și Docker.
 
 ## Funcționalitate implementată
 În acest branch am adăugat:
 
 - Fișierul `app/lib/biblioteca_spania.py` cu trei funcții:
-  - `capitala_spania()` – afișează capitala Spaniei.
-  - `steag_spania()` – afișează o imagine cu steagul Spaniei.
-  - `descriere_spania()` – oferă o scurtă descriere a Spaniei.
+  - `capitala_spania()` – returnează capitala Spaniei.
+  - `steag_spania()` – returnează o imagine reprezentativă cu steagul Spaniei.
+  - `descriere_spania()` – oferă o descriere generală a țării.
 
 - Patru rute noi în fișierul `app/444D_tari.py`:
   - `/spania` – pagină principală pentru Spania.
   - `/spania/capitala` – afișează capitala.
   - `/spania/steag` – afișează steagul.
-  - `/spania/descriere` – oferă o descriere generală a țării.
+  - `/spania/descriere` – oferă o scurtă descriere.
 
-- Fișierul `app/tests/test_biblioteca_spania.py` conține testele automate pentru funcțiile definite.
+- Fișierul `app/tests/test_biblioteca_spania.py` care conține testele automate pentru funcțiile definite.
 
 ## Stadiu dezvoltare
-- Funcționalitate implementată
-- Cod adăugat în branch `devel_balan_carla`
-- Pull Request către `main` în curs
-- Cod testat manual și automat
-- Dockerfile creat
-- Jenkinsfile adăugat
+- Funcționalitate complet implementată
+- Cod adăugat în branch-ul `devel_balan_carla`
+- Dockerfile și Jenkinsfile create și funcționale
+- Testare locală, automată și containerizată realizată cu succes
+- Pull Request în curs de integrare către `main`
 
 ## Testare manuală în browser
-Am creat un director in home pe masina virtuala Linux, numit proiect_scc; in el am clonat repository-ul curs_vcgj_4_tari, folosind comanda 
+După clonarea repository-ului într-un director numit proiect_scc:
+
+```bash
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
-iar mai apoi cu comanda 
-git checkout devel_balan_carla 
-se trece pe branch-ul pe care se va face proiectul.
-Dupa dezvoltarea aplicatiei vor incepe testele. Primul va fi testarea in browser prin activarea mediului virtual cu comenzile
+cd curs_vcgj_4_tari
+git checkout devel_balan_carla
+```
+
+Se activează mediul virtual și se pornește aplicația cu:
+
+```bash
 source activeaza_venv
 source ruleaza_aplicatia
-iar mai apoi se acceseaza pe firefox pe http://127:0.0.1:5011 cele trei pagini. 
+```
 
-## Testare cu pytest în mediu virtual
-Cu mediul virtual activat folosim comanda 
+Aplicația poate fi accesată în browser la adresa:
 
-## Testare cu pylint
-...
+```
+http://127.0.0.1:5011/spania
+```
 
-## Testare cu Jenkins
-...
+De asemenea, se pot verifica următoarele rute:
+- `/spania/capitala`
+- `/spania/steag`
+- `/spania/descriere`
+
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/descriere.png`
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/capitala.png`
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/steag.png`
+
+## Testare automată cu `pytest`
+Testele au fost scrise în fișierul `app/tests/test_biblioteca_spania.py`. Cu mediul virtual activ, rularea testelor se face astfel:
+
+```bash
+pytest app/tests/test_biblioteca_spania.py
+```
+
+Toate testele au fost executate cu succes, validând corectitudinea funcțiilor definite.
+
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/pytest.png`
+
+## Validare cod cu `pylint`
+Pentru respectarea standardelor de stil și bune practici în Python, fișierul `biblioteca_spania.py` a fost verificat cu `pylint`:
+
+```bash
+pylint app/lib/biblioteca_spania.py
+```
+
+Scorul obținut este satisfăcător, fără erori majore de structură sau sintaxă.
+
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/pylint.png`
 
 ## Testare cu Docker
-...
+Pentru asigurarea portabilității aplicației, a fost creat un container Docker. Pașii efectuați:
 
-## Ce mai este de făcut
-...
+1. Construirea imaginii:
+```bash
+sudo docker build -t tari:v04 .
+```
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/docker2.png`
+
+2. Rularea containerului:
+```bash
+sudo docker run --name tari -p 8020:5011 tari:v04
+```
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/docker1.png`
+3. Accesarea aplicației în browser:
+```
+http://localhost:8020/spania
+```
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/docker4.png`
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/docker5.png`
+
+## Testare cu Jenkins
+Pentru integrarea continuă a proiectului, am folosit Jenkins ca instrument de automatizare a etapelor de testare și construire. Am verificat starea sistemului jenkins cu comanda: 
+```bash
+sudo systemctl status jenkins
+```
+Dacă sistemul este inactiv, îl vom porni:
+```bash
+sudo systemctl start jenkins
+```
+Se creează pipeline-ul pe Jenkins, care este accesat local, pe portul 8080 și se conectează cu repository-ul. 
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/jenkins1.png`
+Odată creat, se verifică funcționalitatea cu Build: 
+`/home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/static/jenkins2.png`
 
 ## Resurse
-- Repository: [https://github.com/Iacob45/curs_vcgj_4_tari](https://github.com/Iacob45/curs_vcgj_4_tari)
-- Branch: `devel_balan_carla`
-
+- Repository GitHub: [https://github.com/Iacob45/curs_vcgj_4_tari](https://github.com/Iacob45/curs_vcgj_4_tari)
+- Branch de lucru: `devel_balan_carla`
