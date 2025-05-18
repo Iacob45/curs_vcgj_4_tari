@@ -1,3 +1,4 @@
+import sys
 from flask import Flask, url_for,redirect
 from app.lib import biblioteca_header, biblioteca_CoreeaDeNord
 
