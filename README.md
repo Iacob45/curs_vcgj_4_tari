@@ -69,10 +69,11 @@ Pentru a testa funcționalitatea implementată, aplicația poate fi rulată loca
      ``` git clone https://github.com/Iacob45/curs_vcgj_4_tari.git ```
     
   -  Mediul virtual Python a fost creat astfel folosind comenzile următoare `în terminal`:
-  
+
 ```bash
 source activeaza_venv
-source ruleaza_aplicatia
 ```
-
+```bash
+source activeaza_venv
+```
 ![POZA1 RLOCAL](static/Activeaza_venv.png)
