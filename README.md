@@ -102,10 +102,41 @@ docker start tari1
 
 ## Testare cu pytest
 
-Pentru testarea folosim framework-ul python **pytest**, pentru a verifica funcțiile de ``descriere_lituania(), capitala_lituania() dar și steag_lituania()``, dacă totul merge bine și nu avem erori o să vedem în terminal ``live log call `` ``` Merge funcția header_steag PASSED `` (acest live log este pentru fiecare)
+### Pentru testarea folosim framework-ul python **pytest**, pentru a verifica funcțiile de ``descriere_lituania(), capitala_lituania() dar și steag_lituania()``, dacă totul merge bine și nu avem erori o să vedem în terminal ``live log call `` ``` Merge funcția header_steag PASSED `` (acest live log este pentru fiecare)
 
-Folosim următoarea comandă:
+- ### Folosim următoarea comandă:
 ```bash
 PYTHONPATH=$(pwd) pytest
 ```
 ![POZA3 pytest](static/pytest.png)
+
+
+## Testare cu pylint
+
+### Pentru a evalua calitatea codului pentru aplicația principala folosim Python Pylint
+
+- ### Pentru testare folosim comanda, care ne va returna erorile, scorul aplicației, dar și ce nu este folosit în cod:
+```bash
+pylint tari.py
+```
+
+![POZA4 pylint](static/pylint.png)
+
+
+## Testare cu Jenkins 
+
+Jenkins este un instrument open-source pentru integrare continuă (CI), pe care l-am utilizat pentru automatizarea procesului de testare al aplicației.
+Pentru a pornii Jenkins-ul și a vizualiza status folosim :
+```bash
+sudo systemctl start jenkins
+```
+
+```bash
+sudo systemctl status jenkins
+```
+
+- ### Ip Jenkins ``` http://10.0.2.15:8080 ```
+- #### Pentru a rulat în Jenkins trebuie să cream un Pipeline unde ne punem url-ul de la github de unde să ia codul.
+- #### Dupa ce am dat Build la cod, putem vizualiza in intregime toti pasii cu plugin-ul Blue Ocean.
+
+![POZA5 blueocean](static/blueocean.png)
