@@ -1,5 +1,11 @@
-def descriere_canada() -> str:
-    text = """
+import logging
+from app.lib.biblioteca_canada import descriere_japonia, capitala_japonia, steag_japonia
+
+logger = logging.getLogger(__name__)
+
+
+def test_descriere_japonia():
+    expected_descriere = """
     <style>
         body {
             margin: 0;
@@ -46,20 +52,28 @@ def descriere_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Japonia</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Japonia este o tara insulara din Asia de Est, situata pe un lant de insule aflate intre Oceanul Pacific si Marea Japoniei, la este de Peninsula Coreeana.
+            Denumirea oficiala este NIPPONKOKU, textual "Tara Soarelui Rasare".
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/japonia/capitala"><button>Capitala</button></a>
+            <a href="/japonia/steag"><button>Steag</button></a>
         </div>
     </div>
     """
-    return text
-def capitala_canada() -> str:
-    text = """
+
+    if descriere_japonia().strip() == expected_descriere.strip():
+        logger.info("Functioneaza descriere_japonia")
+        assert True
+    else:
+        logger.error("Nu functioneaza descriere_japonia")
+        assert False
+
+
+def test_capitala_japonia():
+    expected_html = """
     <style>
         body {
             margin: 0;
@@ -106,20 +120,27 @@ def capitala_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Japoniei: Tokyo</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Tokyo, oficial Metropola Tokyo, este capitala Japoniei is una dintre cele 47 de perefecturi ale tarii.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/japonia"><button>Descriere</button></a>
+            <a href="/japonia/steag"><button>Steag</button></a>
         </div>
     </div>
     """
-    return text
 
-def steag_canada() -> str:
-    text = """
+    if capitala_japonia().strip() == expected_html.strip():
+        logger.info("Functioneaza capitala_japonia")
+        assert True
+    else:
+        logger.error("Nu functioneaza capitala_japonia")
+        assert False
+
+
+def test_steag_japonia():
+    expected_html = """
     <style>
         body {
             margin: 0;
@@ -170,13 +191,19 @@ def steag_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Japoniei</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/japonia/capitala"><button>Capitala</button></a>
+            <a href="/japonia"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Japoniei.png" alt="Drapelul Japoniei">
     </div>
     """
-    return text
+
+    if steag_japonia().strip() == expected_html.strip():
+        logger.info("Functioneaza steag_japonia")
+        assert True
+    else:
+        logger.error("Nu functioneaza steag_japonia")
+        assert False
 
