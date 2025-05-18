@@ -77,3 +77,18 @@ source activeaza_venv
 source activeaza_venv
 ```
 ![POZA1 RLOCAL](static/Activeaza_venv.png)
+
+
+## Rulare aplicatie Docker
+
+- Pentru a rula aplicația pe Docker trebuie prima dată trebuie creată imaginea Docker.
+- Prin fișierul DockerFile se configurează mediul pentru Flask, care instalează toate dependințe pentru a rula aplicația, utilizând scriptul dockerstart.sh
+```bash
+docker build -t tari:v01 .
+```
+
+#### - Crearea si rularea containerului pe baza imaginii:
+
+```bash
+sudo docker run --name tari -p 8020:5011 tari:v01
+```
