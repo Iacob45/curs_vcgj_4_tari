@@ -1,49 +1,54 @@
 ## JAPONIA - Dima Cosmin Ilie
 
-Stadiul implementării: funcționalitate completă, testare finalizată, integrare realizată în branch-ul principal `main_dima_cosmin`.
+Status implementare: Funcționalitate completă, testată și integrată în branch-ul principal `main_dima_cosmin`.
 
 ## Cuprins
 
-- [Element adăugat](#element-adăugat)
-- [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
-- [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
-  - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
-  - [Review-uri efectuate](#Review-uri-efectuate)
-- [Implementare funcționalitate](#implementare-funcționalitate)
-- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
+- [Descriere functionalitati](#Descriere-functionalitati)
+- [Flux Git & Pull Request](#Flux-Git-&-Pull-Request)
+- [Detalii implementare](#Detalii-implementare)
+- [Rulare locală](#Rulare-locală)
 
-## Element adăugat
+ 
 
-Am integrat funcționalitatea corespunzătoare țării **Japonia** în aplicația software dezvoltată la nivelul grupei.
+## Descriere functionalitati
 
-## Implementare funcționalitate
+Am adăugat suport pentru Japonia în aplicație, prin implementarea a trei funcționalități de bază:
 
-Am implementat funcțiile specifice elementului adăugat în `app/lib/biblioteca_japonia.py` care vor afișa informațiile necesare descrierii generale a țării:
+    descriere_japonia() – O scurtă descriere a Japoniei
 
-- `descriere_japonia()`
-- `capitala_japonia()`
-- `steag_japonia()`
+    capitala_japonia() – Returnează numele capitalei Japoniei
 
-Aplicația principală, `tari.py`, definește 3 rute implementate cu ajutorul framework-ului Flask, accesibile prin metoda HTTP `GET`, fiecare returnând conținut HTML generat de funcțiile de mai sus. Fiecare rută corespunde unei componente informaționale distincte.
+    steag_japonia() – Afișează imaginea drapelului Japoniei
 
-- `GET /japonia` – punct de intrare general care oferă o descriere pe scurt a Japoniei;
-- `GET /japonia/capitala` – returnează numele capitalei Japoniei;
-- `GET /japonia/steag` – returnează drapelul Japoniei.
+Aceste funcționalități sunt accesibile prin următoarele rute Flask:
 
-Modulul a fost integrat în aplicația existentă astfel încât să respecte arhitectura propusă și să poată fi extins ușor cu funcționalități suplimentare.
+    GET /japonia – Descriere generală a Japoniei
 
-## Flux de lucru Git și Pull Request-uri
+    GET /japonia/capitala – Numele capitalei
 
-Pentru dezvoltarea funcționalității, am utilizat un flux de lucru organizat pe ramuri (branch-uri), care respectă bunele practici de colaborare GitHub.
+    GET /japonia/steag – Imaginea steagului
 
- **PR intern** – am realizat un *Pull Request* de la `devel_dima_cosmin` către `main_dima_cosmin` pentru a valida integritatea codului meu și a simula procesul de integrare.
+Funcțiile sunt implementate în fișierul app/lib/biblioteca_japonia.py și sunt integrate în aplicația principală.
 
-## Rulare locală a aplicației
+## Flux Git & Pull Request
 
-Pentru a putea testa funcționalitatea adăugată, aplicația poate fi rulată local, într-un mediu virtual Python `(.venv)`.
+Pentru dezvoltarea acestei funcționalități, am folosit următorul flux de lucru:
 
-1. Se clonează repository-ul și se accesează branch-ul de dezvoltare corespunzător:
+    1.Branch de dezvoltare: Codul a fost dezvoltat pe branch-ul devel_dima_cosmin.
 
+    2.Pull Request: Am creat un Pull Request pentru integrarea modificărilor din devel_dima_cosmin în main_dima_cosmin, pentru a valida integritatea codului și pentru a simula procesul de integrare.
+
+## Detalii implementare
+
+Funcțiile pentru Japonia au fost adăugate în fișierul app/lib/biblioteca_japonia.py. Aplicația principală (tari.py) definește rutele care răspund la cererile GET, oferind utilizatorilor informațiile despre Japonia.
+
+## Rulare locala
+
+Pentru a testa aplicația pe mașina ta locală, urmează pașii de mai jos:
+
+    1.Clonează repository-ul și comută pe branch-ul corespunzător:
+    
 ```bash
 mkdir proiect_SCC
 cd proiect_SCC
@@ -51,13 +56,9 @@ git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 cd curs_vcgj_4_tari
 git checkout devel_dima_cosmin
 ```
-
-2. Se activează venv în directorul curent și se rulează aplicația, urmând a fi accesată în browser la adresa 127.0.0.1:5011/japonia:
-
+    2.Activează mediul virtual și rulează aplicația:
+    
 ```bash
 source activeaza_venv
 source ruleaza_aplicatia
 ```
-
-
-
