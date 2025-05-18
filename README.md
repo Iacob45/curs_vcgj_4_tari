@@ -111,7 +111,63 @@ După execuție, pylint generează un raport cu:
 - Scorul general al codului (0–10)
 - Recomandări pentru îmbunătățiri
 - Erori sau avertismente identificate
-
-📷 *Exemplu captură analiză pylint:*
 ![Analiză Pylint](static/Spylint.jpg)
+---
+
+### 5. Testare automată cu Jenkins
+
+Pentru automatizarea procesului de testare și livrare, aplicația a fost integrată cu platforma open-source **Jenkins**, folosită pentru integrarea continuă (CI) și livrarea continuă (CD). Acest lucru asigură o verificare riguroasă a funcționalității aplicației, înainte ca aceasta să fie considerată stabilă.
+
+### Lansare și acces Jenkins
+
+După instalarea Jenkins, serviciul este verificat și pornit local:
+
+```bash
+systemctl status jenkins
+jenkins
+```
+
+Accesul la interfața grafică Jenkins se face în browser, la adresa:
+
+```
+http://localhost:8080
+```
+
+În platforma web Jenkins a fost creat un pipeline dedicat proiectului, conectat la repository-ul GitHub. Vizualizarea etapelor și starea fiecărei execuții este realizată cu ajutorul interfeței **Blue Ocean**, care oferă un tablou grafic intuitiv al fluxului de testare.
+
+📷 *Exemplu captură pipeline:*
+![Captură Jenkins](static/pipeline.jpg)
+
+---
+
+### Etapele din Jenkinsfile
+
+Fișierul `Jenkinsfile`, aflat la rădăcina proiectului, descrie pașii automatizați parcurși la fiecare execuție a pipeline-ului. Acesta conține **cinci etape** esențiale:
+
+- **Build** 
+  Creează și activează un mediu virtual Python (`.venv`) pentru rularea aplicației și instalarea dependențelor.
+
+- **Pylint – Verificare cod** 
+  Rulează instrumentul `pylint` pe fișierele sursă din `app/lib/`, `app/tests/` și `tari.py`. Scopul este evaluarea stilului de cod și detectarea eventualelor erori. Notă: pipeline-ul continuă și dacă sunt identificate erori.
+
+- **Pytest – Testare funcțională** 
+  Execută testele unitare definite cu `pytest` pentru a verifica dacă funcțiile returnează corect HTML-ul așteptat pentru fiecare endpoint.
+
+- **Deploy** 
+  Creează o imagine Docker a aplicației, etichetată cu `tari:v${BUILD_NUMBER}` (unde `${BUILD_NUMBER}` este numărul automat al execuției curente).
+
+- **Running** 
+  Rulează containerul Docker, mapând portul 5011 al aplicației către portul 8020 al hostului. Astfel, aplicația poate fi accesată în browser la:
+
+  ```
+  http://127.0.0.1:8020/franta
+  ```
+
+📷 *Exemplu vizualizare Blue Ocean:*
+![Captură Blue Ocean](static/blueocean.jpg)
+
+---
+
+Această automatizare completă permite detectarea rapidă a erorilor și asigură o integrare ușoară a noilor funcționalități în proiect.
+
 
