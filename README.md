@@ -63,11 +63,11 @@ source activeaza_venv
 source ruleaza_aplicatia
 ```
 
-![SS1](poze_readme/1.png)
+![SS1](poze_readme/1.png)  
 `Terminal + pagina steag`
-![SS2](poze_readme/2.png)
+![SS2](poze_readme/2.png)  
 `Pagina capitala`
-![SS3](poze_readme/3.png)
+![SS3](poze_readme/3.png)  
 `Pagina descriere`
 
 # Rulare aplicatie Docker
@@ -80,7 +80,7 @@ docker build -t tari:v1 .
 ```
 
  
-![SS4](poze_readme/4.png)
+![SS4](poze_readme/4.png)  
 `Captura din linia de comanda cu imaginile docker existente`
  
 Pentru a creea cointainerul pe baza imaginii trebuie folosita urmatoarea comanda:
@@ -95,7 +95,7 @@ Pentru a rula containere deja creeate se foloseste comanda
 docker start tari1
 ```
  
-![SS5](poze_readme/5.png)
+![SS5](poze_readme/5.png)  
 `Aplicatia rulata in container + linia de comanda`
 
 # Testare cu pytest
@@ -111,7 +111,7 @@ Pentru a rula pytest am folosit comanda urmatoare:
 PYTHONPATH=$(pwd) pytest
 ```
 
-![SS6](poze_readme/6.png)
+![SS6](poze_readme/6.png)  
 `Log-uri pytest din linia de comanda`
 
 
@@ -128,7 +128,7 @@ Pentru a trece fisierul `tari.py` prin test cu pylint se va folosi comanda:
 pylint tari.py
 ```
 
-![SS7](poze_readme/7.png)
+![SS7](poze_readme/7.png)  
 `Verificare statica cu pylint, captura din linia de comanda`
 
 # Testare cu Jenkins
@@ -151,7 +151,7 @@ In urma rularii putem folosi pluginul Jenkins numit `Blue Ocean` pentru o vizual
 
 Avem 4 pasi: `Build`, `pylint-calitate cod`, `Unit Testing cu pytest`, `Deploy` si `Running`. 
 
-![SS8](poze_readme/8.png)
+![SS8](poze_readme/8.png)  
 `Captura din Jenkins cu toati pasi de rulare fara erori`
 
 # Bibliografie
