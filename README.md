@@ -1,5 +1,16 @@
 ## FRANȚA - ȘERBAN ȘTEFANIA
-
+### Cuprins
+- [Descriere](#descriere)
+- [Obiectivul proiectului](#obiectivul-proiectului)
+- [Rulare locală a aplicației](#rulare-locală-a-aplicației)
+- [Containerizarea aplicației cu Docker](#3-containerizarea-aplicației-cu-docker)
+- [Testarea aplicației](#4-testarea-aplicației)
+  - [Testare automată cu Pytest](#-testare-automată-cu-pytest)
+  - [Verificare calitate cod cu Pylint](#-verificare-calitate-cod-cu-pylint)
+- [Testare automată cu Jenkins](#5-testare-automată-cu-jenkins)
+  - [Lansare și acces Jenkins](#lansare-și-acces-jenkins)
+  - [Etapele din Jenkinsfile](#etapele-din-jenkinsfile)
+- [Integrare și colaborare pe GitHub](#integrare-și-colaborare-pe-github)
 ## Descriere  
 În cadrul cursului *Servicii de Cloud și Containerizare*, a fost dezvoltat un proiect cu tema **„Țări”**, care implică utilizarea mai multor tehnologii moderne: Flask, Docker, Jenkins și GitHub.
 
@@ -162,10 +173,7 @@ Fișierul `Jenkinsfile`, aflat la rădăcina proiectului, descrie pașii automat
   ```
 ![Captură Blue Ocean](static/blueocean.jpg)
 
----
-
 Această automatizare completă permite detectarea rapidă a erorilor și asigură o integrare ușoară a noilor funcționalități în proiect.
----
 
 ## Integrare și colaborare pe GitHub
 
