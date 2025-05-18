@@ -65,9 +65,9 @@ De asemenea, se pot verifica următoarele rute:
 - `/spania/steag`
 - `/spania/descriere`
 
-(static/descriere.png)
-(static/capitala.png)
-(static/steag.png)
+![captura de ecran 1](static/descriere.png)
+![captura de ecran 2](static/capitala.png)
+![captura de ecran 3](static/steag.png)
 
 ## Testare automată cu `pytest`
 Testele au fost scrise în fișierul `app/tests/test_biblioteca_spania.py`. Cu mediul virtual activ, rularea testelor se face astfel:
@@ -78,7 +78,7 @@ pytest app/tests/test_biblioteca_spania.py
 
 Toate testele au fost executate cu succes, validând corectitudinea funcțiilor definite.
 
-(static/pytest.png)
+![captura de ecran 4](static/pytest.png)
 
 ## Validare cod cu `pylint`
 Pentru respectarea standardelor de stil și bune practici în Python, fișierul `biblioteca_spania.py` a fost verificat cu `pylint`:
@@ -89,7 +89,7 @@ pylint app/lib/biblioteca_spania.py
 
 Scorul obținut este satisfăcător, fără erori majore de structură sau sintaxă.
 
-(static/pylint.png)
+![captura de ecran 5](static/pylint.png)
 
 ## Testare cu Docker
 Pentru asigurarea portabilității aplicației, a fost creat un container Docker. Pașii efectuați:
@@ -98,20 +98,20 @@ Pentru asigurarea portabilității aplicației, a fost creat un container Docker
 ```bash
 sudo docker build -t tari:v04 .
 ```
-(static/docker2.png)
+![captura de ecran 6](static/docker2.png)
 
 2. Rularea containerului:
 ```bash
 sudo docker run --name tari -p 8020:5011 tari:v04
 ```
-(static/docker1.png)
+![captura de ecran 7](static/docker1.png)
 
 3. Accesarea aplicației în browser:
 ```
 http://localhost:8020/spania
 ```
-(static/docker4.png)
-(static/docker5.png)
+![captura de ecran 8](static/docker4.png)
+![captura de ecran 9](static/docker5.png)
 
 ## Testare cu Jenkins
 Pentru integrarea continuă a proiectului, am folosit Jenkins ca instrument de automatizare a etapelor de testare și construire. Am verificat starea sistemului jenkins cu comanda: 
@@ -123,9 +123,9 @@ Dacă sistemul este inactiv, îl vom porni:
 sudo systemctl start jenkins
 ```
 Se creează pipeline-ul pe Jenkins, care este accesat local, pe portul 8080 și se conectează cu repository-ul. 
-(static/jenkins1.png)
+![captura de ecran 10](static/jenkins1.png)
 Odată creat, se verifică funcționalitatea cu Build: 
-(static/jenkins2.png)
+![captura de ecran 11](static/jenkins2.png)
 
 ## Resurse
 - Repository GitHub: [https://github.com/Iacob45/curs_vcgj_4_tari](https://github.com/Iacob45/curs_vcgj_4_tari)
