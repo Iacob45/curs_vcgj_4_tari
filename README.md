@@ -1,5 +1,5 @@
-# Proiect SCC – Țări: Spania
-### Spania – Balan Carla
+
+## Spania – Balan Carla
 
 ## Cuprins
 - [Descriere generală](#descriere-generală)
@@ -36,7 +36,7 @@ Tema comună a grupei 444D este „Țări”, iar eu am ales să implementez fun
 - Cod adăugat în branch-ul `devel_balan_carla`
 - Dockerfile și Jenkinsfile create și funcționale
 - Testare locală, automată și containerizată realizată cu succes
-- Pull Request în curs de integrare către `main`
+- Pull Request intermediar cu ID #40 
 
 ## Testare manuală în browser
 După clonarea repository-ului într-un director numit proiect_scc:
