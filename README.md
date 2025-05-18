@@ -94,7 +94,7 @@ Oferă detalii despre capitala țării, Copenhaga. Datele afișate sunt generate
 
 Prezintă informații legate de steagul național. Informațiile sunt furnizate de funcțiile `steag()` și `steag_danemarca()`.
 
-**Containerizarea aplicației folosind Docker**
+**Containerizarea aplicației folosind Docker:**
 ---
 1. Crearea imaginii Docker (include codul aplicaţiei, configuraţiile care asigură execuţia şi dependenţele Python):
 
