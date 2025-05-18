@@ -73,7 +73,7 @@ source ruleaza_aplicatia
 Ca aplicatia sa ruleze in container, trebuie creata imaginea docker
 
 ```bash
-docker build -t tari:v1
+docker build -t tari:v1 .
 ```
  
  ![SS4](poze_readme/4.png)
@@ -105,7 +105,7 @@ Pentru a rula pytest am folosit comanda urmatoare:
 PYTHONPATH=$(pwd) pytest
 ```
 
-![SS6](poze_readme/5.png)
+![SS6](poze_readme/6.png)
 
 
 # Verificare statica cu pylint
@@ -121,7 +121,7 @@ Pentru a trece fisierul `tari.py` prin test cu pylint se va folosi comanda:
 pylint tari.py
 ```
 
-![SS7](poze_readme/6.png)
+![SS7](poze_readme/7.png)
 
 # Testare cu Jenkins
 [cuprins](#cuprins)
@@ -143,7 +143,7 @@ In urma rularii putem folosi pluginul Jenkins numit `Blue Ocean` pentru o vizual
 
 Avem 4 pasi: `Build`, `pylint-calitate cod`, `Unit Testing cu pytest`, `Deploy` si `Running`. 
 
-![SS8](poze_readme/7.png)
+![SS8](poze_readme/8.png)
 
 # Bibliografie
 [cuprins](#cuprins)
