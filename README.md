@@ -73,7 +73,7 @@ De asemenea, se pot verifica următoarele rute:
 Testele au fost scrise în fișierul `app/tests/test_biblioteca_spania.py`. Cu mediul virtual activ, rularea testelor se face astfel:
 
 ```bash
-pytest app/tests/test_biblioteca_spania.py
+pytest 
 ```
 
 Toate testele au fost executate cu succes, validând corectitudinea funcțiilor definite.
@@ -84,7 +84,7 @@ Toate testele au fost executate cu succes, validând corectitudinea funcțiilor 
 Pentru respectarea standardelor de stil și bune practici în Python, fișierul `biblioteca_spania.py` a fost verificat cu `pylint`:
 
 ```bash
-pylint app/lib/biblioteca_spania.py
+pylint tari.py
 ```
 
 Scorul obținut este satisfăcător, fără erori majore de structură sau sintaxă.
