@@ -82,7 +82,7 @@ Prezintă informații legate de steagul național. Informațiile sunt furnizate 
 
 **Containerizarea aplicației folosind Docker - executată din folder-ul cu Dockerfile-ul:**
 ---
-1. Crearea imaginii Docker:
+1. Crearea imaginii Docker (include codul aplicaţiei, configuraţiile care asigură execuţia şi dependenţele Python):
 
 ```bash
 sudo docker build -t tari:v01 .
@@ -91,7 +91,7 @@ sudo docker build -t tari:v01 .
 
 ![Imagini docker](/static/imagini_docker.png)
 
-2. Rulare container:
+2. Rulare container (containerul este accesibil prin maparea portului 5011 pe 8020 prin browser): 
 
 ```bash
 sudo docker run --name tari -p 8020:5011 tari:v01
@@ -135,10 +135,11 @@ Pentru verificarea funcţiilor şi a conţinutului prezentat de acestea în form
 
 ![Testare pytest](/static/pytest.png)
 
+---
+
 **Testare cu pylint:**
 ![Testare pylint](/static/testare_pylint.png)
 ---
-Analiză statică a codului pentru stil și calitate.
 
 **Jenkins:**
 ---
@@ -147,7 +148,7 @@ Analiză statică a codului pentru stil și calitate.
 1. Verificare status Jenkins şi pornirea server-ului Jenkins:
 
 ```bash
-systemctl status Jenkins
+systemctl status jenkins
 ```
 
 ```bash
@@ -192,5 +193,5 @@ PR #23 - Test PR 1
 **Pull Request-uri efectuate:**
 
 ```
-PR #22 – Actualizare aplicaţie 2
+PR #22 - Actualizare aplicaţie 2
 ```
