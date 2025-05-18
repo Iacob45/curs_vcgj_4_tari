@@ -1,10 +1,11 @@
+<!-- README gol -->
 ## ITALIA - Stoica Daria-Andreea
 
 Stadiul implementării: funcționalitate completă, testare finalizată, integrare realizată în branch-ul principal `main_daria_stoica`.
 
 ## Cuprins
 
-- [Element adăugat](#element-adăugat)
+- [Introducere](#introducere)
 - [Flux de lucru Git și Pull Request-uri](#Flux-de-lucru-Git-și-Pull-Request-uri)
 - [Integrare și colaborare GitHub](#Integrare-și-colaborare-GitHub)
   - [Pull Request-uri proprii](#Pull-Request-uri-proprii)
@@ -17,139 +18,115 @@ Stadiul implementării: funcționalitate completă, testare finalizată, integra
 - [Testare automată cu Jenkins](#testare-automată-cu-jenkins)
   - [Etapele testării](#etapele-testării)
 
-## Element adăugat
+1. Introducere
+Această lucrare detaliază integrarea componentei dedicate Italiei în cadrul aplicației web realizate cu Flask, în contextul unui proiect colaborativ. Scopul a fost afișarea informațiilor despre Italia într-un mod structurat și accesibil printr-o interfață web, urmând principiile modularității, testabilității și automatizării.
 
-Funcționalitatea aferentă statului Italia a fost adăugată și integrată în aplicația software realizată de grupă.
+2. Structura Modulului Italia
+Funcționalitatea a fost adăugată în fișierul app/lib/biblioteca_italia.py și conține următoarele funcții:
 
-## Implementare funcționalitate
+descriere_italia() – întoarce o descriere generală (HTML);
 
-Am implementat funcțiile specifice elementului adăugat în `app/lib/biblioteca_italia.py` care vor afișa informațiile necesare descrierii generale a țării:
+capitala_italia() – returnează numele capitalei;
 
-- `descriere_italia()`
-- `capitala_italia()`
-- `steag_italia()`
+steag_italia() – furnizează drapelul național.
 
-Aplicația principală, `tari.py`, utilizeaza framework-ul Flask pentru a expune aceste funcții prin rute de tip HTTP `GET`, fiecare livrând conținut HTML specific.
+Acestea sunt apelate prin rute definite în aplicația principală (tari.py), astfel:
 
-- `GET /italia` – oferă o descriere generală;
-- `GET /italia/capitala` – returnează capitala Italiei;
-- `GET /italia/steag` – returnează drapelul Italiei.
+Rută Flask	Tip HTTP	Funcție apelată
+/italia	GET	descriere_italia()
+/italia/capitala	GET	capitala_italia()
+/italia/steag	GET	steag_italia()
 
-Modulul a fost integrat în structura existentă astfel încât să fie extensibil și să respecte arhitectura proiectului.
+3. Gestionarea Versiunilor și Integrarea Codului
+3.1 Ramuri și dezvoltare locală
+Funcționalitatea a fost dezvoltată pe ramura devel_stoica_daria. După finalizarea și validarea codului, s-a creat un Pull Request către main_stoica_daria.
 
-## Flux de lucru Git și Pull Request-uri
+3.2 Pull Request-uri
+PR #9: Integrare inițială modul Italia
 
-Pentru dezvoltare, a fost utilizat un model de lucru bazat pe ramuri dedicate, conform bunelor practici GitHub.
+PR #22: Refactorizare + actualizare descriere
 
-Inițial, funcționalitatea a fost dezvoltată în branch-ul `devel_stoica_daria`. După testare locală, verificare cu pylint, rularea testelor pytest și validarea în Jenkins, modificările au fost integrate astfel:
+3.3 Code Review
+PR #23: Verificare coleg – Mirescu Monica
 
-Pull Request intern – realizat de la `devel_stoica_daria` către `main_stoica_daria` pentru a simula și valida procesul de integrare.
+PR #26: Supraveghere modificări Spania
 
-Fiecare PR a trecut printr-un proces de review realizat de colegii de grupă, asigurând o integrare sigură și coerentă.
-## Integrare și colaborare GitHub
+4. Testare Funcționalitate
+4.1 Testare unitară
+Am utilizat pytest pentru a testa funcțiile definite. Testele se află în app/tests/test_biblioteca_italia.py.
 
-Pentru integrarea finală a funcționalității, s-a respectat fluxul de lucru standard cu Pull Request-uri.
+Comanda utilizată:
 
-După revizuire și aprobare, Pull Request-ul a fost integrat.
+bash
+Copy
+Edit
+pytest
+Rezultatul a fost pozitiv pentru toate cazurile de test.
 
-### Pull Request-uri proprii
+4.2 Analiza calității codului
+Pentru analiza statică, a fost folosit pylint, cu următoarea comandă:
 
-- PR - Devel stoica daria
-- PR - Actualizare aplicatie 2
+bash
+Copy
+Edit
+pylint tari.py
+Scorul obținut a confirmat respectarea convențiilor PEP8 și absența erorilor semnificative.
 
-### Review-uri efectuate
+5. Rulare Locală – Mediu de Dezvoltare
+Pașii pentru rularea aplicației local:
 
-- PR - Test PR 1
-- PR - Devel mirescu monica
+Clonare și checkout:
 
-## Rulare locală a aplicației
-
-Pentru testarea locală a funcționalității, aplicația se rulează într-un mediu virtual (.venv) după parcurgerea pașilor de mai jos:
-
-1. Se clonează repository-ul și se accesează branch-ul de dezvoltare corespunzător:
-
-```bash
-mkdir proiect_SCC
-cd proiect_SCC
+bash
+Copy
+Edit
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 cd curs_vcgj_4_tari
 git checkout devel_stoica_daria
-```
+Activare și rulare:
 
-2. Se activează venv în directorul curent și se rulează aplicația, urmând a fi accesată în browser la adresa 127.0.0.1:5011/italia:
-
-```bash
+bash
+Copy
+Edit
 source activeaza_venv
 source ruleaza_aplicatia
-```
+Aplicația va fi disponibilă la:
+http://127.0.0.1:5011/italia
 
-## Rulare aplicație cu Docker
+6. Containerizare și Executare Izolată
+6.1 Crearea imaginii
+Fișierul Dockerfile creează mediul izolat cu Flask și aplicația:
 
-Aplicația a fost containerizată cu Docker pentru a permite rularea într-un mediu controlat și portabil. Fișierul Dockerfile conține pașii de configurare, iar scriptul `dockerstart.sh` pornește aplicația.
-
-1. Acest proces presupune crearea unei imagini Docker care include codul aplicației, dependențele Python și configurațiile necesare pentru execuție.
-
-```bash
+bash
+Copy
+Edit
 sudo docker build -t tari:v04 .
-```
-
-2. După construirea imaginii, aplicația poate fi rulată într-un container, accesibil local prin browser (portul 5011 este mapat pe 8020). Astfel, indiferent de sistemul de operare sau de configurația locală, funcționalitatea poate fi testată și demonstrată uniform.
-
-```bash
+6.2 Rulare container
+bash
+Copy
+Edit
 sudo docker run --name tari -p 8020:5011 tari:v04
-```
+Aplicația devine accesibilă la:
+http://localhost:8020/italia
 
+7. Integrare Continuă cu Jenkins
+7.1 Configurare pipeline
+Am utilizat Jenkins pentru testare automată. Etapele pipeline-ului definite în Jenkinsfile:
 
-## Testare cu pytest
+Build – crearea mediului virtual
 
-Folosind framework-ul Python **pytest** am dezvoltat teste unitare, construite pentru a verifica dacă funcțiile `descriere_italia()`, `capitala_italia()` și `steag_italia()` returnează conținutul HTML corespunzător, conform specificațiilor. În cazul trecerii unui test, valoarea returnată va fi PASS, iar în caz contrar FAIL. Fișierul `pytest.ini` controlează testele, direcționând în principal către locația fișierului ce conține testele efective, `app/tests/test_biblioteca_italia.py`.
+pylint – evaluarea calității codului
 
-1. Inițial, se pornește testarea aplicației prin comanda: `pytest`.
+pytest – testare funcțională
 
-2. Rezultatele testelor apar în consolă, indicând PASS/FAIL pentru fiecare caz.
+Deploy Docker – creare imagine
 
-## Testare calitate cod cu pylint
+Run – lansare container pe portul 8020
 
-Analiza statică a codului a fost realizată cu `pylint`, pentru a evalua stilul, redundanțele și posibilele erori.
+7.2 Execuție
+După configurare, testarea este declanșată cu opțiunea Build în interfața Blue Ocean. Rezultatul: toate etapele au fost finalizate cu succes (PASS).
 
-1. Pornirea testării se face prin comanda `pylint tari.py`.
-
-2. La final, se afișează scorul general și eventuale sugestii de îmbunătățire.
-
-
-## Testare automată cu Jenkins
-
-Pentru integrarea continuă (CI), aplicația a fost configurată în Jenkins, care rulează automat pașii de testare pentru fiecare commit important.
-
-1. Pentru început, se verifică starea serviciului Jenkins și se pornește. Platforma web a utilitarului se accesează local, https://localhost:8080.
-
-```bash
-systemctl status jenkins
-jenkins
-```
-
-2. În interfața web, a fost creat un pipeline care preia automat codul din repository.
-
-3. Apăsând Build, se lansează procesul de testare automată. Rezultatele pot fi urmărite în detaliu prin plugin-ul Blue Ocean.
-
-
-### Etapele testării
-
-Fișierul `Jenkinsfile` definește următorii pași executați automat în cadrul pipeline-ului:
-
-1. Build
-Activează mediul virtual necesar aplicației.
-
-2. pylint-calitate cod
-Rulează pylint pe fișierele din `app/lib/`, `app/tests/`, `tari.py`. Erorile nu opresc execuția pipeline-ului.
-
-3. Unit Testing cu pytest
-Rulează testele definite, utilizând comanda `flask --app tari test`.
-
-4. Deploy
-Construiește o imagine Docker tari:v<ID> unde <ID> este identificatorul rularii curente (${BUILD_NUMBER}).
-
-5. Running
-Containerul este lansat în fundal, aplicația rulează și este mapată de pe portul 5011 de pe container pe portul 8020 al gazdei.
+8. Concluzie
+Integrarea Italiei a fost realizată cu succes, respectând cerințele arhitecturale și funcționale ale proiectului. Funcționalitatea este testată, documentată și implementată conform standardelor moderne de dezvoltare software colaborativă.
 
 
