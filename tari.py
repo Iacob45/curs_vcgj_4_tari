@@ -1,27 +1,27 @@
 import sys
 import pytest
 from flask import Flask
-from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
+from app.lib.biblioteca_italia import descriere_italia, capitala_italia, steag_italia
 
-""" Modulul `tari.py` conține funcții care generează pagini HTML pentru CANADA (descriere, capitală, steag). """
+""" Modulul `tari.py` conține funcții care generează pagini HTML pentru ITALIA (descriere, capitală, steag). """
 api = Flask(__name__)
 
 
-@api.route("/canada", methods=['GET'])
+@api.route("/italia", methods=['GET'])
 def index() -> str:
-    """Returnează HTML-ul cu descrierea Canadei."""
-    return descriere_canada()
+    """Returnează HTML-ul cu descrierea Italiei."""
+    return descriere_italia()
 
-@api.route("/canada/capitala", methods=['GET'])
+@api.route("/italia/capitala", methods=['GET'])
 def capitala() -> str:
-    """Returnează HTML-ul capitala Canadei."""
-    return capitala_canada()
+    """Returnează HTML-ul capitala Italia."""
+    return capitala_italia()
 
 
-@api.route("/canada/steag", methods=['GET'])
+@api.route("/italia/steag", methods=['GET'])
 def steag() -> str:
-    """Returnează HTML-ul cu drapelul Canadei."""
-    return steag_canada()
+    """Returnează HTML-ul cu drapelul Italiei."""
+    return steag_italia()
 
 @api.cli.command()
 def test():

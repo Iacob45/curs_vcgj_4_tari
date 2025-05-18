@@ -1,5 +1,11 @@
-def descriere_canada() -> str:
-    text = """
+import logging
+from app.lib.biblioteca_italia import descriere_italia, capitala_italia, steag_italia
+
+logger = logging.getLogger(__name__)
+
+
+def test_descriere_italia():
+    expected_descriere = """
     <style>
         body {
             margin: 0;
@@ -46,20 +52,28 @@ def descriere_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Italia 🇮🇹</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Italia este o țară situată în sudul Europei, cunoscută pentru forma sa de cizmă și pentru bogata sa moștenire culturală, istorică și artistică.
+             Italia a fost leagănul Imperiului Roman și al Renașterii, influențând profund arta, arhitectura, literatura și știința europeană.
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/italia/capitala"><button>Capitala</button></a>
+            <a href="/italia/steag"><button>Steag</button></a>
         </div>
     </div>
     """
-    return text
-def capitala_canada() -> str:
-    text = """
+
+    if descriere_italia().strip() == expected_descriere.strip():
+        logger.info("Functioneaza descriere_italia")
+        assert True
+    else:
+        logger.error("Nu functioneaza descriere_italia")
+        assert False
+
+
+def test_capitala_italia():
+    expected_html = """
     <style>
         body {
             margin: 0;
@@ -106,20 +120,27 @@ def capitala_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Italiei: Roma</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Roma este capitala Italiei și unul dintre cele mai vechi și mai importante orașe din lume. Supranumită "Orașul Etern", Roma are o istorie de peste 2.700 de ani și a fost centrul Imperiului Roman, care a influențat decisiv civilizația occidentală.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/italia"><button>Descriere</button></a>
+            <a href="/italia/steag"><button>Steag</button></a>
         </div>
     </div>
     """
-    return text
 
-def steag_canada() -> str:
-    text = """
+    if capitala_italia().strip() == expected_html.strip():
+        logger.info("Functioneaza capitala_italia")
+        assert True
+    else:
+        logger.error("Nu functioneaza capitala_italia")
+        assert False
+
+
+def test_steag_italia():
+    expected_html = """
     <style>
         body {
             margin: 0;
@@ -170,13 +191,19 @@ def steag_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Italiei</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/italia/capitala"><button>Capitala</button></a>
+            <a href="/italia"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Italiei.png" alt="Drapelul Italiei">
     </div>
     """
-    return text
+
+    if steag_italia().strip() == expected_html.strip():
+        logger.info("Functioneaza steag_italia")
+        assert True
+    else:
+        logger.error("Nu functioneaza steag_italia")
+        assert False
 
