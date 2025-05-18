@@ -9,7 +9,7 @@ Realizarea unei aplicații web pentru **Franța**, care să conțină trei endpo
 - `/franta/capitala` – Afișează informații despre Paris 
 - `/franta/steag` – Afișează imaginea drapelului Franței 
 
-Proiectul include, de asemenea:  
+Proiectul include, de asemenea: 
 - **Testare automată** cu ajutorul Jenkins 
 - **Containerizare** folosind Docker pentru a asigura portabilitate și rulare izolată 
 
@@ -26,5 +26,11 @@ mkdir proiect_SCC
 cd proiect_SCC
 git clone https://github.com/Iacob45/curs_vcgj_4_tari.git
 cd curs_vcgj_4_tari
-git checkout devel_serban_stefania
+git checkout devel_serban_stefania 
+```
+### 2.  Activarea mediului virtual și rularea aplicației
+```bash
+source activeaza_venv
+source ruleaza_aplicatia
+```
 
