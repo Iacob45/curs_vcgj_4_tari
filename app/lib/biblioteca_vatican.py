@@ -1,4 +1,4 @@
-def descriere_canada() -> str:
+def descriere_vatican() -> str:
     text = """
     <style>
         body {
@@ -46,19 +46,20 @@ def descriere_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Vatican 🇻🇦</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Vaticanul este cel mai mic stat din lume, situat în inima Romei. Este centrul spiritual al Bisericii Catolice și reședința Papei.
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/vatican/capitala"><button>Capitala</button></a>
+            <a href="/vatican/steag"><button>Steag</button></a>
         </div>
     </div>
     """
     return text
-def capitala_canada() -> str:
+
+
+def capitala_vatican() -> str:
     text = """
     <style>
         body {
@@ -106,19 +107,20 @@ def capitala_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Vaticanului: Vatican City</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Vatican City este un oraș-stat suveran, reședința Papei și centrul Bisericii Catolice, înconjurat complet de Roma, Italia.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/vatican"><button>Descriere</button></a>
+            <a href="/vatican/steag"><button>Steag</button></a>
         </div>
     </div>
     """
     return text
 
-def steag_canada() -> str:
+
+def steag_vatican() -> str:
     text = """
     <style>
         body {
@@ -170,12 +172,12 @@ def steag_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Vaticanului</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/vatican/capitala"><button>Capitala</button></a>
+            <a href="/vatican"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Vaticanului.png" alt="Drapelul Vaticanului">
     </div>
     """
     return text

@@ -1,10 +1,10 @@
 import logging
-from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
+from app.lib.biblioteca_vatican import descriere_vatican, capitala_vatican, steag_vatican
 
 logger = logging.getLogger(__name__)
 
 
-def test_descriere_canada():
+def test_descriere_vatican():
     expected_descriere = """
     <style>
         body {
@@ -52,27 +52,21 @@ def test_descriere_canada():
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Vatican 🇻🇦</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Vaticanul este cel mai mic stat din lume, situat în inima Romei. Este centrul spiritual al Bisericii Catolice și reședința Papei.
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/vatican/capitala"><button>Capitala</button></a>
+            <a href="/vatican/steag"><button>Steag</button></a>
         </div>
     </div>
     """
 
-    if descriere_canada().strip() == expected_descriere.strip():
-        logger.info("Functioneaza descriere_canada")
-        assert True
-    else:
-        logger.error("Nu functioneaza descriere_canada")
-        assert False
+    assert descriere_vatican().strip() == expected_descriere.strip()
 
 
-def test_capitala_canada():
+def test_capitala_vatican():
     expected_html = """
     <style>
         body {
@@ -120,26 +114,20 @@ def test_capitala_canada():
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Vaticanului: Vatican City</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Vatican City este un oraș-stat suveran, reședința Papei și centrul Bisericii Catolice, înconjurat complet de Roma, Italia.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/vatican"><button>Descriere</button></a>
+            <a href="/vatican/steag"><button>Steag</button></a>
         </div>
     </div>
     """
-
-    if capitala_canada().strip() == expected_html.strip():
-        logger.info("Functioneaza capitala_canada")
-        assert True
-    else:
-        logger.error("Nu functioneaza capitala_canada")
-        assert False
+    assert capitala_vatican().strip() == expected_html.strip()
 
 
-def test_steag_canada():
+def test_steag_vatican():
     expected_html = """
     <style>
         body {
@@ -191,19 +179,13 @@ def test_steag_canada():
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Vaticanului</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/vatican/capitala"><button>Capitala</button></a>
+            <a href="/vatican"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Vaticanului.png" alt="Drapelul Vaticanului">
     </div>
     """
-
-    if steag_canada().strip() == expected_html.strip():
-        logger.info("Functioneaza steag_canada")
-        assert True
-    else:
-        logger.error("Nu functioneaza steag_canada")
-        assert False
+    assert steag_vatican().strip() == expected_html.strip()
 
