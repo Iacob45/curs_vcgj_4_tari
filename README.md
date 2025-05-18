@@ -43,7 +43,7 @@ După rularea aplicației, aceasta poate fi accesată în browser la următoarel
 ![Steag Franta](static/screenshot.jpg)
 ---
 
-###3. Containerizarea aplicației cu Docker
+### 3. Containerizarea aplicației cu Docker
 
 Pentru a asigura portabilitatea și rularea aplicației într-un mediu izolat, proiectul a fost containerizat folosind **Docker**. Procesul presupune construirea unei imagini Docker care include codul aplicației, toate dependențele necesare și configurațiile de execuție.
 
