@@ -138,6 +138,8 @@ Pentru verificarea funcţiilor şi a conţinutului prezentat de acestea în form
 ---
 
 **Testare cu pylint:**
+---
+
 ![Testare pylint](/static/testare_pylint.png)
 
 ---
