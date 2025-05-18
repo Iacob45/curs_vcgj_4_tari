@@ -22,6 +22,14 @@ Teme luate:
     Cristiana: Bulgaria,
     Sasha: Guatemala,
     Luxemburg: Buta,
-    Vatican: Miron
+    Vatican: Miron,
+    Honduras: Furniga,
+    Andorra: Maya,
+    Monaco: Catalin,
+    Norvegia: Dumitru
+    
+    
+    
+    
 
   Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
