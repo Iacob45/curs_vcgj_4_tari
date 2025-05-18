@@ -9,7 +9,7 @@
 1. [Rulare aplicatie Docker](#rulare-docker)
 1. [Testare cu pytest](#test-pytest)
 1. [Verificare statica cu pylint](#verificare-pylint)
-1. [Testare cu Jenkins](#test-jenkins
+1. [Testare cu Jenkins](#test-jenkins)
 1. [Bibliografie](#bibliografie)
 
 # Descriere aplicatie
