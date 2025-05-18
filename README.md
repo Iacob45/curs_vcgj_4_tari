@@ -36,8 +36,6 @@ Modulul a fost integrat în aplicația existentă astfel încât să respecte ar
 
 Pentru dezvoltarea funcționalității, am utilizat un flux de lucru organizat pe ramuri (branch-uri), care respectă bunele practici de colaborare GitHub.
 
-Inițial, am implementat codul în branch-ul personal de dezvoltare: `devel_dima_cosmin`. După ce funcționalitatea a fost testată local, analizată cu `pylint` și validată prin teste cu `pytest` și Jenkins, codul a fost integrat progresiv:
-
  **PR intern** – am realizat un *Pull Request* de la `devel_dima_cosmin` către `main_dima_cosmin` pentru a valida integritatea codului meu și a simula procesul de integrare.
 
 ## Rulare locală a aplicației
