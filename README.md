@@ -1,53 +1,97 @@
-Proiect SCC - Olanda
+# Proiect SCC - Olanda
 
-Descriere
+## Descriere
 
 Acest proiect este dedicat temei "Tari", in cadrul cursului Servicii Cloud si Cointainerizare, folosind tehnologii precum Flask, Docker, Jenkins si Git/GitHub
 
-Obiectivul proiectului
+## Obiectivul proiectului
 
 Proiectul urmareste dezvoltarea unei aplicatii simple pentru Olanda, utilizand Flask
 pentru a furniza informatii despre tara: o mica descriere, capitala acesteia si steagul,
 prin 3 endpoint-uri "/", "/capitala" si "/steag".
 Proiectul include si testarea automata folosind Jenkins, integrarea codului prin GitHub, si containerizarea aplicatiei folosind Docker.
 
-Tehnologii folosite
+## Tehnologii folosite
 
-Flask: Framework Python pentru dezvoltarea aplicatiei web.
-Docker: Containere pentru rularea aplicatiei intr-un mediu izolat.
-Jenkins: Automatizarea testarii si livrarii aplicatiei.
-Git/GitHub: Colaborare si versionare a codului sursa.
+- Flask: Framework Python pentru dezvoltarea aplicatiei web.
+- Docker: Containere pentru rularea aplicatiei intr-un mediu izolat.
+- Jenkins: Automatizarea testarii si livrarii aplicatiei.
+- Git/GitHub: Colaborare si versionare a codului sursa.
 
-Rularea aplicatiei local
-
-Setam numele si emailul utilizatorului care va fi asociat cu toate commit-urile facute pe masina
--> git config --global user.name "username"
--> git config --global user,email "email"
-
-Clonam repo-ul in direcotorul de lucru
-
--> git clone https://github.com/<user>/curs_vcgj_4_tari.git
--> cd curs_vcgj_4_tari
+## Rularea aplicatiei local
 
 Crearea si activarea mediului virtual
 
--> python3 -m venv .venv
--> source .venv/bin/activate
+```bash
+ python3 -m venv .venv
+ source .venv/bin/activate
+```
+Gestionarea codului cu Git si GitHub
 
-Crearea directoarelor si fisierelor necesare proiectului cu comenzile mkdir si touch
+Setam numele si emailul utilizatorului care va fi asociat cu toate commit-urile facute pe masina
+
+```bash
+ git config --global user.name "username"
+ git config --global user,email "email"
+```
+Clonam repo-ul in direcotorul de lucru
+```bash
+git clone https://github.com/<user>/curs_vcgj_4_tari.git
+cd curs_vcgj_4_tari
+```
+Crearea branchurilor individuale
+
+```bash
+git branch <devel_nume>
+git branch <main_nume>
+```
+Ne mutam pe branch-ul devel
+```bash
+git branch <devel_nume>
+```
+Adaugarea fisierelor modificate
+```bash
+git add .
+git commit -m "Mesajul de commit"
+```
+Aducem modificarile pe GitHub
+```bash
+git push origin <devel_nume>
+```
+Crearea unui Pull Request pentru a fuziona in branch ul principal <main_nume> modificarile aduse pe GitHub pe branch ul <devel_nume>
+
+![Structura](/static/pullRequest.png)
+
+Un Pull Request (PR) este o cerere de a integra modificările dintr-un branch într-un alt branch din același repository sau dintr-un repository diferit. Acesta este un proces folosit de obicei în Git și platformele de gestionare a codului sursă, precum GitHub, pentru a revizui și aproba modificările înainte ca acestea să fie adăugate în branch-ul principal al proiectului.
+
+Un Pull Request include de obicei următoarele etape:
+
+1. **Crearea unui branch**: Dezvoltatorul creează un branch dedicat pentru a adăuga noi funcționalități sau pentru a remedia erori.
+
+2. **Realizarea modificărilor**: Dezvoltatorul face modificările necesare în branch-ul său.
+
+3. **Deschiderea unui Pull Request**: După ce modificările sunt finalizate, dezvoltatorul trimite un PR pentru a solicita integrarea acestor modificări în branch-ul principal (de obicei main sau master).
+
+4. **Revizuirea PR-ului**: Alți membri ai echipei sau colaboratori ai proiectului pot verifica modificările, lăsa comentarii și solicita modificări suplimentare.
+
+5. **Fuzionarea (merge)**: După ce PR-ul a fost revizuit și aprobat, modificările sunt integrate în branch-ul principal.
+
+## Crearea directoarelor si fisierelor necesare proiectului cu comenzile mkdir si touch
 Structura proiect:
+
 ![Structura](/static/structura.png)
 
+
 Instalarea dependentelor
-
--> pip install -r requirments.txt
-
+```bash
+pip install -r requirments.txt
+```
 Pornirea aplicatiei Flask
-
--> export FLASK_APP=tari
--> flask run -p 5011 --reload
-
-Descriere `tari.py`
+```bash
+export FLASK_APP=tari
+flask run -p 5011 --reload
+```
+## Descriere `tari.py`
 
 Fișierul **`tari.py`** este responsabil pentru configurarea aplicației web Flask și definirea rutelor care oferă informații despre Olanda. În acest fișier, se utilizează Flask pentru a crea o aplicație care răspunde la cereri HTTP și afișează pagini HTML cu informații despre Olanda.
 
@@ -96,12 +140,15 @@ Aplicația este configurată pentru a rula pe portul 5011 și poate fi ușor ext
 Rularea aplicatiei cu Docker (in folderul in care se afla Dockerfile)
 
 Construirea imaginii Docker 
--> docker build -t <nume>
+```bash
+docker build -t <nume>
+```
 Rularea containerului
--> docker run -dp 5011:5011 <nume>
+```bash
+docker run -dp 5011:5011 <nume>
+```
 Accesarea aplicatiei
--> Deschidem browserul la http://localhost:8020
-
+Deschidem browserul la [http://localhost:8020]
 Descriere Dockerfile
 
 Acest proiect folosește Docker pentru a crea un container izolat ce rulează aplicația Flask. Dockerfile-ul conține pașii următori:
@@ -117,11 +164,12 @@ Acest proiect folosește Docker pentru a crea un container izolat ce rulează ap
 
 Acest container asigură un mediu curat și izolat, oferind o metodă ușoară de a distribui și rula aplicația Flask pe diferite sisteme.
 
-Testare
+## Testare
 
-Testare unitara cu pytest
--> pytest app/tests/
-
+- Testare unitara cu pytest
+```bash
+pytest app/tests/
+```
 Explicații pentru fișierul `pytest.ini`
 
 Fișierul **`pytest.ini`** este un fișier de configurare folosit de framework-ul de testare **pytest** pentru a controla comportamentul testelor. Iată o descriere detaliată a fiecărei linii din acest fișier.
@@ -168,10 +216,12 @@ Cum ajută aceste setări în procesul de testare:
 
 Aceste configurări sunt esențiale pentru a avea o experiență mai eficientă și clară în rularea și monitorizarea testelor în cadrul proiectului tău.
 
-Testare cu Jenkins
+- Testare cu Jenkins
 Testele sunt automatizate si vor rula pe Jenkins, folosind fisierul Jenkinsfile pentru a configura pipeline-ul.
 Pornirea serverului de Jenkins
--> jenkins
+```bash
+jenkins
+```
 Configurare proiect Jenkins
 ![Structura](/static/1.png)
 ![Structura](/static/2.png)
