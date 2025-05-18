@@ -1,4 +1,4 @@
-# BRAZILIA - BARBU ANDREEA-MARIA
+## BRAZILIA - BARBU ANDREEA-MARIA
 
 # CUPRINS
 - [Descrierea aplicației](#descrierea-aplicației)
