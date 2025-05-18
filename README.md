@@ -54,13 +54,13 @@ După revizuire și aprobare, Pull Request-ul a fost integrat.
 
 ### Pull Request-uri proprii
 
-- PR #9 - Devel stoica daria
-- PR #22 - Actualizare aplicatie 2
+- PR - Devel stoica daria
+- PR - Actualizare aplicatie 2
 
 ### Review-uri efectuate
 
-- PR #23 - Test PR 1
-- PR #26 - Devel mirescu monica
+- PR - Test PR 1
+- PR - Devel mirescu monica
 
 ## Rulare locală a aplicației
 
