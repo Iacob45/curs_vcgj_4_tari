@@ -35,8 +35,10 @@ source ruleaza_aplicatia
 ```
 După rularea aplicației, aceasta poate fi accesată în browser la următoarele adrese:
 
-- [http://127.0.0.1:5011/franta](http://127.0.0.1:5011/franta) – 
+- [http://127.0.0.1:5011/franta](http://127.0.0.1:5011/franta) 
 ![Descriere Franța](static/descriere.jpg)
-- [http://127.0.0.1:5011/franta/capitala](http://127.0.0.1:5011/franta/capitala) – Pagina cu informații despre capitala 
-- [http://127.0.0.1:5011/franta/steag](http://127.0.0.1:5011/franta/steag) – Pagina cu imaginea drapelului Franței
+- [http://127.0.0.1:5011/franta/capitala](http://127.0.0.1:5011/franta/capitala) 
+![Capitala Franta](static/capitala.jpg)
+- [http://127.0.0.1:5011/franta/steag](http://127.0.0.1:5011/franta/steag) 
+![Steag Franta](static/screenshot.jpg)
 
