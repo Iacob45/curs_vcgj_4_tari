@@ -90,5 +90,10 @@ docker build -t tari:v01 .
 - ####  Crearea si rularea containerului pe baza imaginii:
 
 ```bash
-sudo docker run --name tari -p 8020:5011 tari:v01
+docker run --name tari17 -p 8021:5011 tari:v17
 ```
+sau 
+```bash
+docker start tari17
+```
+docker build -f /home/ubuntu/Desktop/ProiectSCC/curs_vcgj_4_tari/Dockerfile -t tari:v1 .
