@@ -7,10 +7,10 @@ ENV FLASK_APP tari
 RUN adduser -D tari
 
 RUN mkdir -p /home/carla/Desktop/proiect_scc/curs_vcgj_4_tari
-RUN chown -R tari /home/carla/Desktop/proiect_scc/
+RUN chown -R tari /home/carla/Desktop/proiect_scc
 
 
-WORKDIR /home/carla/Desktop/proiect_scc/curs_vcgj_4_tari/
+WORKDIR /home/carla/Desktop/proiect_scc/curs_vcgj_4_tari
 
 COPY app app
 COPY dockerstart.sh dockerstart.sh
