@@ -1,4 +1,4 @@
-def descriere_canada() -> str:
+def descriere_egipt() -> str:
     text = """
     <style>
         body {
@@ -46,19 +46,20 @@ def descriere_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Egipt</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Egiptul are o populație de circa 114,5 milioane de locuitori, iar capitala și cel mai mare oraș este Cairo.
+            
+            Egiptul este o țară arabă din nordul Africii și din Orientul Mijlociu, limitată la nord de Marea Mediterană, la est de Fâșia Gaza, de Israel, de Golful Aqaba (prin intermediul căruia are contact cu Iordania și cu Arabia Saudită) și de Marea Roșie, la sud de Sudan iar la vest de Libia.
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/egipt/capitala"><button>Capitala</button></a>
+            <a href="/egipt/steag"><button>Steag</button></a>
         </div>
     </div>
     """
     return text
-def capitala_canada() -> str:
+def capitala_egipt() -> str:
     text = """
     <style>
         body {
@@ -106,19 +107,19 @@ def capitala_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Egiptului: Cairo</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Cairo este capitala Egiptului cu o populație estimată între 16 și 20 de milioane de locuitori și este al doilea cel mai mare oraș din Africa.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/egipt"><button>Descriere</button></a>
+            <a href="/egipt/steag"><button>Steag</button></a>
         </div>
     </div>
     """
     return text
 
-def steag_canada() -> str:
+def steag_egipt() -> str:
     text = """
     <style>
         body {
@@ -170,12 +171,12 @@ def steag_canada() -> str:
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Egiptului</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/egipt/capitala"><button>Capitala</button></a>
+            <a href="/egipt"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Egiptului.png" alt="Drapelul Egiptului">
     </div>
     """
     return text

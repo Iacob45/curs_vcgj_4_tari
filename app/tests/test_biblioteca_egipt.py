@@ -1,10 +1,10 @@
 import logging
-from app.lib.biblioteca_canada import descriere_canada, capitala_canada, steag_canada
+from app.lib.biblioteca_egipt import descriere_egipt, capitala_egipt, steag_egipt
 
 logger = logging.getLogger(__name__)
 
 
-def test_descriere_canada():
+def test_descriere_egipt():
     expected_descriere = """
     <style>
         body {
@@ -52,27 +52,28 @@ def test_descriere_canada():
     </style>
 
     <div class="card">
-        <h1>Canada 🇨🇦</h1>
+        <h1>Egipt</h1>
         <p>
-            Canada este a doua cea mai mare țară din lume, cunoscută pentru peisajele naturale impresionante și cultura sa diversă.
-            Este o țară bilingvă și promovează multiculturalismul și calitatea vieții.
+            Egiptul are o populație de circa 114,5 milioane de locuitori, iar capitala și cel mai mare oraș este Cairo.
+            
+            Egiptul este o țară arabă din nordul Africii și din Orientul Mijlociu, limitată la nord de Marea Mediterană, la est de Fâșia Gaza, de Israel, de Golful Aqaba (prin intermediul căruia are contact cu Iordania și cu Arabia Saudită) și de Marea Roșie, la sud de Sudan iar la vest de Libia.
         </p>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/egipt/capitala"><button>Capitala</button></a>
+            <a href="/egipt/steag"><button>Steag</button></a>
         </div>
     </div>
     """
 
-    if descriere_canada().strip() == expected_descriere.strip():
-        logger.info("Functioneaza descriere_canada")
+    if descriere_egipt().strip() == expected_descriere.strip():
+        logger.info("Functioneaza descriere_egipt")
         assert True
     else:
-        logger.error("Nu functioneaza descriere_canada")
+        logger.error("Nu functioneaza descriere_egipt")
         assert False
 
 
-def test_capitala_canada():
+def test_capitala_egipt():
     expected_html = """
     <style>
         body {
@@ -120,26 +121,26 @@ def test_capitala_canada():
     </style>
 
     <div class="card">
-        <h1>Capitala Canadei: Ottawa</h1>
+        <h1>Capitala Egiptului: Cairo</h1>
         <p>
-            Ottawa este centrul administrativ al Canadei, un oraș multicultural, verde și elegant, aflat în provincia Ontario.
+            Cairo este capitala Egiptului cu o populație estimată între 16 și 20 de milioane de locuitori și este al doilea cel mai mare oraș din Africa.
         </p>
         <div class="btn-group">
-            <a href="/canada"><button>Descriere</button></a>
-            <a href="/canada/steag"><button>Steag</button></a>
+            <a href="/egipt"><button>Descriere</button></a>
+            <a href="/egipt/steag"><button>Steag</button></a>
         </div>
     </div>
     """
 
-    if capitala_canada().strip() == expected_html.strip():
-        logger.info("Functioneaza capitala_canada")
+    if capitala_egipt().strip() == expected_html.strip():
+        logger.info("Functioneaza capitala_egipt")
         assert True
     else:
-        logger.error("Nu functioneaza capitala_canada")
+        logger.error("Nu functioneaza capitala_egipt")
         assert False
 
 
-def test_steag_canada():
+def test_steag_egipt():
     expected_html = """
     <style>
         body {
@@ -191,19 +192,19 @@ def test_steag_canada():
     </style>
 
     <div class="card">
-        <h1>Steagul Canadei</h1>
+        <h1>Steagul Egiptului</h1>
         <div class="btn-group">
-            <a href="/canada/capitala"><button>Capitala</button></a>
-            <a href="/canada"><button>Descriere</button></a>
+            <a href="/egipt/capitala"><button>Capitala</button></a>
+            <a href="/egipt"><button>Descriere</button></a>
         </div>
-        <img src="/static/Drapelul-Canadei.png" alt="Drapelul Canadei">
+        <img src="/static/Drapelul-Egiptului.png" alt="Drapelul Egiptului">
     </div>
     """
 
-    if steag_canada().strip() == expected_html.strip():
-        logger.info("Functioneaza steag_canada")
+    if steag_egipt().strip() == expected_html.strip():
+        logger.info("Functioneaza steag_egipt")
         assert True
     else:
-        logger.error("Nu functioneaza steag_canada")
+        logger.error("Nu functioneaza steag_egipt")
         assert False
 
