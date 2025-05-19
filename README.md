@@ -1,8 +1,6 @@
-# Țară Implementată : Lituania
-# Dezolvator Proiect : Calcan Cristian Nicolae
-# Proiect DevOps, virtualizare, containerizare, github, jenkins. 
+## Lituania - Calcan Cristian-Nicolae
 
-## Cuprins
+### Cuprins
 - [Contribuții  la Implementare](#Contribuții-la-Implementare)
 - [Tehnologii utilizate](#Tehnologii-utilizate)
 - [Github](#github)
