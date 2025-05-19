@@ -29,7 +29,7 @@ python3 -m venv .venv
 ```
 5.	Crearea directoarelor si fisierelor necesare utilizand comenzile mkdir si touch 
 
-[!structura](/static/structura.png)
+![structura](/static/structura.png)
 
 6.	Instalarea dependentelor 
 ```bash
@@ -127,7 +127,7 @@ pylint tari.py
     -  Deploy: Construiește și rulează imaginea Docker pe portul 8020.
     - Post: Curăță mediul, oprind și ștergând containerele rămase active.
     
-[!jenkins](/static/jenkins.png)
+![jenkins](/static/jenkins.png)
 
 
 
