@@ -53,7 +53,7 @@ pipeline {
                 echo "Build ID: ${BUILD_NUMBER}"
                 echo "Creare imagine docker"
                 sh '''
-                    sudo docker build -t tari:v${BUILD_NUMBER} .
+                    docker build -t tari:v${BUILD_NUMBER} .
                 '''
 				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
             }
