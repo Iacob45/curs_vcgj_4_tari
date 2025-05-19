@@ -1,27 +1,25 @@
-FROM python:3.10-alpine
+ROM python:3.10-alpine
 
-ENV FLASK_APP=tari
-
+# Creăm utilizatorul
 RUN adduser -D tari
-RUN mkdir -p /home/andrei/SCC/curs_vcgj_4_tari/
-RUN chown -R tari /home/andrei/SCC/
 
-WORKDIR /home/andrei/SCC/curs_vcgj_4_tari/
-
-COPY app/ app/
-COPY static/ static/
-COPY tari.py .
-COPY dockerstart.sh .
-COPY pytest.ini .
-COPY quickrequirements.txt .
-
-RUN chmod -R 777 static
-RUN chmod +x dockerstart.sh
-
+# Ne logăm ca utilizator non-root
 USER tari
 
-RUN python3 -m venv .venv
-RUN .venv/bin/pip install -r quickrequirements.txt
+# Setăm directorul de lucru
+WORKDIR /home/tari/
 
-EXPOSE 5011
-ENTRYPOINT ["./dockerstart.sh"]
+# Copiem toate fișierele necesare
+COPY app/ app/
+COPY main.py main.py
+COPY quickrequirements.txt quickrequirements.txt
+
+# Instalăm dependențele
+RUN pip install --upgrade pip
+RUN pip install -r quickrequirements.txt
+
+# Expunem portul pe care va rula aplicația
+EXPOSE 5050
+
+# Pornim aplicația cu uvicorn
+CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "5050"]
