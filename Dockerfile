@@ -32,3 +32,4 @@ RUN .venv/bin/pip install -r quickrequirements.txt
 EXPOSE 5011
 ENTRYPOINT ["./dockerstart.sh"]
 #CMD sh
+
