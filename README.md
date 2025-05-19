@@ -5,6 +5,7 @@
 - [Descrierea fisierului tari.py](#descrierea-fisierului-tari.py)
 - [Rularea aplicatiei cu Docker](#rularea-aplicatiei-cu-docker)
 - [Testare](#testare)
+
 Tema proiectului este dezvoltarea unei aplicatii simple pentru tara Bulgaria, utilizand Flask pentru a furniza informatii, Jenkins pentru testarea automata, GitHub pentru integrarea codului si Docker pentru containerizarea aplicatiei.
 
 ## Pasii pentru realizarea proiectului
@@ -27,7 +28,9 @@ python3 -m venv .venv
  source .venv/bin/activate
 ```
 5.	Crearea directoarelor si fisierelor necesare utilizand comenzile mkdir si touch 
+
 [!structura](/static/structura.png)
+
 6.	Instalarea dependentelor 
 ```bash
 pip install -r requirments.txt
@@ -118,11 +121,12 @@ La final, aplicația Flask este lansată cu ajutorul unui script numit dockersta
 pylint tari.py
 ```
 •	Testare cu Jenkins avand urmatoarele etape 
-    •  Build: Creează imaginea Docker și o etichetează cu numărul build-ului.
-    •  pylint: Verifică stilul și calitatea codului.
-    •  Testare: Rulează testele unitare cu pytest.
-    •  Deploy: Construiește și rulează imaginea Docker pe portul 8020.
-    •  Post: Curăță mediul, oprind și ștergând containerele rămase active.
+    -  Build: Creează imaginea Docker și o etichetează cu numărul build-ului.
+    -  pylint: Verifică stilul și calitatea codului.
+    -  Testare: Rulează testele unitare cu pytest.
+    -  Deploy: Construiește și rulează imaginea Docker pe portul 8020.
+    - Post: Curăță mediul, oprind și ștergând containerele rămase active.
+    
 [!jenkins](/static/jenkins.png)
 
 
