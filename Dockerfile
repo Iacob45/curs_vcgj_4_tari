@@ -3,10 +3,10 @@ FROM python:3.10-alpine
 ENV FLASK_APP=tari
 
 RUN adduser -D tari
-RUN mkdir -p /home/andrei/SCC/curs_vcgj_4_tari/
-RUN chown -R tari /home/andrei/SCC/
+RUN mkdir -p /home/user/SCC/curs_vcgj_4_tari/
+RUN chown -R tari /home/user/SCC/
 
-WORKDIR /home/andrei/SCC/curs_vcgj_4_tari/
+WORKDIR /home/user/SCC/curs_vcgj_4_tari/
 
 COPY app/ app/
 COPY static/ static/

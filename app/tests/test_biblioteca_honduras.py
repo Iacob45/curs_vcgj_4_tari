@@ -37,7 +37,7 @@ def test_capitala_honduras():
             """
     text += "Tegucigalpa"
     if capitala_honduras() == text:
-        logger.info(f"Merge functia capitala_honduras")
+        logger.info("Merge functia capitala_honduras")
         assert True
     else:
         logger.info("Nu merge functia capitala_honduras")
