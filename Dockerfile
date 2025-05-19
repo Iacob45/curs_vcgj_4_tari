@@ -1,34 +1,21 @@
-FROM python:3.10-alpine
+# Imagine de bază
+FROM python:3.12-slim
 
-ENV FLASK_APP tari
+# Setează directorul de lucru
+WORKDIR /app
 
+# Copiază fișierele în container
+COPY . .
 
-#3.8 alpine
-RUN adduser -D tari
+# Instalează dependențele
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN mkdir -p /home/monica/proiect_scc/curs_vcgj_4_tari
-RUN chown -R tari /home/monica/proiect_scc
+# Expune portul pe care rulează Flask
+EXPOSE 5000
 
+# Setează variabilele de mediu necesare pentru Flask
+ENV FLASK_APP=app/main.py
+ENV PYTHONPATH=/app
 
-WORKDIR /home/monica/proiect_scc/curs_vcgj_4_tari
-
-COPY app/ app/
-COPY dockerstart.sh dockerstart.sh
-COPY pytest.ini pytest.ini
-COPY requirements.txt requirements.txt
-COPY tari.py tari.py
-COPY static/ static/
-
-RUN chmod -R 777 static/
-RUN chmod +x dockerstart.sh
-
-USER tari
-
-RUN python3 -m venv .venv
-RUN .venv/bin/pip install -r requirements.txt
-
-
-# runtime configuration
-EXPOSE 5011
-ENTRYPOINT ["./dockerstart.sh"]
-#CMD sh
+# Comanda de pornire a aplicației
+CMD ["flask", "run", "--host=0.0.0.0"]

@@ -1,71 +1,34 @@
-/*Jenkins*/
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            agent any
-            steps {
-                echo 'Building...'
-                sh '''
-                    pwd;
-                    ls -l;
-                    . ./activeaza_venv_jenkins
-                    '''
-            }
-        }
-        
-
-        stage('pylint - calitate cod') {
-            agent any
-            steps {
-                sh '''
-                    . ./activeaza_venv;
-                    echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero $(find app/lib -name "*.py");
-
-                    echo '\n\nVerificare tests/*.py cu pylint';
-                    pylint --exit-zero $(find app/tests -name "*.py");
-
-                    echo '\n\nVerificare tari.py cu pylint';
-                    pylint --exit-zero tari.py;
-                '''
-            }
-        }
-
-        stage('Unit Testing cu pytest') {
-            agent any
-            steps {
-                echo 'Unit testing with Pytest...'
-                sh '''
-                    . ./activeaza_venv;
-                    flask --app tari test;
-                    
-                '''
-            }
-        }
-        
-        stage('Deploy') {
-            agent any
-            steps {
-                echo "Build ID: ${BUILD_NUMBER}"
-                echo "Creare imagine docker"
-                sh '''
-                    docker build -t tari:v${BUILD_NUMBER} .
-                '''
-				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
-            }
-			
-        }
-		stage('Running') {
-            agent any
-            steps {
-                echo "Pornesc containerul"
-                sh '''
-                    docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
-                '''
-            }
-			
-        }
+  agent any
+  stages {
+    stage('Checkout') {
+      steps { checkout scm }
     }
+    stage('Install') {
+      steps { sh '''
+      python3 -m venv venv
+          . venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+'''}
+    }
+    stage('Test') {    
+      steps {sh '''
+      . venv/bin/activate
+      python3 -m pip install -r requirements.txt
+export PYTHONPATH=$(pwd)      
+      pytest --maxfail=1 --disable-warnings -q
+    '''}
+    }
+    stage('Build Docker image'){
+       steps {
+sh 'docker build -t alpaca_app .'
+	}
+    }
+  }
+  post {
+    always {
+     echo 'pipeline-ul e gata' 
+    }
+  }
 }

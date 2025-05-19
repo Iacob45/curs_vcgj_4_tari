@@ -1,27 +1,31 @@
+from flask import Flask, url_for,redirect
+from app.lib import biblioteca_header, biblioteca_egipt
 import sys
-import pytest
-from flask import Flask
-from app.lib.biblioteca_egipt import descriere_egipt, capitala_egipt, steag_egipt
 
-""" Modulul `tari.py` conține funcții care generează pagini HTML pentru EGIPT (descriere, capitală, steag). """
 api = Flask(__name__)
+@api.route("/", methods=['GET'])
+def home() -> str:
 
+    return redirect(url_for('index'))
 
 @api.route("/egipt", methods=['GET'])
 def index() -> str:
-    """Returnează HTML-ul cu descrierea Egiptului."""
-    return descriere_egipt()
+    text = biblioteca_header.header_descriere()
+    text += biblioteca_egipt.descriere_egipt()
+    return text
 
 @api.route("/egipt/capitala", methods=['GET'])
 def capitala() -> str:
-    """Returnează HTML-ul capitala Egiptului."""
-    return capitala_egipt()
-
+    text = biblioteca_header.header_capitala()
+    text += biblioteca_egipt.capitala_egipt()
+    return text
 
 @api.route("/egipt/steag", methods=['GET'])
 def steag() -> str:
-    """Returnează HTML-ul cu drapelul Egiptului."""
-    return steag_egipt()
+    text = biblioteca_header.header_steag()
+    text += biblioteca_egipt.steag_egipt()
+    return text
+
 
 @api.cli.command()
 def test():
@@ -31,4 +35,5 @@ def test():
     Apelare pytest din aplicatia systest, cu ajutorul comenzii flask.
 
     """
+    import pytest
     sys.exit(pytest.main(["."]))
