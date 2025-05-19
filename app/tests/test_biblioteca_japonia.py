@@ -1,5 +1,5 @@
 import logging
-from app.lib.biblioteca_canada import descriere_japonia, capitala_japonia, steag_japonia
+from app.lib.biblioteca_japonia import descriere_japonia, capitala_japonia, steag_japonia
 
 logger = logging.getLogger(__name__)
 
