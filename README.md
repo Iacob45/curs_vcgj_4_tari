@@ -68,7 +68,7 @@ Local, imaginea e construită cu:
 
 Și rulează astfel:
 
-    	docker run -p 5011:5000 egipt_app
+	docker run -p 5011:5000 egipt_app
 
 
 
