@@ -4,54 +4,71 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo ' Building...'
+                echo 'Building...'
                 sh '''
                     pwd
                     ls -l
-                    ./activeaza_venv_jenkins
+                    . ./activeaza_venv_jenkins
                 '''
             }
         }
 
         stage('Pylint - Calitate Cod') {
-            steps {
+             steps {
                 sh '''
-                    ./activeaza_venv_jenkins;
-                    pylint --exit-zero app/lib/*.py
-                    pylint --exit-zero app/test/*.py
-                    pylint --exit-zero tari.py
+                   ./activeaza_venv_jenkins;
+                   export PYTHONPATH=.;
+                   pylint --exit-zero app/lib/biblioteca_grecia.py;
+	           pylint --exit-zero app/test/test_biblioteca_grecia.py;
+                   pylint --exit-zero tari.py
+        '''
+    }
+}
+
+        stage('Unit Testing cu pytest') {
+            steps {
+                echo 'Unit testing with Pytest...'
+                sh '''
+                    . ./activeaza_venv
+                    flask --app tari test
                 '''
             }
         }
 
-        stage('Unit Testing cu Pytest') {
+        stage('Deploy') {
             steps {
-                echo ' Unit testing with pytest...'
-                sh '''
-                    ./activeaza_venv_jenkins;
-                    pytest
-                '''
-            }
-        }
-
-        stage('Docker Build') {
-            steps {
-                echo " Creare imagine docker"
+                echo "Build ID: ${BUILD_NUMBER}"
+                echo "Creare imagine docker"
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
+                // docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
             }
         }
 
-        stage('Running Container') {
+        stage('Running') {
             steps {
-                echo "Pornește containerul..."
+                echo "Pornesc containerul"
                 sh '''
                     docker run -d --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}
                 '''
             }
         }
     }
-}               
 
-
+    post {
+        always {
+            echo 'Cleaning up...'
+            sh '''
+                docker ps -a | grep tari | grep -v ${BUILD_NUMBER} | awk '{print $1}' | xargs -r docker stop
+                docker ps -a | grep tari | grep -v ${BUILD_NUMBER} | awk '{print $1}' | xargs -r docker rm
+            '''
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
