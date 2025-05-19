@@ -302,6 +302,9 @@ pytest -q
   4. **Docker Build & Run** – construiește și pornește containerul
 
 Astfel, fiecare schimbare este verificată automat pentru calitate și funcționalitate.
+![Configurare pipeline](/static/configurare-pipeline.png)
+![Overview](/static/pipeline-overview.png)
+![BlueOcean](/static/blueocean.png)
 
 ### Descriere Jenkinsfile
 
