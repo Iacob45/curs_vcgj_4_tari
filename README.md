@@ -1,22 +1,22 @@
 # Proiect SCC - Portugalia
 
 ## Descriere
-
-Acest proiect este dedicat temei "Tari", in cadrul cursului Servicii Cloud si Cointainerizare, folosind tehnologii precum Flask, Docker, Jenkins si Git/GitHub
+Acest proiect a fost realizat în cadrul cursului Servicii Cloud și Containerizare, având ca temă explorarea unei țări – în cazul nostru, Portugalia. Aplicația este dezvoltată folosind Flask și este containerizată cu Docker. Automatizarea proceselor este realizată cu Jenkins, iar gestionarea codului sursă se face prin Git și GitHub.
 
 ## Obiectivul proiectului
 
-Proiectul urmareste dezvoltarea unei aplicatii simple pentru Portugalia, utilizand Flask
-pentru a furniza informatii despre tara: o mica descriere, capitala acesteia si steagul,
-prin 3 endpoint-uri "/", "/capitala" si "/steag".
-Proiectul include si testarea automata folosind Jenkins, integrarea codului prin GitHub, si containerizarea aplicatiei folosind Docker.
+Scopul proiectului este dezvoltarea unei aplicații web simple care oferă informații despre Portugalia. Aplicația furnizează: o scurtă descriere a țării, detalii despre capitala Lisabona, imaginea steagului național, prin intermediul a trei endpoint-uri: /, /capitala și /steag.
+Pe lângă implementarea aplicației, proiectul integrează: testare automată prin Jenkins, versionare și colaborare prin GitHub, rulare într-un container Docker.
 
 ## Tehnologii folosite
 
-- Flask: Framework Python pentru dezvoltarea aplicatiei web.
-- Docker: Containere pentru rularea aplicatiei intr-un mediu izolat.
-- Jenkins: Automatizarea testarii si livrarii aplicatiei.
-- Git/GitHub: Colaborare si versionare a codului sursa.
+- Flask – framework Python pentru aplicații web.
+
+- Docker – containerizare pentru un mediu de execuție izolat.
+
+- Jenkins – automatizarea testării și livrării aplicației.
+
+- Git / GitHub – controlul versiunilor și colaborare.
 
 ## Rularea aplicatiei local
 
@@ -174,59 +174,6 @@ Explicații pentru fișierul `pytest.ini`
 
 Fișierul **`pytest.ini`** este un fișier de configurare folosit de framework-ul de testare **pytest** pentru a controla comportamentul testelor. Iată o descriere detaliată a fiecărei linii din acest fișier.
 
-1. `pythonpath = .`
-
-- **Explicație:** Acesta setează calea de import pentru pytest, indicând locația principală a proiectului. În acest caz, semnifică faptul că pytest va căuta modulele în directorul curent (`.`), adică rădăcina proiectului.
-- **De ce este important:** Permite pytest să acceseze corect modulele și fișierele din proiect, fără a necesita specificarea lor manuală în timpul testării.
-
-2. `testpaths = app/tests`
-
-- **Explicație:** Acesta indică locația directorului care conține testele unitare. În acest caz, pytest va căuta fișierele de testare în directorul `app/tests`.
-- **De ce este important:** Acest parametru asigură că pytest va executa doar testele aflate în directorul `app/tests/` și nu va căuta teste în alte locații din proiect.
-
-3. `log_cli = true`
-
-- **Explicație:** Activează logarea la nivel de linie de comandă pentru pytest.
-- **De ce este important:** Permite afișarea mesajelor de log în terminal pe măsură ce testele sunt rulate, oferind informații valoroase despre starea testelor (de exemplu, succes, eroare, avertismente).
-
-4. `log_cli_level = DEBUG`
-
-- **Explicație:** Setează nivelul de logare la **DEBUG**, ceea ce înseamnă că pytest va afișa toate mesajele de log, inclusiv cele de tip **debug**, care sunt utile pentru depanare detaliată.
-- **De ce este important:** Permite o monitorizare detaliată a testelor și ajută la identificarea și rezolvarea problemelor mai rapid.
-
-5. `log_cli_format = %(asctime)s [%(levelname)-8s] (%(filename)s:%(lineno)s) %(message)s`
-
-- **Explicație:** Acesta definește formatul mesajelor de log afișate de pytest. Fiecare mesaj va include:
-  - **`asctime`**: data și ora când a avut loc evenimentul
-  - **`levelname`**: nivelul mesajului de log (exemplu: INFO, DEBUG, ERROR)
-  - **`filename`** și **`lineno`**: fișierul și linia de cod în care a avut loc evenimentul
-  - **`message`**: mesajul propriu-zis
-- **De ce este important:** Formatul detaliat ajută la identificarea rapidă a sursei unei probleme sau erori, facilitând depanarea rapidă.
-
-6. `log_cli_date_format = %Y-%m-%d %H:%M:%S`
-
-- **Explicație:** Setează formatul datei și orei afișate în loguri. Formatul specificat este `YYYY-MM-DD HH:MM:SS`.
-- **De ce este important:** Formatul clar al datei și orei permite urmărirea cronologică a evenimentelor și erorilor în timpul executării testelor.
-
-Cum ajută aceste setări în procesul de testare:
-
-1. **Organizarea Testelor:** Direcționând pytest să caute testele în directorul specificat (`app/tests`), evităm executarea accidentală a unor fișiere care nu sunt teste.
-2. **Monitorizarea detaliată:** Permite logarea la nivel de detaliu complet (prin setarea `DEBUG`) astfel încât să putem observa toate etapele și posibilele erori apărute în timpul rulării testelor.
-3. **Formatul personalizat:** Folosind un format detaliat pentru loguri, este mai ușor să urmărești fluxul de execuție al testelor și să identifici rapid problemele.
-
-Aceste configurări sunt esențiale pentru a avea o experiență mai eficientă și clară în rularea și monitorizarea testelor în cadrul proiectului tău.
-
-- Testare cu Jenkins
-Testele sunt automatizate si vor rula pe Jenkins, folosind fisierul Jenkinsfile pentru a configura pipeline-ul.
-Pornirea serverului de Jenkins
-```bash
-jenkins
-```
-Configurare proiect Jenkins
-![Structura](/static/1.png)
-![Structura](/static/2.png)
-![Structura](/static/3.png)
-
 Descriere Jenkinsfile
 
 Acest **Jenkinsfile** configurează pipeline-ul pentru integrarea continuă (CI) și livrarea continuă (CD) a aplicației Flask.
@@ -239,6 +186,5 @@ Acest **Jenkinsfile** configurează pipeline-ul pentru integrarea continuă (CI)
 6. **Secțiunea 'post'**: Oferă curățare pentru a opri și elimina orice container rămas activ.
 
 Acest pipeline permite crearea și testarea automată a aplicației în fiecare build, asigurându-se că aplicația este mereu într-o stare funcțională și disponibilă.
-
 
 
