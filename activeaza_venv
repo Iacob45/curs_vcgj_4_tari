@@ -1,5 +1,6 @@
 # venv-ul se gaseste in directorul parinte: .venv
 # source ../.venv/bin/activate
+chmod +x activeaza_venv_jenkins
 . .venv/bin/activate
 
 # daca comanda de mai sus esueaza, creaza .venv si instaleaza dependintele

@@ -14,9 +14,11 @@ pipeline {
         }
 
         stage('Pylint - Calitate Cod') {
+             agent any
              steps {
                 sh '''
-                   ./activeaza_venv_jenkins;
+                   chmod +x ./activeaza_venv_jenkins;
+                   . ./activeaza_venv;
                    export PYTHONPATH=.;
                    pylint --exit-zero app/lib/biblioteca_grecia.py;
 	           pylint --exit-zero app/test/test_biblioteca_grecia.py;
