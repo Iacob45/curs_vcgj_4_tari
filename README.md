@@ -93,9 +93,9 @@ Am definit un Jenkinsfile în modul declarativ, cu etape de:
 
 	Checkout – preia codul din branch-ul main_mirescu_monica
 
-        Install – pip install -r requirements.txt
+	Install – pip install -r requirements.txt
 
-        Test – pytest --maxfail=1 --disable-warnings -q
+	Test – pytest --maxfail=1 --disable-warnings -q
 
 	Build Docker Image – docker build -t egipt_app .
 
