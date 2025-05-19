@@ -2,7 +2,7 @@
 
 Această aplicație oferă informații despre Honduras printr-o interfață web simplă bazată pe Flask. Include trei endpoint‑uri care returnează conținut HTML: descriere generală a țării, capitala și imaginea steagului.
 
----
+--- 
 
 ## Cuprins
 
