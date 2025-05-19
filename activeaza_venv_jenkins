@@ -7,7 +7,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Instalează din requirements.txt
-pip install -r requirements.txt
+pip install -r quickrequirements.txt
 
 # Adaugă calea în PATH (foarte important pentru Jenkins)
 export PATH="$PWD/.venv/bin:$PATH"
