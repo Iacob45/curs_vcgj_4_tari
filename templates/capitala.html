@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitala Bulgariei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccffcc;
+            color: #333;
+        }
+        h1 {
+            color: #28a745;
+        }
+        .button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 10px;
+            text-align: center;
+            background-color: #009900;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    
+    {{ header_capitala }}
+    
+    <p>{{ capitala }}</p>
+
+    <a href="/">
+        <button class="button">Descrierea Bulgariei</button>
+    </a>
+    <a href="/steag">
+        <button class="button">Steagul Bulgariei</button>
+    </a>
+</body>
+</html>
