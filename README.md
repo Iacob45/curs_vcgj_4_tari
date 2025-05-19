@@ -4,7 +4,7 @@
 
 - Implementare functionalitate
 - Rularea locala a aplicatiei
-- Rulare aplicatie cu Docker
+- Rularea aplicatiei cu Docker
 - Testare cu pytest
 - Testare automata cu Jenkins
   
@@ -56,7 +56,7 @@ Rulez testele local cu:
 
 
 
-## Rulare aplicatie cu Docker
+## Rularea aplicatiei cu Docker
 
   Containerizare Docker
 
