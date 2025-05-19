@@ -133,6 +133,7 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 ```
 
+
 - #### Ip Jenkins ``` http://10.0.2.15:8080 ```
 - #### Pentru a rulat în Jenkins trebuie să cream un Pipeline unde ne punem url-ul de la github de unde să ia codul.
 - #### Dupa ce am dat Build la cod, putem vizualiza in intregime toti pasii cu plugin-ul Blue Ocean.
