@@ -11,4 +11,3 @@ else
     echo "FAIL: cannot activate venv"
     . ./activeaza_venv_jenkins
 fi
-
