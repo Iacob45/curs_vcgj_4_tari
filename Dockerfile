@@ -1,25 +1,21 @@
-ROM python:3.10-alpine
+# Imagine de bază
+FROM python:3.12-slim
 
-# Creăm utilizatorul
-RUN adduser -D tari
+# Setează directorul de lucru
+WORKDIR /app
 
-# Ne logăm ca utilizator non-root
-USER tari
+# Copiază fișierele în container
+COPY . .
 
-# Setăm directorul de lucru
-WORKDIR /home/tari/
+# Instalează dependențele
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiem toate fișierele necesare
-COPY app/ app/
-COPY main.py main.py
-COPY quickrequirements.txt quickrequirements.txt
+# Expune portul pe care rulează Flask
+EXPOSE 5000
 
-# Instalăm dependențele
-RUN pip install --upgrade pip
-RUN pip install -r quickrequirements.txt
+# Setează variabilele de mediu necesare pentru Flask
+ENV FLASK_APP=app/main.py
+ENV PYTHONPATH=/app
 
-# Expunem portul pe care va rula aplicația
-EXPOSE 5050
-
-# Pornim aplicația cu uvicorn
-CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "5050"]
+# Comanda de pornire a aplicației
+CMD ["flask", "run", "--host=0.0.0.0"]
