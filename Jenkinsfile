@@ -25,6 +25,24 @@ export PYTHONPATH=$(pwd)
 sh 'docker build -t egipt_app .'
 	}
     }
+	stage('Run Docker')
+{
+steps
+{
+sh '''
+if docker ps -a --format '{{.Names}}' | grep -q '^egipt_containers$'; then
+docker stop egipt_container || true
+docker rm egipt_container || true
+fi
+docker run -d --name egipt_container -p 5011:5000 egipt_app
+'''
+}
+
+}
+
+
+
+
   }
   post {
     always {
