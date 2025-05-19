@@ -16,7 +16,7 @@ pipeline {
         }
         
 
-        stage('Controlul calitatii cu pylint') {
+        stage('pylint - calitate cod') {
             agent any
             steps {
                 sh '''
@@ -24,12 +24,12 @@ pipeline {
 					export PYTHONPATH=.
 					
                     echo '\n\nVerificare lib/*.py cu pylint\n';
-                    pylint --exit-zero app/lib/biblioteca_honduras;
+                    pylint --exit-zero $(find app/lib -name "*.py");
 
-                    echo '\n\nVerificare test_biblioteca_honduras.py cu pylint\n';
-                    pylint --exit-zero app/tests/test_biblioteca_honduras.py;
+                    echo '\n\nVerificare tests/*.py cu pylint';
+                    pylint --exit-zero $(find app/tests -name "*.py");
 
-                    echo '\n\nVerificare tari.py cu pylint\n';
+                    echo '\n\nVerificare tari.py cu pylint';
                     pylint --exit-zero tari.py;
                 '''
             }
@@ -41,8 +41,7 @@ pipeline {
                 echo 'Unit testing with Pytest...'
                 sh '''
                     . ./activeaza_venv;
-					export PYTHONPATH=.
-                    pytest;
+                    flask --app tari test;
                     
                 '''
             }
@@ -56,6 +55,7 @@ pipeline {
                 sh '''
                     docker build -t tari:v${BUILD_NUMBER} .
                 '''
+				/*docker create --name tari${BUILD_NUMBER} -p 8020:5011 tari:v${BUILD_NUMBER}*/
             }
 			
         }
