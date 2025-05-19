@@ -22,7 +22,7 @@ export PYTHONPATH=$(pwd)
     }
     stage('Build Docker image'){
        steps {
-sh 'docker build -t alpaca_app .'
+sh 'docker build -t egipt_app .'
 	}
     }
   }
