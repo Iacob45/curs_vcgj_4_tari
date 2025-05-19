@@ -1,7 +1,11 @@
-# curs_vcgj_4_tari
+# Proiect curs_vcgj_4_tari
 Proiect DevOps, virtualizare, containerizare, github, jenkins. 
+Acest proiect contine o aplicatie Flask simpla, cu 3 endpoint-uri: "/" -> descrierea; "/capitala" -> capitala ; "/steag" -> steagul.
+Se foloseste un fisier principal "tari.py" care contine cele 3 endpoint-uri, se folosesc biblioteci de functii care
+intorc cod HTML in acele endpoint-uri, se folosesc biblioteci de functii de testare, se foloseste Docker pentru containerizare
+si Jenkins pentru tot procesul de automatizare.
+
 Tema proiect: Tari.
-3 URL-uri: "/" -> descrierea; "/capitala" -> capitala ; "/steag" -> steagul
 
 Teme luate: 
     Grecia: Roberta, 
@@ -28,8 +32,8 @@ Teme luate:
     Monaco: Catalin,
     Norvegia: Dumitru
     
-    
-    
-    
+## Cuprins
 
-  Pentru descriere a ce trebuie sa facem: RezumatCerinta.txt
+- I. ROMANIA - Delcea Andrei-Iacob
+
+I. ROMANIA - Delcea Andrei-Iacob
