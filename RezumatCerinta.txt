@@ -1,4 +1,4 @@
-Sal, sunt Iacob, aici scriu ce am inteles eu pana acum.
+Sal, sunt Iacob, aici scriu ce am inteles eu pana acum..
 
 Cautati pe net cum se foloseste Flask, si faceti un API simplu, cu 3 endpoint-uri de GET, url-urile celor 3 endpoint-uri sunt "/<tara ta>", "/<tara ta>/capitala", "/<tara ta>/steag"
 Puteti folosi ca template branch-ul meu: main_delcea_iacob
