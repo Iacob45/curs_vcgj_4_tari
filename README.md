@@ -38,8 +38,8 @@ Teme luate:
 - II. HONDURAS - Furniga Silviu Andrei
 - III. CANADA - Manta Valentina
 
-##I. ROMANIA - Delcea Andrei-Iacob
-# „Info Romania” — Serviciu Web cu Flask 🇷🇴
+## I. ROMANIA - Delcea Andrei-Iacob
+„Info Romania” — Serviciu Web cu Flask 🇷🇴
 
 Un serviciu web simplu, realizat în Python cu Flask, care afișează informații despre România: descriere generală, capitală și drapel.
 
@@ -223,7 +223,7 @@ Licența este definită în fișierul `LICENSE`. Contribuțiile sunt binevenite 
 
 
 
-##II. HONDURAS - Furniga Silviu Andrei
+## II. HONDURAS - Furniga Silviu Andrei
 **Aplicație Flask: Informații despre Honduras**
 
 Această aplicație oferă informații despre Honduras printr-o interfață web simplă bazată pe Flask. Include trei endpoint‑uri care returnează conținut HTML: descriere generală a țării, capitala și imaginea steagului.
@@ -246,7 +246,7 @@ Această aplicație oferă informații despre Honduras printr-o interfață web 
 
 ---
 
-#I. Structura proiectului
+# I. Structura proiectului
 
 ```
 ├── tari.py                      # Fișierul principal al aplicației Flask
@@ -272,7 +272,7 @@ Această aplicație oferă informații despre Honduras printr-o interfață web 
 
 ---
 
-#II. Instalare și configurare
+# II. Instalare și configurare
 
 ### 1. Clonare repository
 
@@ -296,7 +296,7 @@ pip install -r quickrequirements.txt
 
 ---
 
-#III. Rulare aplicație
+# III. Rulare aplicație
 
 ### Local
 
@@ -315,7 +315,7 @@ Aplicația va fi disponibilă pe `http://localhost:5011/honduras`
 
 ---
 
-#IV. Endpoint-uri disponibile
+# IV. Endpoint-uri disponibile
 
 | Ruta                 | Descriere                                 | Metodă |
 | -------------------- | ----------------------------------------- | ------ |
@@ -327,7 +327,7 @@ Fiecare pagină include linkuri de navigare între endpoint-uri și conținut HT
 
 ---
 
-#V. Testare
+# V. Testare
 
 Testele sunt în `app/tests/test_biblioteca_honduras.py` și verifică funcțiile:
 
@@ -346,7 +346,7 @@ pytest -v
 
 ---
 
-#VI. Controlul calității codului
+# VI. Controlul calității codului
 
 Se folosește `pylint` pentru analiza statică a codului. Pentru a rula:
 
@@ -356,7 +356,7 @@ pylint app/lib/biblioteca_honduras.py app/tests/test_biblioteca_honduras.py tari
 
 ---
 
-#VII. CI/CD (Jenkins)
+# VII. CI/CD (Jenkins)
 
 Pipeline-ul definit în `Jenkinsfile` conține următoarele etape:
 
@@ -368,14 +368,14 @@ Pipeline-ul definit în `Jenkinsfile` conține următoarele etape:
 
 ---
 
-#VIII. Docker
+# VIII. Docker
 
 - **Dockerfile**: imagine bazată pe Python 3.10 Alpine, creează utilizator non-root, copiază codul și scripturile, setează permisiuni și rulează aplicația cu entrypointul `dockerstart.sh`.
 - **dockerstart.sh**: activează mediul virtual și pornește aplicația cu `flask run` pe `0.0.0.0:5011`
 
 ---
 
-#IX. Scripturi utile
+# IX. Scripturi utile
 
 dockerstart.sh – entrypoint pentru aplicație în Docker
 ruleaza_aplicatia – pornește serverul Flask local
@@ -383,7 +383,7 @@ activeaza_venv / activeaza_venv_jenkins – creează și activează mediu virtua
 
 ---
 
-#X. Dependințe externe
+# X. Dependințe externe
 
 - Flask
 - pytest
@@ -393,12 +393,12 @@ activeaza_venv / activeaza_venv_jenkins – creează și activează mediu virtua
 
 ---
 
-#XI. Licență
+# XI. Licență
 
 Acest proiect este licențiat sub licența MIT definită în fișierul `LICENSE`.
 
 
-##III. CANADA - Manta Valentina-Elena
+## III. CANADA - Manta Valentina-Elena
 
 Stadiul implementării: funcționalitate completă, testare finalizată, integrare realizată în branch-ul principal `main_manta_valentina`.
 
