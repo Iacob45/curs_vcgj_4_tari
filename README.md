@@ -66,7 +66,7 @@ Local, imaginea e construită cu:
 
 	docker build -t egipt_app .
 
-	Și rulează astfel:
+Și rulează astfel:
 
     	docker run -p 5011:5000 egipt_app
 
@@ -97,9 +97,9 @@ Am definit un Jenkinsfile în modul declarativ, cu etape de:
 
         Test – pytest --maxfail=1 --disable-warnings -q
 
-        Build Docker Image – docker build -t egipt_app .
+	Build Docker Image – docker build -t egipt_app .
 
- 	Run Docker Image - docker run -d --name egipt_container -p 5011:5000 egipt_app
+	Run Docker Image - docker run -d --name egipt_container -p 5011:5000 egipt_app
 
 Jenkins rulează pipeline-ul la fiecare push, asigurându-se că codul e testat și containerul poate fi construit.
 
