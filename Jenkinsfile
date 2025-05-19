@@ -17,7 +17,7 @@ pipeline {
              agent any
              steps {
                 sh '''
-                   chmod +x ./activeaza_venv_jenkins;
+                   chmod +x activeaza_venv_jenkins;
                    . ./activeaza_venv;
                    export PYTHONPATH=.;
                    pylint --exit-zero app/lib/biblioteca_grecia.py;
