@@ -1,4 +1,13 @@
- Proiect SCC - Luxembourg
+ ##Luxembourg - Buță Cosmin Andrei
+
+##Cuprins
+-Descriere
+-Obiectiv
+-Utiliare
+-Setup
+-Implementare
+-containerizare
+-jenkins
 
 Descriere
 
